@@ -7,7 +7,11 @@ export function Footer() {
           reserved.
         </p>
         <p className="text-xs text-[#6B6B6B]">
-          Robotics &amp; AI · Differentiable Physics · Autonomous Systems
+          Robotics &amp; Autonomous Systems · Defense and EW Platforms · AI, Deep Learning & Computer Vision . Autonomous Systems 
+          
+
+
+
         </p>
       </div>
     </footer>

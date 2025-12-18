@@ -20,14 +20,14 @@ export const achievements: Achievement[] = [
       "Completed a series of advanced robotics and AI projects, including vision-guided differentiable physics, autonomous drone navigation, and S&P 500 deep learning forecasting.",
     tags: ["Robotics", "AI", "Deep Learning"],
   },
-  {
-    id: "dl-course-projects",
-    title: "Deep Learning Course Projects – EEE 598",
-    issuer: "EEE 598 Deep Learning",
-    date: "2025",
-    description:
-      "Delivered several research-style deep learning projects spanning custom ResNet architectures, ViT fine-tuning, perceptual loss engineering, GANs, diffusion models, and sequence generation.",
-    tags: ["Deep Learning", "Vision", "Generative Models"],
-  },
+  // {
+  //   id: "dl-course-projects",
+  //   title: "Deep Learning Course Projects – EEE 598",
+  //   issuer: "EEE 598 Deep Learning",
+  //   date: "2025",
+  //   description:
+  //     "Delivered several research-style deep learning projects spanning custom ResNet architectures, ViT fine-tuning, perceptual loss engineering, GANs, diffusion models, and sequence generation.",
+  //   tags: ["Deep Learning", "Vision", "Generative Models"],
+  // },
   // Add more specific awards, scholarships, competition results here later
 ];

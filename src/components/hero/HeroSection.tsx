@@ -29,17 +29,18 @@ export function HeroSection() {
                   >
                     Gourishankar Bansode
                   </h1>
-                  <p className="mt-1 text-sm sm:text-base text-[#6B6B6B] text-center">
-                    Robotics &amp; AI Engineer
+                  <p className="mt-1 text-sm sm:text-base text-[#6B6B6B] text-center md:text-left">
+                    Software &amp; Robotics Engineer · M.S. Robotics &amp; Autonomous Systems (AI), ASU
                   </p>
                 </div>
 
           {/* Tagline */}
-          <p className="max-w-xl text-sm sm:text-base text-[#3A3A3A]">
-            I build autonomous systems at the intersection of perception,
-            differentiable physics, and control — from vision‑guided
-            manipulation to drone navigation and defense‑grade tracking.
-          </p>
+            <p className="max-w-xl text-sm sm:text-base text-[#3A3A3A]">
+              I design reliable, data-intensive systems for robotics and defense, spanning
+              electronic warfare backends, health and performance monitoring, 
+              differentiable-physics manipulators, autonomous drones, and deep learning models.
+            </p>
+
 
           {/* Call-to-action buttons */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -60,16 +61,16 @@ export function HeroSection() {
           {/* Key-focus tags */}
           <div className="mt-6 flex flex-wrap gap-2 text-xs">
             <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
-              Differentiable Physics
+              Robotics &amp; Autonomous Systems
             </span>
-            <span className="rounded-full bg-[#FFE3E3]/80 text-[#1F1F1F] px-3 py-1">
-              Autonomous Systems
+            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
+              Defense and EW Platforms
             </span>
-            <span className="rounded-full bg-white border border-[#E4E6EB] text-[#1F1F1F] px-3 py-1">
-              Vision Transformers
+            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
+              Deep Learning &amp; Computer Vision
             </span>
-            <span className="rounded-full bg-white border border-[#E4E6EB] text-[#1F1F1F] px-3 py-1">
-              Robotics &amp; Control
+            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
+              Data Pipelines &amp; Evaluation
             </span>
           </div>
         </div>

@@ -1,29 +1,29 @@
 import type { Experience } from "@/types/experience";
 
 export const experiences: Experience[] = [
-  {
-    id: "asu-grad-ras",
-    company: "Arizona State University",
-    role: "Graduate Research & Projects – Robotics & Autonomous Systems (AI)",
-    period: "Aug 2024 – Present",
-    location: "Tempe, AZ, USA",
-    description:
-      "Graduate work in robotics and autonomous systems with a focus on AI, differentiable physics, and autonomous systems.",
-    bullets: [
-      "Developing a unified perception-to-control framework that integrates 3D Gaussian Splatting with NVIDIA Warp for differentiable physics-based manipulation.",
-      "Building an S&P 500 deep learning forecasting system using Temporal Fusion Transformers alongside LSTM and ARIMAX baselines.",
-      "Working on autonomous drone landing/navigation and an automated goalkeeper robot that combines YOLOv8-based vision with real-time control.",
-    ],
-    tech: [
-      "PyTorch",
-      "Temporal Fusion Transformer",
-      "NVIDIA Isaac Sim/Lab",
-      "MATLAB / Simulink",
-      "ROS",
-      "YOLOv8",
-      "Python",
-    ],
-  },
+  // {
+  //   id: "asu-grad-ras",
+  //   company: "Arizona State University",
+  //   role: "Graduate Research & Projects – Robotics & Autonomous Systems (AI)",
+  //   period: "Aug 2024 – Present",
+  //   location: "Tempe, AZ, USA",
+  //   description:
+  //     "Graduate work in robotics and autonomous systems with a focus on AI, differentiable physics, and autonomous systems.",
+  //   bullets: [
+  //     "Developing a unified perception-to-control framework that integrates 3D Gaussian Splatting with NVIDIA Warp for differentiable physics-based manipulation.",
+  //     "Building an S&P 500 deep learning forecasting system using Temporal Fusion Transformers alongside LSTM and ARIMAX baselines.",
+  //     "Working on autonomous drone landing/navigation and an automated goalkeeper robot that combines YOLOv8-based vision with real-time control.",
+  //   ],
+  //   tech: [
+  //     "PyTorch",
+  //     "Temporal Fusion Transformer",
+  //     "NVIDIA Isaac Sim/Lab",
+  //     "MATLAB / Simulink",
+  //     "ROS",
+  //     "YOLOv8",
+  //     "Python",
+  //   ],
+  // },
   {
     id: "tata-advanced-systems",
     company: "Tata Advanced Systems Limited",

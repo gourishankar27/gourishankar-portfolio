@@ -10,12 +10,12 @@ export default function ExperiencePage() {
           className="text-2xl sm:text-3xl font-semibold tracking-tight"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Experience
+          Professional Experience
         </h1>
         <p className="mt-2 text-sm sm:text-base text-[#3A3A3A] max-w-2xl">
-          Work across robotics, embedded systems, and AI — from defense‑grade
+          {/* Work across robotics, embedded systems, and AI — from defense‑grade
           systems to research in differentiable physics, autonomous drones, and
-          deep learning.
+          deep learning. */}
         </p>
       </header>
 
