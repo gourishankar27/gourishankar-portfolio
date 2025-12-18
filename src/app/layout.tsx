@@ -32,7 +32,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
-      {/* <body className="antialiased">
+      <body
+        className="antialiased"
+        style={{ fontFamily: "var(--font-sans)" }}
+      >
         <div
           className="min-h-screen flex flex-col"
           style={{ backgroundColor: "#FAFAFD", color: "#1F1F1F" }}
@@ -41,14 +44,7 @@ export default function RootLayout({
           <PageShell>{children}</PageShell>
           <Footer />
         </div>
-      </body> */}
-
-      <body
-        className="antialiased"
-        style={{ fontFamily: "var(--font-sans)" }}
-
-        
-      ></body>
+      </body>
     </html>
   );
 }

@@ -7,37 +7,35 @@ import { HeroRobotCanvas } from "./HeroRobotCanvas";
 
 export function HeroSection() {
   return (
-    <section className="pt-4 lg:pt-8">
+    <section className="pt-8 lg:pt-10">
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
-        {/* Left side – intro, photo, CTA */}
+        {/* Left side – avatar, intro, CTA */}
         <div className="relative">
-          {/* Top row: avatar + name */}
-          <div className="flex items-center gap-3 mb-4">
-            <div className="relative h-14 w-14 rounded-full border-2 border-[#4DA3FF] shadow-[0_4px_14px_rgba(77,163,255,0.25)] overflow-hidden bg-white">
-              {/* Replace /images/avatar.jpg with your actual file later */}
-              <Image
-                src="/images/avatar.jpg"
-                alt="Gourishankar Bansode"
-                width={80}
-                height={80}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div>
-              <h1
-                className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Gourishankar Bansode
-              </h1>
-              <p className="text-sm sm:text-base text-[#6B6B6B]">
-                Robotics &amp; AI Engineer
-              </p>
-            </div>
-          </div>
+          {/* Avatar above name */}
+              {/* Avatar above name */}
+                <div className="mb-5 flex flex-col items-center">
+                  <div className="relative h-48 w-48 rounded-full border-2 border-[#4DA3FF] shadow-[0_6px_18px_rgba(77,163,255,0.3)] overflow-hidden bg-white mb-4">
+                    <Image
+                      src="/images/avatar.jpg"
+                      alt="Gourishankar Bansode"
+                      width={200}
+                      height={200}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h1
+                    className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-center"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Gourishankar Bansode
+                  </h1>
+                  <p className="mt-1 text-sm sm:text-base text-[#6B6B6B] text-center">
+                    Robotics &amp; AI Engineer
+                  </p>
+                </div>
 
           {/* Tagline */}
-          <p className="mt-4 max-w-xl text-sm sm:text-base text-[#3A3A3A]">
+          <p className="max-w-xl text-sm sm:text-base text-[#3A3A3A]">
             I build autonomous systems at the intersection of perception,
             differentiable physics, and control — from vision‑guided
             manipulation to drone navigation and defense‑grade tracking.
