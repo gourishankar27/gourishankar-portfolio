@@ -2,31 +2,31 @@ import type { Education } from "@/types/education";
 
 export const education: Education[] = [
   {
-    id: "masters-robotics-ai",
-    school: "Your University Name (replace this)",
-    degree: "M.S.",
-    field: "Electrical / Computer Engineering – Robotics & AI Focus",
-    period: "2023 – 2025",
-    location: "City, Country",
+    id: "asu-ms-ras",
+    school: "Arizona State University",
+    degree: "Master of Science",
+    field: "Robotics and Autonomous Systems (Artificial Intelligence)",
+    period: "Aug 2024 – May 2026 (expected)",
+    location: "Tempe, AZ, USA",
     details:
-      "Graduate studies focused on deep learning, robotics, and autonomous systems.",
+      "Graduate program focused on robotics, autonomous systems, and AI, with an emphasis on deep learning, perception, and control for autonomous systems.",
     highlights: [
-      "Coursework in deep learning, computer vision, robotics, and control systems (e.g., EEE 598 Deep Learning).",
-      "Projects in differentiable physics, vision-guided manipulation, and autonomous drone navigation.",
+      "Coursework in deep learning, computer vision, robotics, and control systems (e.g., EEE 598 Deep Learning, autonomous systems labs).",
+      "Projects in differentiable physics, vision-guided manipulation, autonomous drones, and deep learning model engineering.",
     ],
   },
   {
-    id: "bachelors-engineering",
-    school: "Your Undergraduate University (replace this)",
-    degree: "B.E. / B.Tech.",
-    field: "Electronics / Computer / Related Engineering",
-    period: "2017 – 2021",
-    location: "City, Country",
+    id: "mit-adt-btech-intelligent-systems",
+    school: "MIT School of Engineering, MIT-ADT University",
+    degree: "Bachelor of Technology",
+    field: "Computer Science (Specialized in Intelligent Systems)",
+    period: "Aug 2017 – July 2021",
+    location: "Pune, India",
     details:
-      "Undergraduate engineering studies with a focus on fundamentals of electronics, computing, and applied machine learning.",
+      "Undergraduate program specializing in intelligent systems, machine learning, and computer science fundamentals.",
     highlights: [
-      "Final-year project: Descriptive Question Answering System using BERT and transformers.",
-      "Published work at IEEE Pune Section International Conference (Dec 2021).",
+      "Final-year project: Descriptive Question Answering System using BERT and transformers, published at the IEEE Pune Section International Conference (Dec 2021).",
+      "Represented the university at national-level innovation events, including Smart India Hackathon (winner) and National Innovation Contest (finalist).",
     ],
   },
 ];

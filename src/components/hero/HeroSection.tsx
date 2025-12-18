@@ -8,7 +8,7 @@ import { HeroRobotCanvas } from "./HeroRobotCanvas";
 export function HeroSection() {
   return (
     <section className="pt-8 lg:pt-10">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.25fr)] items-center">
         {/* Left side – avatar, intro, CTA */}
         <div className="relative">
           {/* Avatar above name */}
@@ -75,7 +75,7 @@ export function HeroSection() {
         </div>
 
         {/* Right side – 3D / visual area */}
-        <div className="relative h-[260px] sm:h-[320px] md:h-[360px] lg:h-[420px]">
+        <div className="relative h-[300px] sm:h-[360px] md:h-[420px] lg:h-[460px]">
           <HeroRobotCanvas />
         </div>
       </div>

@@ -13,7 +13,7 @@ const navItems = [
 export function Header() {
   return (
     <header className="w-full border-b border-[#E4E6EB]/80 bg-white/80 backdrop-blur-sm">
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
         {/* Logo / Name */}
         <Link href="/" className="flex items-baseline gap-2">
           <span className="text-lg font-semibold tracking-tight text-[#1F1F1F]">
