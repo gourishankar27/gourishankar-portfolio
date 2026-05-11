@@ -4,17 +4,19 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, ContactShadows } from "@react-three/drei";
 import { RobotScene } from "@/components/three/RobotScene";
+import { useCanvasBackgroundVar } from "@/components/three/useCanvasTheme";
 
 export function HeroRobotCanvas() {
+  const background = useCanvasBackgroundVar("--surface-2", "#f7f9fe");
   return (
-    <div className="h-full w-full rounded-2xl border border-[#E4E6EB] bg-gradient-to-br from-[#FFFFFF] via-[#F4F9FF] to-[#FFE3E3]/80 shadow-[0_18px_45px_rgba(77,163,255,0.18)] overflow-hidden">
+    <div className="h-full w-full rounded-2xl border border-[color:var(--border)] bg-gradient-to-br from-[color:var(--surface)] via-[color:var(--primary-soft)] to-[color:var(--danger-soft)] shadow-[0_18px_45px_var(--shadow-2)] overflow-hidden">
       <Canvas
         camera={{ position: [3, 2, 4], fov: 45 }}
         dpr={[1, 2]}
         shadows
       >
         {/* Soft background color inside the canvas */}
-        <color attach="background" args={["#f7f9fe"]} />
+        <color attach="background" args={[background]} />
 
         {/* Lights */}
         <ambientLight intensity={0.5} />

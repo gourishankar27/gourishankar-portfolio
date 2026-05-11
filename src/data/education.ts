@@ -6,13 +6,13 @@ export const education: Education[] = [
     school: "Arizona State University",
     degree: "Master of Science",
     field: "Robotics and Autonomous Systems (Artificial Intelligence)",
-    period: "Aug 2024 – May 2026 (expected)",
+    period: "Aug 2024 - May 2026 (expected)",
     location: "Tempe, AZ, USA",
     details:
-      "Graduate program focused on robotics, autonomous systems, and AI, with an emphasis on deep learning, perception, and control for autonomous systems.",
+      "Graduate program focused on robotics, autonomous systems, and AI, with current research in event-based vision and spacecraft attitude estimation. GPA: 3.79.",
     highlights: [
-      "Coursework in deep learning, computer vision, robotics, and control systems (e.g., EEE 598 Deep Learning, autonomous systems labs).",
-      "Projects in differentiable physics, vision-guided manipulation, autonomous drones, and deep learning model engineering.",
+      "Research Assistant on an ASU-Alphacore NASA event-based star-tracking project for high-speed spacecraft attitude estimation under low-SWaP constraints.",
+      "Graduate projects in differentiable physics, vision-guided manipulation, autonomous drone landing, time-series forecasting, and deep learning model engineering.",
     ],
   },
   {
@@ -20,13 +20,13 @@ export const education: Education[] = [
     school: "MIT School of Engineering, MIT-ADT University",
     degree: "Bachelor of Technology",
     field: "Computer Science (Specialized in Intelligent Systems)",
-    period: "Aug 2017 – July 2021",
+    period: "Aug 2017 - July 2021",
     location: "Pune, India",
     details:
       "Undergraduate program specializing in intelligent systems, machine learning, and computer science fundamentals.",
     highlights: [
       "Final-year project: Descriptive Question Answering System using BERT and transformers, published at the IEEE Pune Section International Conference (Dec 2021).",
-      "Represented the university at national-level innovation events, including Smart India Hackathon (winner) and National Innovation Contest (finalist).",
+      "Smart India Hackathon winner and National Innovation Contest finalist representing MIT-ADT University.",
     ],
   },
 ];

@@ -9,73 +9,71 @@ export function HeroSection() {
   return (
     <section className="pt-8 lg:pt-10">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.25fr)] items-center">
-        {/* Left side – avatar, intro, CTA */}
         <div className="relative">
-          {/* Avatar above name */}
-              {/* Avatar above name */}
-                <div className="mb-5 flex flex-col items-center">
-                  <div className="relative h-48 w-48 rounded-full border-2 border-[#4DA3FF] shadow-[0_6px_18px_rgba(77,163,255,0.3)] overflow-hidden bg-white mb-4">
-                    <Image
-                      src="/images/avatar.jpg"
-                      alt="Gourishankar Bansode"
-                      width={200}
-                      height={200}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h1
-                    className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-center"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    Gourishankar Bansode
-                  </h1>
-                  <p className="mt-1 text-sm sm:text-base text-[#6B6B6B] text-center md:text-left">
-                    Software &amp; Robotics Engineer · M.S. Robotics &amp; Autonomous Systems (AI), ASU
-                  </p>
-                </div>
-
-          {/* Tagline */}
-            <p className="max-w-xl text-sm sm:text-base text-[#3A3A3A]">
-              I design reliable, data-intensive systems for robotics and defense, spanning
-              electronic warfare backends, health and performance monitoring, 
-              differentiable-physics manipulators, autonomous drones, and deep learning models.
+          <div className="mb-5 flex flex-col items-center sm:items-start">
+            <div className="relative mb-4 h-48 w-48 overflow-hidden rounded-full border-2 border-[color:var(--primary)] bg-[color:var(--surface)] shadow-[0_6px_18px_var(--shadow-1)]">
+              <Image
+                src="/images/avatar.jpg"
+                alt="Gourishankar Bansode"
+                width={200}
+                height={200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <h1
+              className="text-center text-2xl font-semibold tracking-tight sm:text-left sm:text-3xl lg:text-4xl"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Gourishankar Bansode
+            </h1>
+            <p className="mt-1 text-center text-sm text-[color:var(--muted)] sm:text-left sm:text-base">
+              Robotics &amp; AI Software Engineer · ASU Research Assistant
             </p>
+          </div>
 
+          <p className="max-w-xl text-sm sm:text-base text-[color:var(--muted-2)]">
+            I build reliable autonomy software across event-based space vision,
+            spacecraft attitude estimation, differentiable-physics robotics,
+            real-time computer vision, and production-grade backend/data systems.
+          </p>
 
-          {/* Call-to-action buttons */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
               href="/projects"
-              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white bg-[#4DA3FF] hover:bg-[#3b83d1] transition-colors shadow-md"
+              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white bg-[color:var(--primary)] hover:opacity-90 transition-colors shadow-md"
             >
               View Projects
             </Link>
             <Link
               href="/experience"
-              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-[#4DA3FF] bg-white border border-[#4DA3FF33] hover:border-[#4DA3FF] hover:bg-[#F4F9FF] transition-colors"
+              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-[color:var(--primary)] bg-[color:var(--surface)] border border-[color:var(--primary-border)] hover:border-[color:var(--primary)] hover:bg-[color:var(--primary-soft)] transition-colors"
             >
               View Experience
             </Link>
+            <Link
+              href="/about#contact"
+              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-[color:var(--text)] bg-[color:var(--surface)] border border-[color:var(--border)] hover:border-[color:var(--primary)] transition-colors"
+            >
+              Contact
+            </Link>
           </div>
 
-          {/* Key-focus tags */}
           <div className="mt-6 flex flex-wrap gap-2 text-xs">
-            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
-              Robotics &amp; Autonomous Systems
+            <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
+              Event-Based Vision &amp; Space Autonomy
             </span>
-            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
-              Defense and EW Platforms
+            <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
+              State Estimation &amp; Control
             </span>
-            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
-              Deep Learning &amp; Computer Vision
+            <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
+              Differentiable Physics &amp; 3D Vision
             </span>
-            <span className="rounded-full bg-[#B7DAFF]/60 text-[#1F1F1F] px-3 py-1">
-              Data Pipelines &amp; Evaluation
+            <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
+              Reliable Distributed Systems
             </span>
           </div>
         </div>
 
-        {/* Right side – 3D / visual area */}
         <div className="relative h-[300px] sm:h-[360px] md:h-[420px] lg:h-[460px]">
           <HeroRobotCanvas />
         </div>

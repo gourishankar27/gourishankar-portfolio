@@ -11,7 +11,7 @@ export default function PublicationsPage() {
         >
           Publications
         </h1>
-        <p className="mt-2 text-sm sm:text-base text-[#3A3A3A] max-w-2xl">
+        <p className="mt-2 text-sm sm:text-base text-[color:var(--muted-2)] max-w-2xl">
           Academic and research publications, starting with my bachelor&apos;s
           thesis work on descriptive question answering. This section will grow
           as I publish more in robotics and AI.

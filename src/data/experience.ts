@@ -1,42 +1,45 @@
 import type { Experience } from "@/types/experience";
 
 export const experiences: Experience[] = [
-  // {
-  //   id: "asu-grad-ras",
-  //   company: "Arizona State University",
-  //   role: "Graduate Research & Projects – Robotics & Autonomous Systems (AI)",
-  //   period: "Aug 2024 – Present",
-  //   location: "Tempe, AZ, USA",
-  //   description:
-  //     "Graduate work in robotics and autonomous systems with a focus on AI, differentiable physics, and autonomous systems.",
-  //   bullets: [
-  //     "Developing a unified perception-to-control framework that integrates 3D Gaussian Splatting with NVIDIA Warp for differentiable physics-based manipulation.",
-  //     "Building an S&P 500 deep learning forecasting system using Temporal Fusion Transformers alongside LSTM and ARIMAX baselines.",
-  //     "Working on autonomous drone landing/navigation and an automated goalkeeper robot that combines YOLOv8-based vision with real-time control.",
-  //   ],
-  //   tech: [
-  //     "PyTorch",
-  //     "Temporal Fusion Transformer",
-  //     "NVIDIA Isaac Sim/Lab",
-  //     "MATLAB / Simulink",
-  //     "ROS",
-  //     "YOLOv8",
-  //     "Python",
-  //   ],
-  // },
+  {
+    id: "asu-research-assistant-nasa-alphacore",
+    company: "Arizona State University - Prof. Dr. Suren Jayasuriya; NASA project with Alphacore Inc.",
+    role: "Research Assistant",
+    period: "Jan 2026 - Present",
+    location: "Tempe, AZ, USA",
+    description:
+      "Researching event-based star tracking for high-speed spacecraft attitude estimation under low-SWaP constraints, with emphasis on centroid correction, adaptive uncertainty, and evaluation-driven state estimation.",
+    bullets: [
+      "Lead research on the ASU-Alphacore NASA event-based star-tracking project for high-speed spacecraft attitude estimation under low-SWaP constraints.",
+      "Led development of a centroid-correction algorithm, improving the measurement model from brightness-only correction to a speed-aware and brightness-aware formulation for fast-moving stars.",
+      "Implemented speed-aware centroid correction with adaptive measurement uncertainty, event batching, centroid extraction, astrometric initialization, and weighted Wahba attitude estimation.",
+      "Validated the prototype on synthetic star-motion tests and public real-night-sky resources; compared baseline and speed-aware runs on a 3.0 s sequence with 372 batches and about 8.7M events while preserving runtime feasibility.",
+      "Supported the Phase I proposal submitted to NASA and currently contributing to Phase II technical progress, including experiments, evaluation design, and research/proposal writing.",
+    ],
+    tech: [
+      "Python",
+      "Event-Based Vision",
+      "State Estimation",
+      "Wahba Attitude Estimation",
+      "Astrometry",
+      "Synthetic Data",
+      "Low-SWaP Systems",
+      "Performance Evaluation",
+    ],
+  },
   {
     id: "tata-advanced-systems",
     company: "Tata Advanced Systems Limited",
     role: "Software Executive",
-    period: "Dec 2021 – June 2024",
+    period: "Dec 2021 - June 2024",
     location: "Mumbai, India",
     description:
-      "Built backend and data-intensive software for large, distributed defense platforms with strict reliability constraints, including Integrated Electronic Warfare Systems and naval projects.",
+      "Built backend and data-intensive software for large, distributed defense platforms with strict reliability, availability, and performance requirements, including Integrated Electronic Warfare Systems and naval projects.",
     bullets: [
-      "Led backend development for Integrated Electronic Warfare Systems (IEWS), managing a team of 6 and building data pipelines and services for communication and configuration modules across heterogeneous hardware.",
-      "Designed and documented a reusable Health Monitor SDK for critical Indian Navy projects (3D-ASR, CMS), exposing standardized health and performance signals and fault detection interfaces.",
-      "Automated Fire Controller Units for defense projects Dhanush, ATAGS, and Pinaka, reducing manual intervention by around 75% and improving reliability through deterministic software control and repeatable test procedures.",
-      "Implemented data cataloging and processing features in the Ballistic Logix library for ballistic range data handling, improving processing efficiency by ~60% and enabling downstream analytics and model development.",
+      "Led backend development for the Indian Army's Integrated Electronic Warfare Systems (IEWS), delivering distributed C/C++ and Python services, data pipelines, and control-plane components across heterogeneous hardware; managed a team of 6 engineers.",
+      "Designed and documented a reusable Health Monitor SDK for Indian Navy programs (3D-ASR, CMS), standardizing telemetry, diagnostics, fault-detection interfaces, and observability across products.",
+      "Automated Fire Controller Units for Dhanush, ATAGS, and Pinaka platforms, reducing manual intervention by 75% through deterministic control logic, Python scripting, and repeatable validation workflows.",
+      "Implemented high-performance data cataloging and processing features in the Ballistic Logix library for ballistic range data, improving processing efficiency by 60% and enabling downstream analytics and model development.",
     ],
     tech: [
       "Python",
@@ -50,20 +53,21 @@ export const experiences: Experience[] = [
       "Linux",
       "Docker",
       "Kubernetes",
+      "Observability",
     ],
   },
   {
     id: "softnautics-intern",
     company: "Softnautics LLP",
     role: "Software Engineering Intern",
-    period: "Jan 2021 – June 2021",
+    period: "Jan 2021 - June 2021",
     location: "Pune, India",
     description:
-      "Worked on ML and computer-vision-driven automotive interfaces and data visualization tools.",
+      "Built machine-learning and computer-vision-driven automotive interfaces with real-time data exchange and visualization tooling.",
     bullets: [
-      "Developed a data-driven gesture-implied car infotainment prototype using OpenCV and TensorFlow, integrating REST APIs for real-time data exchange and achieving about 92% gesture recognition accuracy.",
-      "Combined machine learning with computer vision and designed data visualization tools for a real-time automotive control interface, applying systematic profiling and debugging to resolve performance bottlenecks.",
+      "Developed a gesture-driven car infotainment prototype using OpenCV and TensorFlow, integrating REST APIs for real-time data exchange and achieving 92% gesture-recognition accuracy.",
+      "Combined machine learning, computer vision, and data visualization for a real-time automotive interface; profiled and debugged the perception pipeline to resolve latency and performance bottlenecks.",
     ],
-    tech: ["Python", "TensorFlow", "OpenCV", "REST APIs"],
+    tech: ["Python", "TensorFlow", "OpenCV", "REST APIs", "Data Visualization"],
   },
 ];

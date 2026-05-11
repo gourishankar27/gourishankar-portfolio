@@ -7,22 +7,22 @@ export function PublicationsList() {
       {publications.map((pub) => (
         <article
           key={pub.id}
-          className="rounded-xl border border-[#E4E6EB] bg-white shadow-[0_12px_30px_rgba(77,163,255,0.12)] p-4 sm:p-5"
+          className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[0_12px_30px_var(--shadow-1)] p-4 sm:p-5"
         >
-          <h3 className="text-sm sm:text-base font-semibold text-[#1F1F1F]">
+          <h3 className="text-sm sm:text-base font-semibold text-[color:var(--text)]">
             {pub.title}
           </h3>
 
-          <p className="mt-1 text-xs sm:text-sm text-[#6B6B6B]">
+          <p className="mt-1 text-xs sm:text-sm text-[color:var(--muted)]">
             {pub.authors}
           </p>
 
-          <p className="mt-1 text-xs sm:text-sm text-[#6B6B6B]">
+          <p className="mt-1 text-xs sm:text-sm text-[color:var(--muted)]">
             {pub.venue} · {pub.year}
           </p>
 
           {pub.abstract && (
-            <p className="mt-3 text-xs sm:text-sm text-[#3A3A3A]">
+            <p className="mt-3 text-xs sm:text-sm text-[color:var(--muted-2)]">
               {pub.abstract}
             </p>
           )}
@@ -33,7 +33,7 @@ export function PublicationsList() {
                 href={pub.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#4DA3FF] hover:text-[#3b83d1] underline underline-offset-2"
+                className="text-[color:var(--primary)] hover:opacity-90 underline underline-offset-2"
               >
                 View online
               </Link>
@@ -43,7 +43,7 @@ export function PublicationsList() {
                 href={pub.pdf}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#4DA3FF] hover:text-[#3b83d1] underline underline-offset-2"
+                className="text-[color:var(--primary)] hover:opacity-90 underline underline-offset-2"
               >
                 Download PDF
               </Link>
@@ -52,10 +52,10 @@ export function PublicationsList() {
 
           {pub.bibtex && (
             <details className="mt-3 text-xs">
-              <summary className="cursor-pointer text-[#4DA3FF] hover:text-[#3b83d1]">
+              <summary className="cursor-pointer text-[color:var(--primary)] hover:opacity-90">
                 Show BibTeX
               </summary>
-              <pre className="mt-2 whitespace-pre-wrap rounded-md bg-[#F4F4F7] p-2 text-[11px] text-[#3A3A3A]">
+              <pre className="mt-2 whitespace-pre-wrap rounded-md bg-[color:var(--surface-2)] p-2 text-[11px] text-[color:var(--muted-2)]">
                 {pub.bibtex}
               </pre>
             </details>
