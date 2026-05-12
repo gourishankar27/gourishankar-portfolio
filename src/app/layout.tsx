@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageShell } from "@/components/layout/PageShell";
 import { absoluteUrl, ogImageUrl, siteConfig } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -135,6 +136,7 @@ export default function RootLayout({
           <PageShell>{children}</PageShell>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
