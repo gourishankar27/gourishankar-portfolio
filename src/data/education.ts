@@ -9,7 +9,7 @@ export const education: Education[] = [
     period: "Aug 2024 - May 2026 (expected)",
     location: "Tempe, AZ, USA",
     details:
-      "Graduate program focused on robotics, autonomous systems, and AI, with current research in event-based vision and spacecraft attitude estimation. GPA: 3.79.",
+      "Graduate program focused on robotics, autonomous systems, and AI, with current research in event-based vision and spacecraft attitude estimation. GPA: 3.84.",
     highlights: [
       "Research Assistant on an ASU-Alphacore NASA event-based star-tracking project for high-speed spacecraft attitude estimation under low-SWaP constraints.",
       "Graduate projects in differentiable physics, vision-guided manipulation, autonomous drone landing, time-series forecasting, and deep learning model engineering.",
