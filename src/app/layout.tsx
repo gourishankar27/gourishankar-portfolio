@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PageShell } from "@/components/layout/PageShell";
 import { absoluteUrl, ogImageUrl, siteConfig } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -137,6 +138,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
