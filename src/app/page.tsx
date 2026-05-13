@@ -48,12 +48,10 @@ export default function HomePage() {
               className="mt-2 text-xl font-semibold text-[color:var(--text)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Robotics case studies with measurable engineering outcomes.
+              ENGINEERING WORK WITH REAL-WORLD IMPACT
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-[color:var(--muted-2)]">
-              Each project is structured around the problem, system design,
-              evaluation metrics, media, and next steps so reviewers can quickly
-              see both research depth and implementation rigor.
+              Projects focused on autonomy, computer vision, simulation, and scalable software systems, backed by research and production experience.
             </p>
           </div>
           <Link
