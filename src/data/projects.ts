@@ -3,6 +3,195 @@ import type { Project } from "@/types/project";
 export const featuredProjects: Project[] = [
 
   {
+    id: "ownerpilot-ai-operating-copilot",
+    title: "OwnerPilot - AI Operating Copilot for SMB Owners",
+    year: 2026,
+    category: "AI Product Engineering",
+    featured: true,
+    order: 6,
+    summary:
+      "Open-source decision intelligence platform that helps smaller business owners import records, track obligations, investigate cash and margin shifts, forecast scenarios, and execute evidence-backed operating actions.",
+    role: "Full-Stack AI Product Engineer",
+    tags: [
+      "Full-Stack AI",
+      "Decision Intelligence",
+      "RAG",
+      "Forecasting",
+      "PWA",
+      "SMB Analytics",
+      "Self-Hosted",
+      "Open Source",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "Pydantic",
+      "PostgreSQL",
+      "pgvector",
+      "Docker Compose",
+      "Ollama",
+      "Recharts",
+      "Drizzle ORM",
+      "Better Auth",
+      "Turborepo",
+    ],
+    highlights: [
+      "Built a monorepo product with a Next.js PWA frontend, FastAPI analytics service, shared typed contracts, Postgres/pgvector business memory, and Docker Compose self-hosting support.",
+      "Implemented owner workflows for CSV/Excel import previews, confirmed ledger history, recurring obligations, quick-add sales/purchases/expenses, document storage, action queues, forecasting, scenario planning, and cash-aware reorder recommendations.",
+      "Designed AI analyst flows with prompt guardrails, retrieval-backed evidence snippets, confidence and recommendation fields, and runtime metadata for provider, mode, latency, and estimated cost.",
+      "Shipped a recruiter-ready India-first pharmacy demo with sanitized fixtures, deterministic walkthrough prompts, local-open Ollama mode, BYO cloud mode, hybrid routing, and hosted deployment path documentation.",
+    ],
+    coverImage: "/projects/ownerpilot-ai-operating-copilot/cover.svg",
+    coverAlt: "OwnerPilot AI operating copilot project cover",
+    links: [
+      {
+        type: "github",
+        label: "Source repository",
+        href: "https://github.com/gourishankar27/ownerpilot",
+      },
+      {
+        type: "docs",
+        label: "Architecture notes",
+        href: "https://github.com/gourishankar27/ownerpilot/tree/main/docs",
+      },
+      {
+        type: "website",
+        label: "Discuss demo access",
+        href: "/about#contact",
+      },
+    ],
+    metrics: [
+      {
+        label: "Showcase release",
+        value: "v1.0.0",
+        context: "Public milestone with docs, demo data, and deployment paths",
+      },
+      {
+        label: "API surface",
+        value: "24 routes",
+        context: "FastAPI endpoints for imports, investigations, forecasts, actions, and reorder plans",
+      },
+      {
+        label: "Runtime modes",
+        value: "3",
+        context: "local-open, BYO cloud, and hybrid model routing",
+      },
+      {
+        label: "Deployment paths",
+        value: "2",
+        context: "Hosted Vercel/Render/Supabase path and Docker/Ollama self-hosted path",
+      },
+    ],
+    media: [
+      {
+        type: "image",
+        src: "/projects/ownerpilot-ai-operating-copilot/cover.svg",
+        alt: "OwnerPilot command center cover image",
+        caption: "Portfolio cover for the OwnerPilot SMB operating cockpit and AI copilot.",
+      },
+      {
+        type: "image",
+        src: "/projects/ownerpilot-ai-operating-copilot/architecture.svg",
+        alt: "OwnerPilot technical architecture diagram",
+        caption: "System architecture: Next.js PWA, FastAPI service, Postgres/pgvector memory, Ollama local inference, and optional cloud model providers.",
+      },
+      {
+        type: "image",
+        src: "/projects/ownerpilot-ai-operating-copilot/workflow.svg",
+        alt: "OwnerPilot owner workflow diagram",
+        caption: "Owner workflow: import records, build business memory, investigate issues, forecast scenarios, reorder stock, and move actions through a lifecycle.",
+      },
+    ],
+    sections: [
+      {
+        id: "problem",
+        title: "Problem",
+        paragraphs: [
+          "Small business owners often make inventory, cash, supplier, and margin decisions without dedicated analytics teams or expensive operating software.",
+          "OwnerPilot is designed to close that gap with practical owner workflows instead of generic dashboards: import the records a business already has, surface operational risks, and explain what to do next with evidence and confidence traces.",
+        ],
+      },
+      {
+        id: "product-scope",
+        title: "Product scope",
+        bullets: [
+          "India-first pharmacy and medical-store showcase with reusable SMB domain models for sales, purchases, products, expenses, recurring obligations, documents, actions, forecasts, and reorder plans.",
+          "Dashboard surfaces revenue, margin, bills, inventory alerts, morning briefs, action queue, and quick-add entries for daily operations.",
+          "Owner workflows include import preview and confirmation, recurring obligation tracking, document upload, AI investigation, action lifecycle management, forecasting, scenario planning, and cash-aware replenishment.",
+        ],
+      },
+      {
+        id: "architecture",
+        title: "Architecture",
+        paragraphs: [
+          "The system uses a thin web shell plus thin API orchestration model around a Postgres-first business memory. The web app owns the owner-facing PWA experience, while the API centralizes ingestion, analytics, retrieval, forecasting, scheduler, and AI orchestration workflows.",
+        ],
+        bullets: [
+          "apps/web: Next.js App Router PWA with dashboard, imports, documents, Ask OwnerPilot, action center, planner, reorder plan, authentication, and workspace entry.",
+          "apps/api: FastAPI service with Pydantic models for import jobs, document storage, investigations, briefings, forecasts, scenarios, quick-add ledger entries, actions, and scheduler runs.",
+          "packages/contracts: shared schemas and structured response contracts to keep API/UI boundaries explicit.",
+          "infra: Docker Compose stack with Postgres, pgvector, and Ollama for private self-hosted operation.",
+        ],
+      },
+      {
+        id: "ai-analyst-workflow",
+        title: "AI analyst workflow",
+        bullets: [
+          "Investigation requests return structured summaries, confidence scores, evidence snippets, risks, recommendations, provider metadata, runtime mode, latency, and estimated cost.",
+          "Retrieval-backed evidence is stored through the business document and pgvector memory path so recommendations can cite business context rather than acting like a free-form chatbot.",
+          "Provider configuration supports local-open, BYO cloud, and hybrid modes so the project can demonstrate privacy-first local inference while still allowing hosted model fallbacks.",
+          "Prompt guardrails and deterministic demo fixtures keep recruiter walkthroughs repeatable and safe to record.",
+        ],
+      },
+      {
+        id: "planning-and-actions",
+        title: "Planning and action systems",
+        bullets: [
+          "Cash-aware reorder planning blends stock, sales velocity, supplier costs, expiry risk, and recurring obligation pressure into replenishment recommendations.",
+          "Forecast Lab exposes deterministic baseline forecasts and scenario outputs with assumptions and warnings instead of opaque chart-only results.",
+          "Action Center tracks open, watching, snoozed, and resolved states so insights become operational tasks rather than static dashboard observations.",
+          "Scheduler routes generate briefings, anomalies, due reminders, and action prompts that can evolve into daily owner workflows.",
+        ],
+      },
+      {
+        id: "engineering-quality",
+        title: "Engineering quality",
+        bullets: [
+          "Monorepo structure separates UX composition, API orchestration, contracts, UI primitives, infra, and sanitized demo data.",
+          "Public fixtures are sanitized and reproducible, with strict data safety rules against committing raw private business data.",
+          "CI-oriented commands cover linting, type checking, web builds, API compile sanity, and formatting baselines across TypeScript and Python modules.",
+          "Deployment docs cover both near-zero-cost hosted mode and private self-hosted Windows-first mode with Docker and Ollama.",
+        ],
+      },
+      {
+        id: "demo-walkthrough",
+        title: "Demo walkthrough",
+        paragraphs: [
+          "The showcase narrative starts with the dashboard, demonstrates import history, asks why profit dropped, reviews evidence and confidence, moves an action through the lifecycle, compares reorder horizons, and runs a forecast or scenario.",
+        ],
+        bullets: [
+          "Sample prompts: 'Why did profit drop this month?', 'What are my top selling products?', 'Which expense categories are spiking?', and 'What should I reorder next week?'",
+          "Expected proof points: evidence-backed response, provider/mode/latency/cost metadata, visible action lifecycle, and deterministic forecast/scenario output.",
+        ],
+      },
+      {
+        id: "next-steps",
+        title: "Next steps",
+        bullets: [
+          "Add API integration tests for import confirmation, recurring obligations, investigation, scheduler, and reorder workflows.",
+          "Add Playwright smoke coverage for dashboard -> import -> ask -> action transitions.",
+          "Expand import mapping presets, supplier lead-time settings, localization scaffolding, and model-routing observability.",
+          "Capture a 90-second recruiter walkthrough and a 2-3 minute technical walkthrough for the project page media gallery.",
+        ],
+      },
+    ],
+  },
+
+  {
     id: "event-based-star-tracking",
     title: "Event-Based Star Tracking for Spacecraft Attitude Estimation",
     year: 2026,
@@ -533,13 +722,14 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
+  
   {
     id: "descriptive-question-answering-system",
     title: "Descriptive Question Answering System",
     year: 2021,
     category: "NLP",
     featured: false,
-    order: 6,
+    order: 7,
     summary:
       "Transformer-based descriptive question answering system using a fine-tuned BERT model and sentence-ranking pipeline, published at an IEEE conference.",
     role: "NLP Research (Bachelor's Thesis)",
