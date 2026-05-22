@@ -1,0 +1,68 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111D"/>
+      <stop offset="1" stop-color="#06101B"/>
+    </linearGradient>
+    <style>
+      .label { font-family: Inter, Arial, sans-serif; fill: #F8FAFC; font-weight: 800; }
+      .body { font-family: Inter, Arial, sans-serif; fill: #B7C6D7; font-weight: 500; }
+      .tiny { font-family: Inter, Arial, sans-serif; fill: #94A3B8; font-weight: 700; letter-spacing: 3px; }
+      .box { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.16); stroke-width: 2; }
+      .accent { stroke: #22D3EE; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="250" cy="160" r="260" fill="#22D3EE" opacity="0.10"/>
+  <circle cx="1350" cy="710" r="300" fill="#16A34A" opacity="0.10"/>
+
+  <text x="120" y="110" class="tiny" font-size="18">OWNERPILOT ARCHITECTURE</text>
+  <text x="120" y="166" class="label" font-size="48">Thin UI + API orchestration over business memory</text>
+  <text x="120" y="210" class="body" font-size="22">Next.js PWA, FastAPI workflows, Postgres/pgvector retrieval, local Ollama or BYO cloud providers.</text>
+
+  <rect x="115" y="305" width="310" height="190" rx="30" class="box"/>
+  <text x="150" y="356" class="label" font-size="30">Next.js PWA</text>
+  <text x="150" y="398" class="body" font-size="18">Dashboard, imports, docs,</text>
+  <text x="150" y="426" class="body" font-size="18">Ask, actions, planner,</text>
+  <text x="150" y="454" class="body" font-size="18">reorder workspace</text>
+
+  <rect x="515" y="305" width="310" height="190" rx="30" class="box"/>
+  <text x="550" y="356" class="label" font-size="30">FastAPI service</text>
+  <text x="550" y="398" class="body" font-size="18">Imports, retrieval,</text>
+  <text x="550" y="426" class="body" font-size="18">forecasting, scenarios,</text>
+  <text x="550" y="454" class="body" font-size="18">scheduler, actions</text>
+
+  <rect x="915" y="305" width="310" height="190" rx="30" class="box"/>
+  <text x="950" y="356" class="label" font-size="30">Postgres + pgvector</text>
+  <text x="950" y="398" class="body" font-size="18">Ledger, documents,</text>
+  <text x="950" y="426" class="body" font-size="18">actions, embeddings,</text>
+  <text x="950" y="454" class="body" font-size="18">business memory</text>
+
+  <rect x="1275" y="250" width="230" height="120" rx="28" fill="#22D3EE" fill-opacity="0.14" stroke="#22D3EE" stroke-opacity="0.55" stroke-width="2"/>
+  <text x="1310" y="302" class="label" font-size="25">Ollama</text>
+  <text x="1310" y="335" class="body" font-size="16">local-open mode</text>
+
+  <rect x="1275" y="430" width="230" height="120" rx="28" fill="#7C3AED" fill-opacity="0.14" stroke="#C4B5FD" stroke-opacity="0.55" stroke-width="2"/>
+  <text x="1310" y="482" class="label" font-size="25">BYO cloud</text>
+  <text x="1310" y="515" class="body" font-size="16">optional providers</text>
+
+  <rect x="330" y="650" width="300" height="120" rx="28" fill="#16A34A" fill-opacity="0.14" stroke="#86EFAC" stroke-opacity="0.50" stroke-width="2"/>
+  <text x="365" y="702" class="label" font-size="26">Shared contracts</text>
+  <text x="365" y="735" class="body" font-size="17">typed API/UI boundaries</text>
+
+  <rect x="735" y="650" width="300" height="120" rx="28" fill="#F59E0B" fill-opacity="0.14" stroke="#FDE68A" stroke-opacity="0.48" stroke-width="2"/>
+  <text x="770" y="702" class="label" font-size="26">Docker Compose</text>
+  <text x="770" y="735" class="body" font-size="17">self-hosted stack</text>
+
+  <rect x="1140" y="650" width="300" height="120" rx="28" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2"/>
+  <text x="1175" y="702" class="label" font-size="26">Sanitized fixtures</text>
+  <text x="1175" y="735" class="body" font-size="17">deterministic demo data</text>
+
+  <path d="M425 400 H515" class="accent"/>
+  <path d="M825 400 H915" class="accent"/>
+  <path d="M1225 365 C1250 330 1260 310 1275 310" class="accent"/>
+  <path d="M1225 435 C1255 458 1260 490 1275 490" class="accent"/>
+  <path d="M670 495 V650" class="accent" opacity="0.55"/>
+  <path d="M1070 495 C1040 585 960 620 885 650" class="accent" opacity="0.55"/>
+  <path d="M1070 495 C1125 570 1230 610 1290 650" class="accent" opacity="0.55"/>
+</svg>

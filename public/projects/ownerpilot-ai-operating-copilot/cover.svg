@@ -1,0 +1,78 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06101B"/>
+      <stop offset="0.5" stop-color="#0F2537"/>
+      <stop offset="1" stop-color="#10251E"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="180" y1="110" x2="1420" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.06"/>
+    </linearGradient>
+    <filter id="shadow" x="70" y="40" width="1460" height="820" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="40" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="235" cy="150" r="270" fill="#22D3EE" opacity="0.15"/>
+  <circle cx="1340" cy="760" r="320" fill="#16A34A" opacity="0.15"/>
+  <circle cx="1200" cy="180" r="160" fill="#7C3AED" opacity="0.14"/>
+
+  <g filter="url(#shadow)">
+    <rect x="135" y="92" width="1330" height="716" rx="38" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.16"/>
+    <rect x="180" y="142" width="1240" height="76" rx="22" fill="#FFFFFF" fill-opacity="0.10" stroke="#FFFFFF" stroke-opacity="0.14"/>
+    <text x="220" y="191" fill="#E0F2FE" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">OwnerPilot</text>
+    <text x="430" y="190" fill="#B7C6D7" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500">AI operating copilot for smaller business owners</text>
+    <rect x="1182" y="158" width="188" height="44" rx="22" fill="#22D3EE" fill-opacity="0.18" stroke="#22D3EE" stroke-opacity="0.45"/>
+    <text x="1210" y="187" fill="#A5F3FC" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">v1.0 showcase</text>
+
+    <rect x="180" y="258" width="360" height="188" rx="28" fill="#0B1220" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <text x="214" y="304" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4">DASHBOARD</text>
+    <text x="214" y="357" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800">INR 8.4L</text>
+    <text x="214" y="392" fill="#B7C6D7" font-family="Inter, Arial, sans-serif" font-size="18">monthly sales monitored</text>
+    <path d="M214 418 C250 380 285 430 322 398 C360 365 395 392 432 342 C458 308 484 324 506 288" stroke="#22D3EE" stroke-width="7" stroke-linecap="round"/>
+
+    <rect x="580" y="258" width="380" height="188" rx="28" fill="#0B1220" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <text x="614" y="304" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4">ASK OWNERPILOT</text>
+    <rect x="614" y="332" width="292" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.10"/>
+    <text x="636" y="355" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="16">Why did profit drop?</text>
+    <rect x="614" y="386" width="304" height="28" rx="14" fill="#22D3EE" fill-opacity="0.18"/>
+    <rect x="614" y="424" width="220" height="12" rx="6" fill="#94A3B8" fill-opacity="0.55"/>
+
+    <rect x="1000" y="258" width="420" height="188" rx="28" fill="#0B1220" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <text x="1034" y="304" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4">REORDER PLAN</text>
+    <g fill="#16A34A" fill-opacity="0.26" stroke="#86EFAC" stroke-opacity="0.5">
+      <rect x="1034" y="332" width="96" height="82" rx="18"/>
+      <rect x="1154" y="332" width="96" height="82" rx="18"/>
+      <rect x="1274" y="332" width="96" height="82" rx="18"/>
+    </g>
+    <text x="1057" y="381" fill="#DCFCE7" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">14d</text>
+    <text x="1183" y="381" fill="#DCFCE7" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">cash</text>
+    <text x="1302" y="381" fill="#DCFCE7" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">risk</text>
+
+    <rect x="180" y="490" width="1240" height="250" rx="34" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <text x="222" y="548" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800">Decision intelligence pipeline</text>
+    <text x="222" y="590" fill="#B7C6D7" font-family="Inter, Arial, sans-serif" font-size="19">Import records, build business memory, investigate with evidence, forecast scenarios, and convert insights into operational actions.</text>
+
+    <g font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">
+      <rect x="230" y="636" width="150" height="54" rx="20" fill="#22D3EE" fill-opacity="0.18" stroke="#22D3EE" stroke-opacity="0.55"/>
+      <text x="260" y="670" fill="#CFFAFE">Imports</text>
+      <rect x="442" y="636" width="176" height="54" rx="20" fill="#7C3AED" fill-opacity="0.18" stroke="#C4B5FD" stroke-opacity="0.45"/>
+      <text x="476" y="670" fill="#E9D5FF">Business memory</text>
+      <rect x="680" y="636" width="168" height="54" rx="20" fill="#F59E0B" fill-opacity="0.16" stroke="#FDE68A" stroke-opacity="0.44"/>
+      <text x="718" y="670" fill="#FEF3C7">AI analyst</text>
+      <rect x="910" y="636" width="154" height="54" rx="20" fill="#16A34A" fill-opacity="0.18" stroke="#86EFAC" stroke-opacity="0.45"/>
+      <text x="945" y="670" fill="#DCFCE7">Forecast</text>
+      <rect x="1126" y="636" width="200" height="54" rx="20" fill="#FFFFFF" fill-opacity="0.11" stroke="#FFFFFF" stroke-opacity="0.24"/>
+      <text x="1164" y="670" fill="#E2E8F0">Action queue</text>
+    </g>
+
+    <g stroke="#CBD5E1" stroke-opacity="0.36" stroke-width="3" stroke-linecap="round">
+      <path d="M384 663 H438"/>
+      <path d="M622 663 H676"/>
+      <path d="M852 663 H906"/>
+      <path d="M1068 663 H1122"/>
+    </g>
+  </g>
+</svg>

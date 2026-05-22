@@ -1,0 +1,71 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07131F"/>
+      <stop offset="1" stop-color="#0B1F1A"/>
+    </linearGradient>
+    <style>
+      .title { font-family: Inter, Arial, sans-serif; fill: #F8FAFC; font-weight: 800; }
+      .text { font-family: Inter, Arial, sans-serif; fill: #B7C6D7; font-weight: 500; }
+      .tag { font-family: Inter, Arial, sans-serif; fill: #A5F3FC; font-weight: 800; letter-spacing: 3px; }
+      .card { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.16); stroke-width: 2; }
+      .line { stroke: #22D3EE; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="1230" cy="190" r="250" fill="#22D3EE" opacity="0.10"/>
+  <circle cx="340" cy="740" r="270" fill="#16A34A" opacity="0.10"/>
+
+  <text x="118" y="110" class="tag" font-size="18">OWNER WORKFLOW</text>
+  <text x="118" y="166" class="title" font-size="48">From raw records to evidence-backed actions</text>
+  <text x="118" y="210" class="text" font-size="22">The product story emphasizes practical owner decisions, not generic BI charts.</text>
+
+  <g>
+    <rect x="120" y="335" width="230" height="170" rx="30" class="card"/>
+    <text x="154" y="388" class="title" font-size="26">1. Import</text>
+    <text x="154" y="430" class="text" font-size="17">CSV/Excel previews,</text>
+    <text x="154" y="457" class="text" font-size="17">mappings, warnings,</text>
+    <text x="154" y="484" class="text" font-size="17">confirmed ledger</text>
+
+    <rect x="420" y="335" width="230" height="170" rx="30" class="card"/>
+    <text x="454" y="388" class="title" font-size="26">2. Remember</text>
+    <text x="454" y="430" class="text" font-size="17">Sales, purchases,</text>
+    <text x="454" y="457" class="text" font-size="17">documents, bills,</text>
+    <text x="454" y="484" class="text" font-size="17">products, vectors</text>
+
+    <rect x="720" y="335" width="230" height="170" rx="30" class="card"/>
+    <text x="754" y="388" class="title" font-size="26">3. Ask</text>
+    <text x="754" y="430" class="text" font-size="17">Evidence snippets,</text>
+    <text x="754" y="457" class="text" font-size="17">confidence, risks,</text>
+    <text x="754" y="484" class="text" font-size="17">recommendations</text>
+
+    <rect x="1020" y="335" width="230" height="170" rx="30" class="card"/>
+    <text x="1054" y="388" class="title" font-size="26">4. Plan</text>
+    <text x="1054" y="430" class="text" font-size="17">Forecasts, scenarios,</text>
+    <text x="1054" y="457" class="text" font-size="17">cash-aware reorder</text>
+    <text x="1054" y="484" class="text" font-size="17">recommendations</text>
+
+    <rect x="1320" y="335" width="230" height="170" rx="30" class="card"/>
+    <text x="1354" y="388" class="title" font-size="26">5. Act</text>
+    <text x="1354" y="430" class="text" font-size="17">Open, watching,</text>
+    <text x="1354" y="457" class="text" font-size="17">snoozed, resolved</text>
+    <text x="1354" y="484" class="text" font-size="17">action states</text>
+  </g>
+
+  <path d="M350 420 H420" class="line"/>
+  <path d="M650 420 H720" class="line"/>
+  <path d="M950 420 H1020" class="line"/>
+  <path d="M1250 420 H1320" class="line"/>
+
+  <rect x="160" y="620" width="360" height="118" rx="28" fill="#22D3EE" fill-opacity="0.14" stroke="#22D3EE" stroke-opacity="0.45" stroke-width="2"/>
+  <text x="196" y="670" class="title" font-size="26">Demo proof</text>
+  <text x="196" y="704" class="text" font-size="17">Dashboard -> imports -> ask -> actions -> reorder -> forecast</text>
+
+  <rect x="620" y="620" width="360" height="118" rx="28" fill="#16A34A" fill-opacity="0.14" stroke="#86EFAC" stroke-opacity="0.45" stroke-width="2"/>
+  <text x="656" y="670" class="title" font-size="26">Privacy path</text>
+  <text x="656" y="704" class="text" font-size="17">Self-hosted Docker with local-open Ollama inference</text>
+
+  <rect x="1080" y="620" width="360" height="118" rx="28" fill="#7C3AED" fill-opacity="0.14" stroke="#C4B5FD" stroke-opacity="0.45" stroke-width="2"/>
+  <text x="1116" y="670" class="title" font-size="26">Hosted path</text>
+  <text x="1116" y="704" class="text" font-size="17">Vercel web, Render API, Supabase Postgres</text>
+</svg>
