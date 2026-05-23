@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Variable selection weights</title>
+<desc id="desc">Baseline and regime-aware variable-selection weights across periods.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#08111f"/>
+    <stop offset="0.55" stop-color="#111827"/>
+    <stop offset="1" stop-color="#0f766e"/>
+  </linearGradient>
+  <linearGradient id="hot" x1="0" x2="1">
+    <stop offset="0" stop-color="#f59e0b"/>
+    <stop offset="1" stop-color="#ef4444"/>
+  </linearGradient>
+  <linearGradient id="cool" x1="0" x2="1">
+    <stop offset="0" stop-color="#38bdf8"/>
+    <stop offset="1" stop-color="#22c55e"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/>
+  </filter>
+  <style>
+    .title { font: 800 54px Inter, Arial, sans-serif; fill: #f8fafc; }
+    .subtitle { font: 500 25px Inter, Arial, sans-serif; fill: #cbd5e1; }
+    .label { font: 700 22px Inter, Arial, sans-serif; fill: #e2e8f0; }
+    .small { font: 500 17px Inter, Arial, sans-serif; fill: #cbd5e1; }
+    .tiny { font: 600 13px Inter, Arial, sans-serif; fill: #94a3b8; }
+    .num { font: 800 36px Inter, Arial, sans-serif; fill: #ffffff; }
+  </style>
+</defs>
+<rect width="1600" height="900" fill="#e8e3da"/>
+<path d="M1065 0h535v92l-365 58z" fill="url(#hot)"/>
+<g transform="translate(60 45)">
+  <rect width="1015" height="810" fill="#fff" stroke="#e5e7eb"/>
+  <text x="508" y="55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#111827">Variable Selection Weights by Period</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+    <text x="180" y="780" transform="rotate(-35 180 780)" fill="#111827">VIX</text>
+    <text x="350" y="780" transform="rotate(-35 350 780)" fill="#111827">Treasury_10Y</text>
+    <text x="520" y="780" transform="rotate(-35 520 780)" fill="#111827">Yield_Spread</text>
+    <text x="690" y="780" transform="rotate(-35 690 780)" fill="#111827">Inflation_YoY</text>
+    <text x="860" y="780" transform="rotate(-35 860 780)" fill="#111827">relative_time_idx</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="end" fill="#111827">
+    <text x="70" y="100">2020</text><text x="70" y="160">2021</text><text x="70" y="220">2022</text><text x="70" y="280">2023</text><text x="70" y="340">2024</text><text x="70" y="400">2025</text>
+    <text x="70" y="488">2020</text><text x="70" y="548">2021</text><text x="70" y="608">2022</text><text x="70" y="668">2023</text><text x="70" y="728">2024</text><text x="70" y="788">2025</text>
+  </g>
+  <text x="25" y="250" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#475569" transform="rotate(-90 25 250)">Baseline</text>
+  <text x="25" y="638" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#475569" transform="rotate(-90 25 638)">Regime Attention</text>
+  <!-- Heatmap baseline rows -->
+  <g font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <!-- x=95,265,435,605,775; cell 170x60 -->
+    <g transform="translate(95 75)"><rect width="170" height="60" fill="#fb923c"/><text x="85" y="38" fill="#fff">0.270</text></g>
+    <g transform="translate(265 75)"><rect width="170" height="60" fill="#8b1e3f"/><text x="85" y="38" fill="#fff">0.518</text></g>
+    <g transform="translate(435 75)"><rect width="170" height="60" fill="#fef9c3"/><text x="85" y="38" fill="#334155">0.057</text></g>
+    <g transform="translate(605 75)"><rect width="170" height="60" fill="#fde68a"/><text x="85" y="38" fill="#334155">0.131</text></g>
+    <g transform="translate(775 75)"><rect width="170" height="60" fill="#fefce8"/><text x="85" y="38" fill="#334155">0.024</text></g>
+    <g transform="translate(95 135)"><rect width="170" height="60" fill="#b91c1c"/><text x="85" y="38" fill="#fff">0.500</text></g>
+    <g transform="translate(265 135)"><rect width="170" height="60" fill="#f59e0b"/><text x="85" y="38" fill="#334155">0.224</text></g>
+    <g transform="translate(435 135)"><rect width="170" height="60" fill="#fde68a"/><text x="85" y="38" fill="#334155">0.158</text></g>
+    <g transform="translate(605 135)"><rect width="170" height="60" fill="#fef3c7"/><text x="85" y="38" fill="#334155">0.069</text></g>
+    <g transform="translate(775 135)"><rect width="170" height="60" fill="#fef9c3"/><text x="85" y="38" fill="#334155">0.048</text></g>
+    <g transform="translate(95 195)"><rect width="170" height="60" fill="#fb923c"/><text x="85" y="38" fill="#fff">0.313</text></g>
+    <g transform="translate(265 195)"><rect width="170" height="60" fill="#dc2626"/><text x="85" y="38" fill="#fff">0.401</text></g>
+    <g transform="translate(435 195)"><rect width="170" height="60" fill="#fbbf24"/><text x="85" y="38" fill="#334155">0.206</text></g>
+    <g transform="translate(95 255)"><rect width="170" height="60" fill="#f97316"/><text x="85" y="38" fill="#fff">0.311</text></g>
+    <g transform="translate(265 255)"><rect width="170" height="60" fill="#fb923c"/><text x="85" y="38" fill="#fff">0.284</text></g>
+    <g transform="translate(435 255)"><rect width="170" height="60" fill="#ef4444"/><text x="85" y="38" fill="#fff">0.329</text></g>
+    <g transform="translate(95 315)"><rect width="170" height="60" fill="#f97316"/><text x="85" y="38" fill="#fff">0.307</text></g>
+    <g transform="translate(265 315)"><rect width="170" height="60" fill="#f59e0b"/><text x="85" y="38" fill="#334155">0.247</text></g>
+    <g transform="translate(435 315)"><rect width="170" height="60" fill="#dc2626"/><text x="85" y="38" fill="#fff">0.368</text></g>
+    <g transform="translate(95 375)"><rect width="170" height="60" fill="#fb923c"/><text x="85" y="38" fill="#fff">0.270</text></g>
+    <g transform="translate(265 375)"><rect width="170" height="60" fill="#fb923c"/><text x="85" y="38" fill="#fff">0.279</text></g>
+    <g transform="translate(435 375)"><rect width="170" height="60" fill="#dc2626"/><text x="85" y="38" fill="#fff">0.366</text></g>
+    <rect x="95" y="463" width="850" height="2" fill="#e5e7eb"/>
+    <!-- Regime rows summarized -->
+    <g transform="translate(95 475)"><rect width="170" height="60" fill="#f59e0b"/><text x="85" y="38" fill="#334155">0.325</text></g>
+    <g transform="translate(265 475)"><rect width="170" height="60" fill="#ef4444"/><text x="85" y="38" fill="#fff">0.481</text></g>
+    <g transform="translate(435 475)"><rect width="170" height="60" fill="#fef3c7"/><text x="85" y="38" fill="#334155">0.077</text></g>
+    <g transform="translate(95 535)"><rect width="170" height="60" fill="#fde68a"/><text x="85" y="38" fill="#334155">0.223</text></g>
+    <g transform="translate(265 535)"><rect width="170" height="60" fill="#dc2626"/><text x="85" y="38" fill="#fff">0.570</text></g>
+    <g transform="translate(95 595)"><rect width="170" height="60" fill="#7f1d1d"/><text x="85" y="38" fill="#fff">0.741</text></g>
+    <g transform="translate(265 595)"><rect width="170" height="60" fill="#fef3c7"/><text x="85" y="38" fill="#334155">0.123</text></g>
+    <g transform="translate(435 655)"><rect width="170" height="60" fill="#fbbf24"/><text x="85" y="38" fill="#334155">0.246</text></g>
+    <g transform="translate(435 715)"><rect width="170" height="60" fill="#dc2626"/><text x="85" y="38" fill="#fff">0.538</text></g>
+    <g transform="translate(435 775)"><rect width="170" height="35" fill="#ef4444"/><text x="85" y="25" fill="#fff">0.452</text></g>
+  </g>
+</g>
+<g transform="translate(1110 160)" font-family="Inter, Arial, sans-serif" fill="#333">
+  <text x="0" y="0" font-size="52" font-weight="500">VSN Feature</text>
+  <text x="0" y="62" font-size="52" font-weight="500">Weights</text>
+  <text x="0" y="120" font-size="30"><tspan font-weight="800">Baseline (top):</tspan> Feature weights</text>
+  <text x="0" y="158" font-size="30">shift gradually across periods</text>
+  <text x="30" y="215" font-size="30">- Treasury_10Y dominates</text>
+  <text x="75" y="253" font-size="30">2020-2021</text>
+  <text x="30" y="307" font-size="30">- Yield_Spread rises in</text>
+  <text x="75" y="345" font-size="30">2023-2025</text>
+  <text x="0" y="450" font-size="30"><tspan font-weight="800">With Regime Attention</tspan></text>
+  <text x="0" y="488" font-size="30"><tspan font-weight="800">(bottom):</tspan> More dramatic</text>
+  <text x="0" y="526" font-size="30">regime-specific focusing</text>
+  <text x="30" y="583" font-size="30">- VIX spikes to 0.74 in bear</text>
+  <text x="75" y="621" font-size="30">market (vs. 0.31 baseline)</text>
+  <text x="30" y="675" font-size="30">- Yield_Spread dominates</text>
+  <text x="75" y="713" font-size="30">2024 bull market (0.54)</text>
+  <text x="0" y="810" font-size="30"><tspan font-weight="800">Takeaway:</tspan> Regime gates make</text>
+  <text x="0" y="848" font-size="30">the model more adaptive.</text>
+</g>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Regime-aware attention gates</title>
+<desc id="desc">Learned attention gates by volatility regime.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#08111f"/>
+    <stop offset="0.55" stop-color="#111827"/>
+    <stop offset="1" stop-color="#0f766e"/>
+  </linearGradient>
+  <linearGradient id="hot" x1="0" x2="1">
+    <stop offset="0" stop-color="#f59e0b"/>
+    <stop offset="1" stop-color="#ef4444"/>
+  </linearGradient>
+  <linearGradient id="cool" x1="0" x2="1">
+    <stop offset="0" stop-color="#38bdf8"/>
+    <stop offset="1" stop-color="#22c55e"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/>
+  </filter>
+  <style>
+    .title { font: 800 54px Inter, Arial, sans-serif; fill: #f8fafc; }
+    .subtitle { font: 500 25px Inter, Arial, sans-serif; fill: #cbd5e1; }
+    .label { font: 700 22px Inter, Arial, sans-serif; fill: #e2e8f0; }
+    .small { font: 500 17px Inter, Arial, sans-serif; fill: #cbd5e1; }
+    .tiny { font: 600 13px Inter, Arial, sans-serif; fill: #94a3b8; }
+    .num { font: 800 36px Inter, Arial, sans-serif; fill: #ffffff; }
+  </style>
+</defs>
+<rect width="1600" height="900" fill="#e8e3da"/>
+<path d="M1065 0h535v92l-365 58z" fill="url(#hot)"/>
+<text x="60" y="86" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="500" fill="#333">Regime Aware Attention</text>
+<text x="64" y="140" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="500" fill="#333">Implementation and Results</text>
+<g transform="translate(60 200)" font-family="Inter, Arial, sans-serif" fill="#333">
+  <text x="0" y="0" font-size="32" font-weight="800">Implementation:</text>
+  <text x="35" y="52" font-size="31">- Per-head gating conditioned on VIX regime</text>
+  <text x="35" y="94" font-size="31">- 4 learned parameters (2 regimes x 2 heads)</text>
+  <text x="0" y="180" font-size="32" font-weight="800">Results (weekly):</text>
+  <text x="35" y="232" font-size="31" font-weight="800">- Directional accuracy:</text>
+  <text x="105" y="274" font-size="31">57.9% -> 59.4% (+1.5%)</text>
+  <text x="35" y="326" font-size="31" font-weight="800">- Sharpe:</text>
+  <text x="105" y="368" font-size="31">1.05 -> 1.22</text>
+  <text x="0" y="500" font-size="32" font-weight="800">Gates learn regime-specific</text>
+  <text x="0" y="542" font-size="32" font-weight="800">behavior:</text>
+  <text x="35" y="592" font-size="31"><tspan font-weight="800">- Low volatility:</tspan> dampens</text>
+  <text x="105" y="634" font-size="31">attention (~0.46)</text>
+  <text x="35" y="692" font-size="31"><tspan font-weight="800">- High volatility:</tspan> amplifies</text>
+  <text x="105" y="734" font-size="31">attention (~0.57)</text>
+</g>
+<g transform="translate(650 280)">
+  <rect width="880" height="548" fill="#fff" stroke="#d1d5db"/>
+  <text x="440" y="32" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#111827">Learned Attention Gates by Regime</text>
+  <rect x="75" y="70" width="745" height="215" fill="#fee2e2" opacity="0.55"/>
+  <rect x="75" y="285" width="745" height="205" fill="#e0f2fe" opacity="0.6"/>
+  <line x1="75" y1="285" x2="820" y2="285" stroke="#94a3b8" stroke-dasharray="5 6"/>
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="75" y1="110" x2="820" y2="110"/><line x1="75" y1="185" x2="820" y2="185"/><line x1="75" y1="360" x2="820" y2="360"/><line x1="75" y1="435" x2="820" y2="435"/>
+  </g>
+  <g stroke="#ef4444" stroke-width="5" fill="none">
+    <polyline points="120,272 220,245 320,205 430,158 560,132 700,122 780,118"/>
+    <polyline points="120,267 220,236 320,202 430,160 560,134 700,121 780,119" stroke-dasharray="16 12"/>
+  </g>
+  <g stroke="#0ea5e9" stroke-width="5" fill="none">
+    <polyline points="120,294 220,305 320,327 430,355 560,375 700,388 780,394"/>
+    <polyline points="120,300 220,318 320,338 430,365 560,386 700,398 780,403" stroke-dasharray="16 12"/>
+  </g>
+  <text x="42" y="91" class="tiny">0.58</text><text x="42" y="168" class="tiny">0.56</text><text x="42" y="250" class="tiny">0.52</text><text x="42" y="292" class="tiny">0.50</text><text x="42" y="405" class="tiny">0.46</text>
+  <text x="415" y="530" font-family="Inter, Arial, sans-serif" font-size="20" fill="#111827">Epoch</text>
+  <text x="-178" y="28" transform="rotate(-90)" font-family="Inter, Arial, sans-serif" font-size="20" fill="#111827">Gate Value</text>
+  <text x="690" y="100" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ef4444">Amplifies</text>
+  <text x="690" y="480" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#0284c7">Dampens</text>
+  <g transform="translate(90 86)" font-family="Inter, Arial, sans-serif" font-size="15" fill="#111827">
+    <rect x="0" y="0" width="165" height="102" fill="#fff" opacity="0.88" stroke="#cbd5e1"/>
+    <line x1="12" y1="24" x2="45" y2="24" stroke="#0ea5e9" stroke-width="4"/><text x="56" y="29">Low Vol - Head 1</text>
+    <line x1="12" y1="49" x2="45" y2="49" stroke="#0ea5e9" stroke-width="4" stroke-dasharray="8 6"/><text x="56" y="54">Low Vol - Head 2</text>
+    <line x1="12" y1="74" x2="45" y2="74" stroke="#ef4444" stroke-width="4"/><text x="56" y="79">High Vol - Head 1</text>
+  </g>
+</g>
+</svg>
