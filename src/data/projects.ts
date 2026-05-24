@@ -598,79 +598,218 @@ export const featuredProjects: Project[] = [
     featured: true,
     order: 4,
     summary:
-      "Real-time system that tracks a ping pong ball with YOLOv8 on a Raspberry Pi and steers a servo-driven goalie by predicting 3D trajectories.",
-    role: "Computer Vision & Controls",
-    tags: ["Computer Vision", "Trajectory Prediction", "Embedded Systems", "Real-Time Robotics"],
-    tech: ["YOLOv8", "OpenCV", "NumPy", "Raspberry Pi 5", "MQTT", "Python"],
-    highlights: [
-      "Fine-tuned a YOLOv8 model on 1,000+ custom frames to detect a ping pong ball at around 2.7 ms per frame on a Raspberry Pi camera stream.",
-      "Converted 2D detections into 3D coordinates via calibrated pixel-to-world mapping and inverse-square depth estimation, then fit quadratic polynomials to predict landing positions.",
-      "Mapped predicted landing points to servo angles and streamed commands over MQTT, achieving accurate saves on several test positions with servo alignment within 5–10 degrees of optimal.",
+      "A closed-loop robot-learning prototype that detects a ping pong ball, estimates its 3D motion, predicts the landing point, and rotates a servo-driven blocker in real time on a Raspberry Pi-based hardware setup.",
+    role: "Robotics Perception, Prediction & Controls Lead",
+    tags: [
+      "Computer Vision",
+      "Trajectory Prediction",
+      "Embedded Systems",
+      "Real-Time Robotics",
+      "Robot Learning",
+      "Hardware Integration",
     ],
-    coverImage: "/projects/automated-goalie/cover.svg",
-    coverAlt: "Automated goalie robot cover",
+    tech: [
+      "Python",
+      "YOLOv8",
+      "OpenCV",
+      "NumPy",
+      "Raspberry Pi 5",
+      "Pi Camera",
+      "Servo Motor",
+      "MQTT",
+      "Quadratic Regression",
+      "Camera Calibration",
+    ],
+    highlights: [
+      "Designed the end-to-end perception-to-control loop: camera capture, YOLO-based ball detection, pixel-to-world mapping, motion buffering, quadratic trajectory prediction, and MQTT servo commands.",
+      "Fine-tuned a YOLO-family detector on more than 1,000 custom labeled ping pong ball images and reported 92% mAP with approximately 2.7 ms inference per frame.",
+      "Built a lightweight 3D position estimate from 2D bounding-box centers and apparent ball radius, then fit a quadratic model to predict the interception point on the goalie plane.",
+      "Integrated Raspberry Pi 5, Pi Camera, and a servo-driven blocker into a functional real-time hardware demo, with servo alignment typically within 5-10 degrees of a good blocking angle.",
+      "Analyzed system-level failure cases caused by noisy detections, single-camera depth uncertainty, bounce timing, limited field of view, and fixed-frame-rate assumptions.",
+    ],
+    coverImage: "/projects/automated-goalie/cover.png",
+    coverAlt: "Automated goalie robot project cover",
     links: [
       {
+        type: "paper",
+        label: "Final report",
+        href: "/projects/automated-goalie/final-report.pdf",
+      },
+      {
+        type: "slides",
+        label: "Presentation slides",
+        href: "/projects/automated-goalie/presentation-slides.pdf",
+      },
+      {
         type: "website",
-        label: "Contact",
+        label: "Discuss project",
         href: "/about#contact",
       },
     ],
     metrics: [
       {
-        label: "Detection mAP",
+        label: "Detector mAP",
         value: "92%",
-        context: "Custom YOLOv8 model",
+        context: "Reported custom ping pong ball detector performance",
       },
       {
-        label: "Inference",
-        value: "2.7 ms / frame",
-        context: "Raspberry Pi stream",
+        label: "Inference latency",
+        value: "2.7 ms",
+        context: "Average per-frame processing in the project conclusion",
       },
       {
-        label: "Dataset",
-        value: "1,000+ frames",
-        context: "Custom labeled data",
+        label: "Training data",
+        value: "1,000+",
+        context: "Custom labeled images from the project setup",
+      },
+      {
+        label: "Camera rate",
+        value: "60 FPS",
+        context: "Pi camera stream used for real-time detection",
+      },
+      {
+        label: "Workspace",
+        value: "40 x 23 cm",
+        context: "Approximate physical play area",
+      },
+      {
+        label: "Servo alignment",
+        value: "5-10°",
+        context: "Typical blocking-angle error during testing",
       },
     ],
     media: [
       {
         type: "image",
-        src: "/projects/automated-goalie/cover.svg",
+        src: "/projects/automated-goalie/cover.png",
         alt: "Automated goalie project cover",
-        caption: "Project cover (replace with ball tracking screenshots).",
+        caption:
+          "Generated cover summarizing the end-to-end robotics loop: detect the ball, estimate its motion, predict the landing point, and command the servo blocker.",
       },
       {
         type: "image",
-        src: "/projects/automated-goalie/diagram.svg",
-        alt: "Realtime perception/control diagram placeholder",
-        caption: "Suggested figure: camera → YOLO → trajectory → servo control.",
+        src: "/projects/automated-goalie/demo.gif",
+        alt: "Automated goalie hardware demo frame",
+        caption:
+          "Demo frame from the physical prototype showing the servo-driven blocker inside the small ping pong test arena.",
+      },
+      {
+        type: "image",
+        src: "/projects/automated-goalie/system-diagram.png",
+        alt: "Automatic goalie perception, prediction, and control system diagram",
+        caption:
+          "System diagram from the final report: camera input flows through YOLO detection, 2D-to-3D mapping, motion buffering, trajectory prediction, and MQTT servo control.",
+      },
+      {
+        type: "image",
+        src: "/projects/automated-goalie/hardware-architecture.png",
+        alt: "Raspberry Pi camera and servo hardware architecture slide",
+        caption:
+          "Hardware architecture: Raspberry Pi 5, Pi Camera, servo motor, 60 FPS detection, z-depth from apparent ball radius, and servo-angle mapping from predicted position.",
+      },
+      {
+        type: "image",
+        src: "/projects/automated-goalie/yolo-detection-pipeline.png",
+        alt: "YOLO detector training examples and real-time pipeline slide",
+        caption:
+          "Detection and control implementation: fine-tuned YOLO-family detector, image-to-world coordinate mapping, quadratic trajectory prediction, and servo command publishing.",
+      },
+      {
+        type: "image",
+        src: "/projects/automated-goalie/trajectory-modeling.png",
+        alt: "Pixel-to-world mapping and quadratic trajectory prediction slide",
+        caption:
+          "Trajectory modeling workflow: map pixel coordinates and ball diameter into approximate x, y, z positions, collect trajectory data, fit a quadratic curve, and predict the interception point where z reaches the goalie plane.",
+      },
+      {
+        type: "image",
+        src: "/projects/automated-goalie/prototype-results-slide.png",
+        alt: "Automatic goalie prototype conclusion slide",
+        caption:
+          "Prototype result slide: the system produced a functional real-time demo, delivered accurate predictions on multiple target positions, and averaged about 2.7 ms processing per frame.",
       },
     ],
     sections: [
       {
         id: "problem",
-        title: "Problem",
+        title: "Problem and objective",
         paragraphs: [
-          "Build a low-latency perception + control system that can react to a fast-moving ping pong ball using affordable hardware.",
+          "This project reduced the table-tennis robot problem into a compact automatic goalie: observe a ping pong ball in a small arena, predict where it will land, and rotate a blocker before impact.",
+          "The key challenge was not only training a detector. The system had to close the loop across perception, calibration, prediction, communication, and actuation under real timing constraints on lightweight hardware.",
         ],
       },
       {
-        id: "approach",
-        title: "Approach",
+        id: "hardware",
+        title: "Hardware and sensing setup",
+        paragraphs: [
+          "The prototype used a Raspberry Pi 5, Pi Camera, and servo motor inside an approximately 40 cm by 23 cm workspace. The camera observed the ball from above while the servo rotated a simple goalie arm across the interception region.",
+          "The design intentionally used affordable hardware so the main engineering challenge was software integration: reliable detection, approximate 3D position estimation, fast trajectory prediction, and responsive servo control.",
+        ],
         bullets: [
-          "Detect ball in real time (YOLOv8) on Raspberry Pi.",
-          "Project detections into an estimated 3D trajectory using calibration + physics priors.",
-          "Predict landing position and command a servo-driven goalie via MQTT.",
+          "Pi Camera stream at 60 FPS for fast visual feedback.",
+          "Servo-driven blocker mounted at the front of the arena.",
+          "MQTT interface separating prediction logic from motor command publishing.",
+        ],
+      },
+      {
+        id: "perception",
+        title: "Perception and calibration",
+        paragraphs: [
+          "The perception stack used a custom YOLO-family detector trained on more than 1,000 labeled images collected from the project setup. The detector localized the orange ping pong ball in each frame and produced bounding boxes used for downstream position estimation.",
+          "After detection, the system converted the bounding-box center into approximate workspace x-y coordinates. The apparent radius or diameter of the ball was used as a depth cue for z, which kept the setup simple but introduced sensitivity to small detection-size errors.",
+        ],
+        bullets: [
+          "Reported detector performance: 92% mAP.",
+          "Average processing latency: approximately 2.7 ms per frame.",
+          "Calibration mapped image coordinates and ball size into approximate real-world position.",
+        ],
+      },
+      {
+        id: "prediction-control",
+        title: "Trajectory prediction and servo control",
+        paragraphs: [
+          "The system stored a short buffer of recent ball positions, smoothed noisy measurements, and fit a quadratic trajectory model. The prediction target was the landing or interception position where the ball would cross the goalie plane.",
+          "The predicted x-y point was mapped to a servo angle and published through MQTT. This kept the software modular while allowing the servo controller to rotate the blocker toward the predicted landing region.",
+        ],
+        bullets: [
+          "Used quadratic regression as a lightweight physics-inspired predictor suitable for Raspberry Pi deployment.",
+          "Mapped predicted landing points to servo commands for reactive blocking.",
+          "Logged throw outputs so errors could be traced to detection, calibration, timing, or actuation.",
         ],
       },
       {
         id: "results",
-        title: "Results",
+        title: "Results and representative predictions",
+        paragraphs: [
+          "The prototype produced strong results on several test throws. Representative targets at (0, 20) cm and (40, 10) cm were predicted exactly as (0.0, 20.0) cm and (40.0, 10.0) cm, while a mid-field target at (20, 18) cm was predicted as (20.5, 20.0) cm.",
+          "The system also exposed clear failure modes. Low-y targets were often overestimated, and aggressive extrapolation sometimes pushed the prediction toward the workspace boundary. These errors were usually linked to noisy paths, bounce ambiguity, or mismatch between real timing and the fixed 60 FPS assumption.",
+        ],
         bullets: [
-          "92% mAP ball detection with custom YOLOv8.",
-          "2.7 ms/frame inference enabling reactive control.",
-          "Accurate saves on test shots with near-optimal alignment.",
+          "Exact predictions on selected corner and side targets in representative tests.",
+          "Servo usually moved within about 5-10 degrees of a good blocking angle.",
+          "Demonstrated a real closed-loop robot behavior rather than only offline ball detection.",
+        ],
+      },
+      {
+        id: "contribution",
+        title: "My contribution",
+        paragraphs: [
+          "I led the design of the full pipeline and hardware setup. My work covered detector training, camera calibration, trajectory prediction logic, and integration of the MQTT servo-control loop with the rest of the system.",
+          "This made the project a complete robotics integration exercise: data collection, model training, calibration, real-time inference, prediction, motor command publishing, and hardware testing all had to work together.",
+        ],
+      },
+      {
+        id: "lessons",
+        title: "Lessons learned and next steps",
+        paragraphs: [
+          "The project showed that robotics performance depends on the full sensing-to-action chain. A detector can work well on individual frames but still miss the block if calibration, timing, or servo response is off.",
+          "A practical next version would add a Kalman filter or similar state estimator, dynamic frame-rate handling, better bounce detection, more robust lighting tests, and improved depth estimation through stereo vision or stronger calibration.",
+        ],
+        bullets: [
+          "Improve trajectory tracking with a Kalman filter instead of a simple moving average.",
+          "Handle variable frame timing rather than assuming fixed 60 FPS.",
+          "Upgrade depth estimation using stereo vision or a more reliable calibration model.",
+          "Test under varied lighting and backgrounds for robustness.",
         ],
       },
     ],
