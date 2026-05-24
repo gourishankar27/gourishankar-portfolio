@@ -526,66 +526,179 @@ export const featuredProjects: Project[] = [
     featured: true,
     order: 3,
     summary:
-      "Full-stack autonomous quadrotor system combining computer vision, SLAM, optimal control, reinforcement learning, and waypoint navigation.",
-    role: "Robotics Engineer",
-    tags: ["Drones", "SLAM", "Reinforcement Learning", "Control"],
-    tech: ["ROS", "PX4 / ArduPilot", "OpenCV", "YOLO", "Python", "C++", "PID", "MPC"],
-    highlights: [
-      "Implemented computer vision pipelines for object tracking and ArUco-marker-based localization, with optional YOLO-style detectors for semantic awareness.",
-      "Used SLAM and mapping to build an environment representation for collision-free waypoint planning.",
-      "Combined low-level PID/MPC flight control with a high-level reinforcement-learning policy and waypoint planner for fully autonomous missions.",
+      "A vision-based landing system where a Parrot Mambo drone tracks a moving line-follower robot, stays aligned using image feedback, and executes a timed descent onto the platform.",
+    role: "Solo Robotics Systems Engineer",
+    tags: [
+      "Autonomous Drones",
+      "Computer Vision",
+      "Visual Servoing",
+      "Moving Platform Landing",
+      "Control Systems",
+      "MATLAB/Simulink",
     ],
-    coverImage: "/projects/autonomous-drone-navigation/cover.svg",
-    coverAlt: "Autonomous drone navigation system cover",
+    tech: [
+      "MATLAB",
+      "Simulink",
+      "Parrot Mambo Minidrone",
+      "Image Processing",
+      "HSV Color Thresholding",
+      "Centroid Tracking",
+      "PI Control",
+      "State Machine",
+    ],
+    highlights: [
+      "Built a complete vision-based landing prototype that combines platform detection, centroid and area extraction, PI alignment control, and timed landing logic.",
+      "Tracked a colored landing platform carried by a line-follower robot at speeds up to 0.2 m/s in indoor trials.",
+      "Achieved more than 95% platform detection reliability, average tracking error below 8 pixels, and 80% landing accuracy within 5 cm over 10 trials.",
+      "Designed the full hardware/software loop as a solo project, from robot setup and Simulink deployment to gain tuning and final evaluation.",
+    ],
+    coverImage: "/projects/autonomous-drone-navigation/cover.png",
+    coverAlt: "Autonomous drone navigation and moving-platform landing cover",
     links: [
       {
+        type: "paper",
+        label: "Final report",
+        href: "/projects/autonomous-drone-navigation/final-report.pdf",
+      },
+      {
         type: "website",
-        label: "Contact",
+        label: "Contact for project details",
         href: "/about#contact",
       },
     ],
     metrics: [
       {
-        label: "Stack",
-        value: "Perception → SLAM → Planning → Control",
-        context: "End-to-end autonomy",
+        label: "Detection reliability",
+        value: ">95%",
+        context: "Colored platform detected across moving trials",
       },
       {
-        label: "Control",
-        value: "PID / MPC + RL",
-        context: "Low + high-level",
+        label: "Tracking error",
+        value: "<8 px",
+        context: "Average image-plane error during alignment",
+      },
+      {
+        label: "Landing accuracy",
+        value: "80%",
+        context: "Within 5 cm of target endpoint over 10 trials",
+      },
+      {
+        label: "Platform speed",
+        value: "0.2 m/s",
+        context: "Moving line-follower robot speed during tests",
+      },
+      {
+        label: "Control logic",
+        value: "4 states",
+        context: "Takeoff, tracking, descent, and landing",
+      },
+      {
+        label: "Implementation",
+        value: "Solo",
+        context: "Hardware setup, perception, control, deployment, and testing",
       },
     ],
     media: [
       {
         type: "image",
-        src: "/projects/autonomous-drone-navigation/cover.svg",
-        alt: "Drone navigation cover image",
-        caption: "Project cover (replace with flight logs/video).",
+        src: "/projects/autonomous-drone-navigation/cover.png",
+        alt: "Autonomous drone landing cover image",
+        caption:
+          "Generated project cover showing the Parrot Mambo drone, moving landing platform, control loop, and headline landing metrics.",
       },
       {
         type: "image",
-        src: "/projects/autonomous-drone-navigation/diagram.svg",
-        alt: "Autonomy stack diagram placeholder",
-        caption: "Suggested figure: autonomy stack + interfaces.",
+        src: "/projects/autonomous-drone-navigation/hardware-setup.png",
+        alt: "Parrot Mambo drone and line-follower robot hardware setup",
+        caption:
+          "Hardware setup: a Parrot Mambo Minidrone observes a colored landing platform carried by a line-follower robot inside a controlled indoor testbed.",
+      },
+      {
+        type: "image",
+        src: "/projects/autonomous-drone-navigation/system-diagram.png",
+        alt: "Vision-based landing system diagram",
+        caption:
+          "System pipeline: downward camera input, HSV color mask, centroid and area extraction, PI alignment control, lead-distance estimate, and synchronized descent.",
+      },
+      {
+        type: "image",
+        src: "/projects/autonomous-drone-navigation/control-state-machine.png",
+        alt: "Drone landing control state machine",
+        caption:
+          "Landing logic: the drone takes off, tracks the moving platform, triggers descent when thresholds are satisfied, and completes synchronized touchdown.",
+      },
+      {
+        type: "image",
+        src: "/projects/autonomous-drone-navigation/results-summary.png",
+        alt: "Autonomous drone landing results summary",
+        caption:
+          "Results summary: >95% detection reliability, <8 px average tracking error, 80% landings within 5 cm, and tracking up to 0.2 m/s platform speed.",
       },
     ],
     sections: [
       {
-        id: "overview",
-        title: "System overview",
+        id: "problem",
+        title: "Problem and objective",
         paragraphs: [
-          "A full-stack autonomy project combining perception, state estimation, planning, and control for quadrotor navigation.",
+          "Landing a drone on a moving platform is a compact but realistic autonomy problem: the system must perceive the target, estimate where it is, stay aligned while both bodies move, and trigger descent at the right moment.",
+          "This project built an indoor version of that problem using a Parrot Mambo Minidrone and a small line-follower robot carrying a colored landing platform. The objective was to make the drone detect the platform with its downward camera, center itself using visual feedback, and land near the end of the track.",
         ],
       },
       {
-        id: "approach",
-        title: "Approach",
+        id: "system-overview",
+        title: "System overview",
+        paragraphs: [
+          "The system has three hardware components: the Parrot Mambo drone, a line-follower ground robot, and a lightweight colored platform mounted on the robot. The drone observes the platform from above and uses image features to guide alignment and landing timing.",
+          "The software stack was implemented in MATLAB/Simulink so camera capture, image processing, control generation, state-machine logic, and deployment could be handled in one prototyping environment.",
+        ],
         bullets: [
-          "Perception: tracking + ArUco localization + optional detector for semantics.",
-          "Estimation: SLAM/mapping for consistent state.",
-          "Planning: waypoint + collision avoidance.",
-          "Control: PID/MPC for stabilization and tracking; RL for high-level behaviors.",
+          "Camera input: downward-facing drone camera observes the moving colored target.",
+          "Perception: HSV-style thresholding creates a binary mask for the landing platform.",
+          "Feature extraction: centroid gives image-plane alignment error; segmented area gives a rough distance/descent-readiness cue.",
+          "Control: PI alignment commands keep the platform near the image center.",
+          "Landing: a state machine manages takeoff, tracking, descent, and touchdown.",
+        ],
+      },
+      {
+        id: "vision-control",
+        title: "Vision and control approach",
+        paragraphs: [
+          "The perception pipeline converts the downward camera image into a thresholded platform mask, then extracts centroid and area measurements. The centroid is used as the main feedback signal: if the platform drifts away from image center, the controller corrects lateral motion and yaw to bring it back.",
+          "The landing decision uses an additional timing layer. The drone remains in tracking mode until the target is centered enough and appears large enough in the frame. A lead-distance estimate based on line-follower speed and drone descent rate then triggers landing near the end of the track.",
+        ],
+      },
+      {
+        id: "results",
+        title: "Results",
+        paragraphs: [
+          "The prototype worked reliably in a controlled indoor setting. In moving-platform trials, the drone kept the platform near the image center while the ground robot moved at speeds up to 0.2 m/s.",
+          "Across 10 runs, the system achieved more than 95% platform detection reliability, average tracking error below 8 pixels, and 80% landing accuracy within 5 cm of the target endpoint. The strongest part of the system was the vision pipeline: the colored platform was detected consistently in most test conditions.",
+        ],
+      },
+      {
+        id: "failure-modes",
+        title: "Failure modes and engineering lessons",
+        paragraphs: [
+          "The difficult part was not simply detecting the platform; it was landing at the right time while the platform was still moving. Lighting changes, floor reflections, and platform appearance changes could disturb the color mask, while aggressive gains could make hover behavior oscillatory and reduce touchdown repeatability.",
+          "The project reinforced a core robotics lesson: performance depends on the full sensing-to-action loop. A working vision block is only useful when camera timing, thresholding, controller tuning, state transitions, and physical robot motion are all consistent.",
+        ],
+      },
+      {
+        id: "contribution",
+        title: "My contribution",
+        paragraphs: [
+          "This was a solo project. I assembled and tested the line-follower robot, mounted the landing platform, built the image-processing pipeline, extracted centroid and area measurements, tuned the PI controller, created the landing state machine, deployed the Simulink model, and ran the experiments.",
+        ],
+      },
+      {
+        id: "next-steps",
+        title: "Next steps",
+        bullets: [
+          "Add adaptive thresholding to improve platform detection under changing lighting and reflections.",
+          "Estimate ground-robot speed online instead of depending on a fixed speed assumption for the descent trigger.",
+          "Use a more predictive controller to reduce delay during moving-platform tracking.",
+          "Add direct communication between the drone and ground robot so landing decisions can use both vision and platform state.",
+          "Upgrade the landing target with stronger visual markers instead of relying only on platform color.",
         ],
       },
     ],
