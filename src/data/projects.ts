@@ -208,20 +208,21 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
+
   {
     id: "vision-guided-diff-physics",
     title: "Vision-Guided Differentiable Physics for Robotic Manipulation",
     year: 2025,
     category: "Robotics",
     featured: true,
-    order: 1,
+    order: 5,
     summary:
       "End-to-end perception-to-control framework that uses 3D Gaussian Splatting and differentiable physics to identify object properties and plan contact-rich robotic manipulation.",
     role: "Research & Engineering",
     tags: ["Robotics", "Differentiable Physics", "3D Vision", "System Identification"],
     tech: ["PyTorch", "NVIDIA Warp", "Isaac Lab", "3D Gaussian Splatting", "Python"],
     highlights: [
-      "Integrated 3D Gaussian Splatting with NVIDIA Warp to build a differentiable perception–physics loop for robotic manipulation.",
+      "Integrated 3D Gaussian Splatting with NVIDIA Warp to build a differentiable perception-physics loop for robotic manipulation.",
       "Used Isaac Lab to generate synthetic RGB-D data with ground-truth dynamics for system identification and planning.",
       "Recovered latent physical parameters such as friction and mass from visual gradients and stored them in a neural scene-graph for long-horizon planning.",
     ],
@@ -300,13 +301,14 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
+
   {
     id: "sp500-deep-learning-forecasting",
     title: "S&P 500 Deep Learning Forecasting System",
     year: 2025,
     category: "Financial ML",
     featured: true,
-    order: 2,
+    order: 1,
     summary:
       "A research-grade forecasting system that evaluates Temporal Fusion Transformers against LSTM and ARIMAX baselines for S&P 500 return prediction using mixed-frequency market and macroeconomic data, then extends TFT with regime-aware attention and interpretability diagnostics.",
     role: "ML Research Engineer / Time-Series Modeling",
@@ -518,6 +520,7 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
+
   {
     id: "autonomous-drone-navigation",
     title: "Autonomous Drone Navigation System",
@@ -703,6 +706,7 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
+
   {
     id: "automated-goalie",
     title: "Automated Goalie: Ping Pong Ball Trajectory Prediction System",
@@ -927,9 +931,10 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
+  
   {
     id: "intellicart-iiot-smart-factory-vehicle",
-    title: "IntelliCart – IIoT Smart Factory Vehicle",
+    title: "IntelliCart - IIoT Smart Factory Vehicle",
     year: 2025,
     category: "Systems / IIoT",
     featured: true,
@@ -949,7 +954,7 @@ export const featuredProjects: Project[] = [
       "HTML/CSS/JS",
     ],
     highlights: [
-      "Integrated line sensors, ultrasonic distance sensors, and a pan–tilt camera with a Raspberry Pi 4 and RobotHat for multi-mode operation: manual drive, line follow, obstacle avoidance, and color tracking.",
+      "Integrated line sensors, ultrasonic distance sensors, and a pan-tilt camera with a Raspberry Pi 4 and RobotHat for multi-mode operation: manual drive, line follow, obstacle avoidance, and color tracking.",
       "Implemented an edge layer in Python + Flask handling the real-time control loop, safety thresholds, and telemetry logging at 1 Hz into a per-vehicle SQLite database.",
       "Synchronized per-vehicle logs into a central PostgreSQL fleet database and built a browser-based dashboard with live camera, 3D IntelliCart model, obstacle radar, and historical telemetry charts.",
     ],
@@ -1300,7 +1305,7 @@ export const miniProjects: Project[] = [
     highlights: [
       "Transformed a severely imbalanced 20k-image PV dataset (57:1 class ratio) into a balanced 30k-image dataset (12 classes) using unsharp masking and targeted data augmentation.",
       "Benchmarked head-only, partial-block, and full fine-tuning strategies for ViT-B/32, achieving about 89.3% test accuracy with full fine-tuning.",
-      "Showed that partial block unfreezing reaches roughly 84.4% accuracy with around 24% of parameters trainable, offering a strong accuracy–compute trade-off.",
+      "Showed that partial block unfreezing reaches roughly 84.4% accuracy with around 24% of parameters trainable, offering a strong accuracy-compute trade-off.",
     ],
     coverImage: "/projects/vit-pv-defect-classification/cover.svg",
     coverAlt: "ViT PV defect classification cover",
@@ -1342,7 +1347,7 @@ export const miniProjects: Project[] = [
     tags: ["Perceptual Loss", "VGG16", "Image Quality", "Simulation"],
     tech: ["PyTorch", "VGG-16", "NumPy", "DAATSim"],
     highlights: [
-      "Compared pixel-wise losses with VGG-16 feature losses and showed 33–92× lower sensitivity to small translations and much higher robustness to additive noise.",
+      "Compared pixel-wise losses with VGG-16 feature losses and showed 33-92× lower sensitivity to small translations and much higher robustness to additive noise.",
       "Integrated a depth-aware atmospheric turbulence simulator to create a dataset of turbulence-degraded images with realistic, depth-dependent distortions.",
       "Designed a multi-layer perceptual loss with optimized layer weights that reduced turbulence sensitivity by roughly 24% compared to uniform VGG-layer weighting.",
     ],
@@ -1352,7 +1357,7 @@ export const miniProjects: Project[] = [
     metrics: [
       {
         label: "Shift robustness",
-        value: "33–92×",
+        value: "33-92×",
         context: "Vs pixel loss",
       },
       {
@@ -1478,7 +1483,7 @@ export const miniProjects: Project[] = [
     tech: ["PyTorch", "DCGAN", "Progressive GAN", "Diffusion", "Python"],
     highlights: [
       "Trained a DCGAN on standard face datasets and a custom 64×64 colored-squares dataset to study sample complexity and mode collapse.",
-      "Collected a 1k–5k image dataset of a chosen animal at 256×256 resolution and trained both DCGAN and Progressive GAN with augmentation and architecture tweaks.",
+      "Collected a 1k-5k image dataset of a chosen animal at 256×256 resolution and trained both DCGAN and Progressive GAN with augmentation and architecture tweaks.",
       "Implemented a diffusion model on the same animal dataset, visualizing the forward noising and reverse denoising processes and comparing sample quality against GAN-based approaches.",
     ],
     coverImage: "/projects/gans-and-diffusion-animal-dataset/cover.svg",
@@ -1487,7 +1492,7 @@ export const miniProjects: Project[] = [
     metrics: [
       {
         label: "Dataset size",
-        value: "1k–5k",
+        value: "1k-5k",
         context: "Custom animal images",
       },
       {
