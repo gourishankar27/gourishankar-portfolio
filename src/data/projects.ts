@@ -1016,7 +1016,7 @@ export const featuredProjects: Project[] = [
     year: 2026,
     category: "AI Product Engineering",
     featured: true,
-    order: 6,
+    order: 2,
     summary:
       "Open-source decision intelligence platform that helps smaller business owners import records, track obligations, investigate cash and margin shifts, forecast scenarios, and execute evidence-backed operating actions.",
     role: "Full-Stack AI Product Engineer",
