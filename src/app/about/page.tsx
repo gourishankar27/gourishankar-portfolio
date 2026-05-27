@@ -48,11 +48,11 @@ const contactItems = [
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
   },
-  {
-    label: "Phone",
-    value: siteConfig.phone,
-    href: `tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`,
-  },
+  // {
+  //   label: "Phone",
+  //   value: siteConfig.phone,
+  //   href: `tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`,
+  // },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/gourishankarb",

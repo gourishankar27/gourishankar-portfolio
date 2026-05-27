@@ -5,7 +5,7 @@ export const siteConfig = {
     "Portfolio of Gourishankar Bansode - robotics and AI software engineer working on event-based vision, space autonomy, state estimation, differentiable physics, autonomous systems, and reliability-focused production software.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://gshankar.me",
   email: "gourishankar@asu.edu",
-  phone: "+1-602-491-8770",
+  // phone: "+1-602-491-8770",
   location: "Tempe, AZ",
   socials: {
     github: "https://github.com/gourishankar27",

@@ -215,88 +215,248 @@ export const featuredProjects: Project[] = [
     year: 2025,
     category: "Robotics",
     featured: true,
-    order: 5,
+    order: 2,
     summary:
-      "End-to-end perception-to-control framework that uses 3D Gaussian Splatting and differentiable physics to identify object properties and plan contact-rich robotic manipulation.",
-    role: "Research & Engineering",
-    tags: ["Robotics", "Differentiable Physics", "3D Vision", "System Identification"],
-    tech: ["PyTorch", "NVIDIA Warp", "Isaac Lab", "3D Gaussian Splatting", "Python"],
-    highlights: [
-      "Integrated 3D Gaussian Splatting with NVIDIA Warp to build a differentiable perception-physics loop for robotic manipulation.",
-      "Used Isaac Lab to generate synthetic RGB-D data with ground-truth dynamics for system identification and planning.",
-      "Recovered latent physical parameters such as friction and mass from visual gradients and stored them in a neural scene-graph for long-horizon planning.",
+      "A presentation-style robotics case study that connects RGB observations, robot state, temporal Transformer prediction, differentiable rollout losses, and Isaac Sim Franka data to learn multi-step manipulation behavior from visual context.",
+    role: "Project Lead / Research Engineer",
+    tags: [
+      "Robotics",
+      "Robot Learning",
+      "Differentiable Physics",
+      "Vision-Guided Control",
+      "Isaac Sim",
+      "Franka Manipulation",
+      "Transformer",
+      "3D Gaussian Splatting",
+      "System Identification",
     ],
-    coverImage: "/projects/vision-guided-diff-physics/cover.svg",
-    coverAlt: "Differentiable physics manipulation project cover",
+    tech: [
+      "Python",
+      "PyTorch",
+      "NVIDIA Isaac Sim",
+      "NVIDIA Warp",
+      "3D Gaussian Splatting",
+      "Transformer Encoder",
+      "CNN Vision Encoder",
+      "Franka Panda",
+      "JSONL Datasets",
+      "YAML Configs",
+      "Matplotlib",
+    ],
+    highlights: [
+      "Built an end-to-end RGB plus robot-state learning pipeline for Franka manipulation, predicting 8-step future joint deltas and end-effector trajectories from 4 context frames/states.",
+      "Implemented a TemporalVisionFrankaPolicy with a CNN image encoder, state projection, Transformer temporal fusion, joint-delta rollout head, and end-effector prediction head.",
+      "Created an Isaac Sim data workflow with brighter multi-episode collection, merged JSONL indexes, episode-level validation, continuity filters, image preprocessing, and modality ablations.",
+      "Trained the advanced run for 100 epochs and reached a best validation terminal end-effector distance of 1.67 cm with a 1.37 cm mean trajectory end-effector distance across 976 validation windows.",
+      "Validated that visual context contributes to the model: removing RGB increased terminal end-effector error by about 1.49x, while removing state/cube context caused order-of-magnitude degradation.",
+    ],
+    coverImage: "/projects/vision-guided-diff-physics/cover.png",
+    coverAlt: "Vision-guided differentiable physics project cover",
     links: [
       {
         type: "website",
-        label: "Contact",
+        label: "Architecture",
+        href: "#architecture",
+      },
+      {
+        type: "website",
+        label: "Results",
+        href: "#results",
+      },
+      {
+        type: "website",
+        label: "Contact for code/demo",
         href: "/about#contact",
       },
     ],
     metrics: [
       {
-        label: "Synthetic RGB-D data",
-        value: "Isaac Lab",
-        context: "Auto-labeled dynamics + contacts",
+        label: "Terminal EE error",
+        value: "1.67 cm",
+        context: "Best validation terminal end-effector distance at epoch 97",
       },
       {
-        label: "Differentiable physics",
-        value: "NVIDIA Warp",
-        context: "Custom kernels for system ID",
+        label: "Mean EE error",
+        value: "1.37 cm",
+        context: "Validation trajectory-average end-effector distance",
       },
       {
-        label: "3D representation",
-        value: "3D Gaussian Splatting",
-        context: "Perception-to-control loop",
+        label: "Temporal window",
+        value: "4 -> 8",
+        context: "4 context frames/states used to predict an 8-step future rollout",
+      },
+      {
+        label: "Validation windows",
+        value: "976",
+        context: "Windows used in the saved modality-ablation evaluation",
+      },
+      {
+        label: "Vision ablation",
+        value: "1.49x",
+        context: "Terminal error increase when RGB context is zeroed",
+      },
+      {
+        label: "Model backbone",
+        value: "2L / 4H",
+        context: "2-layer, 4-head Transformer temporal encoder",
       },
     ],
     media: [
       {
         type: "image",
-        src: "/projects/vision-guided-diff-physics/cover.svg",
-        alt: "Vision-guided differentiable physics cover image",
-        caption: "Project cover (replace with real screenshots/figures).",
+        src: "/projects/vision-guided-diff-physics/cover.png",
+        alt: "Vision-guided differentiable physics project cover",
+        caption:
+          "Project cover summarizing the portfolio case study: RGB observations, robot state, temporal policy learning, differentiable rollouts, and end-effector target prediction.",
       },
       {
         type: "image",
-        src: "/projects/vision-guided-diff-physics/diagram.svg",
-        alt: "System diagram placeholder",
-        caption: "Suggested figure: perception → differentiable simulation → control.",
+        src: "/projects/vision-guided-diff-physics/architecture.png",
+        alt: "Vision-guided differentiable physics architecture diagram",
+        caption:
+          "System architecture: visual observations are encoded, fused with state context, passed through a differentiable physics/simulation loop, and optimized through end-to-end gradient flow.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/visual-property-estimation.png",
+        alt: "Visual feature extraction and physical property estimation diagram",
+        caption:
+          "Visual feature extraction concept: RGB observations and depth-like structure support prediction of physical properties such as mass, friction, and restitution for downstream physics reasoning.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/optimization-progression.png",
+        alt: "Gradient-based optimization progression for object manipulation",
+        caption:
+          "Optimization progression: the differentiable loop moves from an initial configuration through gradient-guided updates toward a target manipulation configuration.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/training-summary.png",
+        alt: "Training and evaluation summary for Isaac Franka temporal model",
+        caption:
+          "Presentation-style summary of the advanced Isaac Franka run, including context horizon, best end-effector errors, validation windows, and the training/evaluation pipeline.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/loss-curve.png",
+        alt: "Advanced Isaac Franka temporal training loss curve",
+        caption:
+          "Training curve from the advanced run: train terminal EE error, validation terminal EE error, and validation mean EE error converge toward centimeter-level tracking behavior.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/ee-rollout.png",
+        alt: "Predicted versus target end-effector rollout plot",
+        caption:
+          "Predicted vs target end-effector rollout: the model predicts future x, y, and z end-effector coordinates over the 8-step horizon.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/ablation-summary.png",
+        alt: "Vision and state ablation summary",
+        caption:
+          "Ablation summary: the full model is strongest; removing RGB increases terminal error, while removing robot/state context causes much larger degradation.",
+      },
+      {
+        type: "image",
+        src: "/projects/vision-guided-diff-physics/context-frame.png",
+        alt: "Isaac Franka context frame used by the temporal policy",
+        caption:
+          "Representative final context frame from the saved Isaac Franka evaluation sample, showing the kind of visual input used by the policy.",
       },
     ],
     sections: [
       {
-        id: "problem",
-        title: "Problem",
+        id: "objective",
+        title: "Objective",
         paragraphs: [
-          "Contact-rich manipulation depends on physical properties (friction, mass) that are hard to measure and often mismatched between simulation and the real world.",
-          "This project explores learning those latent properties directly from visual observations so planning/control can adapt online.",
+          "The goal of this project is to make robotic manipulation models more physically grounded by tying visual observations to differentiable state prediction and rollout losses. Instead of treating perception and control as separate blocks, the system asks whether an RGB-conditioned policy can learn multi-step robot motion while remaining inspectable through simulation metrics and ablations.",
+          "The final portfolio version presents the project as a research-style report page: it explains the robotics problem, shows the architecture, documents the Isaac Sim data workflow, visualizes training behavior, and summarizes ablation evidence from the saved run artifacts.",
         ],
       },
       {
-        id: "approach",
-        title: "Approach",
+        id: "problem",
+        title: "Problem and motivation",
+        paragraphs: [
+          "Contact-rich manipulation is hard because the policy must reason about geometry, object state, physical interaction, robot kinematics, and future consequences of actions. Pure image models can learn correlations, but they often hide whether the model is using visual evidence, robot state, or dataset shortcuts.",
+          "This project focuses on the bridge between visual learning and physics-aware prediction. The code base starts with runnable differentiable-physics demos, then extends the idea toward Isaac Sim Franka manipulation with temporal context, multi-step supervision, continuity filtering, and modality ablations.",
+        ],
+      },
+      {
+        id: "architecture",
+        title: "System architecture",
         bullets: [
-          "Represent the scene with 3D Gaussian Splatting (3DGS) to get a differentiable visual representation.",
-          "Use Isaac Lab to generate RGB-D trajectories with ground-truth dynamics and contact signals.",
-          "Run differentiable physics kernels (NVIDIA Warp) to backpropagate error to physical parameters (e.g., friction, mass).",
+          "Input: a temporal context of 4 RGB frames plus robot joint positions, end-effector position, cube/object position, target position, and a normalized time token.",
+          "Vision branch: a lightweight CNN encoder converts each frame into a compact visual feature vector that can be trained without external pretrained dependencies.",
+          "State branch: robot and scene state are projected into the same embedding space as the vision features.",
+          "Temporal fusion: a 2-layer, 4-head Transformer encoder fuses the context window and produces a sequence-level summary.",
+          "Prediction heads: the model predicts bounded future joint deltas for rollout integration and future end-effector positions for trajectory-level supervision.",
+        ],
+      },
+      {
+        id: "data-pipeline",
+        title: "Isaac Sim data and sequence pipeline",
+        paragraphs: [
+          "The project includes an Isaac Sim Franka workflow for collecting RGB frames and robot/cube/end-effector trajectories, converting episodes into training indexes, merging multiple episodes, and inspecting sequence quality before training.",
+          "A major engineering improvement was treating sequence quality as a first-class issue. The dataset loader splits merged JSONL indexes back into episode trajectories, supports episode-level train/validation splits, and rejects windows with impossible end-effector or joint jumps so the temporal model is not trained across reset boundaries.",
+        ],
+        bullets: [
+          "Bright collection workflow: stronger lighting, camera look-at setup, visual randomization, debug previews, and percentile image preprocessing for under-exposed frames.",
+          "Sequence settings: image size 128, batch size 8, context length 4, horizon 8, stride 1, validation fraction 0.2, and episode-level split mode.",
+          "Continuity filters: reject windows with excessive end-effector jumps or joint-space jumps before constructing multi-step targets.",
+        ],
+      },
+      {
+        id: "model",
+        title: "Temporal vision model",
+        paragraphs: [
+          "The core model is a TemporalVisionFrankaPolicy. It encodes each context frame using a CNN, combines those visual features with projected state vectors, adds learned positional embeddings, and passes the context through a Transformer encoder. The last token summary drives two prediction heads: one for future joint deltas and one for future end-effector coordinates.",
+          "The architecture is intentionally practical: the image encoder is compact, the Transformer is modest enough to train on project-scale data, and the prediction heads expose interpretable quantities that can be plotted and compared against future trajectories.",
+        ],
+      },
+      {
+        id: "differentiable-physics",
+        title: "Differentiable physics and rollout losses",
+        paragraphs: [
+          "The training objective combines multiple physical consistency signals instead of relying on one scalar loss. Predicted joint deltas are integrated into future joint trajectories, end-effector predictions are compared across the horizon, terminal end-effector error receives extra weight, smoothness discourages jittery actions, and joint-limit regularization keeps predictions physically plausible.",
+          "The repository also includes differentiable physics scaffolding beyond the Franka sequence model: a PyTorch Gaussian splatting renderer for visual-loss wiring, an optional NVIDIA Warp planar-arm engine, and local proxy robot-arm training scripts that provide a fast path before heavier simulator integration.",
         ],
       },
       {
         id: "results",
-        title: "Results",
+        title: "Training results",
         paragraphs: [
-          "System identification recovers plausible physical parameters and reduces the gap between simulated and observed trajectories, enabling tighter perception-to-control feedback loops.",
+          "The saved advanced Isaac Franka bright-many run trained for 100 epochs. The best validation checkpoint occurred at epoch 97, reaching 1.67 cm terminal end-effector distance and 1.37 cm mean end-effector distance across the future trajectory. The final epoch remained close, ending at 1.71 cm terminal end-effector distance and 1.39 cm mean end-effector distance.",
+          "The loss curve shows the model moving from a high initial terminal error into a stable centimeter-level validation regime. The rollout plot compares predicted and target end-effector x/y/z coordinates over the future horizon and exposes where the model tracks well versus where longer-horizon transitions remain difficult.",
         ],
       },
       {
-        id: "next",
-        title: "Next steps",
+        id: "ablations",
+        title: "Ablation findings",
+        paragraphs: [
+          "The ablation run evaluated 976 validation windows. The full model achieved a 1.67 cm terminal end-effector distance. Zeroing RGB context increased terminal error to 2.49 cm, showing that visual information contributes to the policy even though robot state is still very informative.",
+          "The stronger ablations show that the task is not solvable from vision alone in the current formulation. Removing joint state, end-effector/cube state, or the full state vector increases terminal error by more than an order of magnitude, which is a useful engineering signal: the next version should make action/state conditioning explicit and collect more diverse visual episodes before claiming strong vision-only generalization.",
+        ],
+      },
+      {
+        id: "engineering-contribution",
+        title: "Engineering contribution",
         bullets: [
-          "Add real-robot validation and evaluate sim-to-real transfer.",
-          "Benchmark planning performance on multi-step tasks under varying friction/mass.",
+          "Implemented the temporal sequence dataset, model, training loop, metrics logging, checkpointing, rollout visualization, and modality-ablation evaluation workflow.",
+          "Added Isaac Sim data-collection utilities, merged-index tooling, path-repair scripts, dark-frame diagnostics, and generated-data hygiene so the repository stays usable as experiments grow.",
+          "Documented practical lessons around lighting, camera placement, episode-level validation, reset-boundary filtering, and the difference between a visually attractive demo and a learnable sequence dataset.",
+          "Packaged the project page with a cover image, architecture visual, visual-property concept figure, optimization progression image, training curve, rollout plot, ablation chart, and concise research-style narrative.",
+        ],
+      },
+      {
+        id: "limitations-next-steps",
+        title: "Limitations and next steps",
+        bullets: [
+          "The current best results are from simulator-generated Franka sequences, not a physical robot deployment.",
+          "The model still relies heavily on robot state, so the next iteration should add richer visual diversity, multi-camera inputs, and action-conditioned prediction.",
+          "The differentiable FK prior is scaffolded but should be calibrated from the actual Isaac/URDF transforms before enabling stronger FK consistency losses.",
+          "Future work should add closed-loop Isaac replay, action-conditioned rollouts, 50-100 brighter randomized episodes, production-grade 3DGS rendering, and real-robot validation.",
         ],
       },
     ],
@@ -932,91 +1092,92 @@ export const featuredProjects: Project[] = [
     ],
   },
   
-  {
-    id: "intellicart-iiot-smart-factory-vehicle",
-    title: "IntelliCart - IIoT Smart Factory Vehicle",
-    year: 2025,
-    category: "Systems / IIoT",
-    featured: true,
-    order: 5,
-    summary:
-      "An IIoT-enabled smart factory cart with end-to-end stack from edge control on a Raspberry Pi to central fleet analytics dashboards.",
-    role: "Full-Stack Systems Engineer",
-    tags: ["IIoT", "Edge Computing", "Robotics", "Dashboards"],
-    tech: [
-      "Raspberry Pi 4",
-      "Flask",
-      "SQLite",
-      "PostgreSQL",
-      "Chart.js",
-      "Three.js",
-      "Python",
-      "HTML/CSS/JS",
-    ],
-    highlights: [
-      "Integrated line sensors, ultrasonic distance sensors, and a pan-tilt camera with a Raspberry Pi 4 and RobotHat for multi-mode operation: manual drive, line follow, obstacle avoidance, and color tracking.",
-      "Implemented an edge layer in Python + Flask handling the real-time control loop, safety thresholds, and telemetry logging at 1 Hz into a per-vehicle SQLite database.",
-      "Synchronized per-vehicle logs into a central PostgreSQL fleet database and built a browser-based dashboard with live camera, 3D IntelliCart model, obstacle radar, and historical telemetry charts.",
-    ],
-    coverImage: "/projects/intellicart-iiot-smart-factory-vehicle/cover.svg",
-    coverAlt: "IIoT smart factory vehicle cover",
-    links: [
-      {
-        type: "website",
-        label: "Contact",
-        href: "/about#contact",
-      },
-    ],
-    metrics: [
-      {
-        label: "Telemetry logging",
-        value: "1 Hz",
-        context: "Edge control loop + logging",
-      },
-      {
-        label: "Data stack",
-        value: "SQLite → PostgreSQL",
-        context: "Per-vehicle → fleet",
-      },
-      {
-        label: "Modes",
-        value: "4",
-        context: "Manual, line-follow, avoid, track",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/intellicart-iiot-smart-factory-vehicle/cover.svg",
-        alt: "IntelliCart cover image",
-        caption: "Project cover (replace with dashboard screenshots).",
-      },
-      {
-        type: "image",
-        src: "/projects/intellicart-iiot-smart-factory-vehicle/diagram.svg",
-        alt: "Edge-to-cloud architecture diagram placeholder",
-        caption: "Suggested figure: sensors → edge → DB → dashboard.",
-      },
-    ],
-    sections: [
-      {
-        id: "architecture",
-        title: "Architecture",
-        bullets: [
-          "Edge: Raspberry Pi + RobotHat runs the control loop and safety checks.",
-          "Data: logs stored locally (SQLite) then synced to a central PostgreSQL fleet DB.",
-          "UI: browser dashboard with camera, 3D model, radar, and charts.",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: "intellicart-iiot-smart-factory-vehicle",
+  //   title: "IntelliCart - IIoT Smart Factory Vehicle",
+  //   year: 2025,
+  //   category: "Systems / IIoT",
+  //   featured: true,
+  //   order: 5,
+  //   summary:
+  //     "An IIoT-enabled smart factory cart with end-to-end stack from edge control on a Raspberry Pi to central fleet analytics dashboards.",
+  //   role: "Full-Stack Systems Engineer",
+  //   tags: ["IIoT", "Edge Computing", "Robotics", "Dashboards"],
+  //   tech: [
+  //     "Raspberry Pi 4",
+  //     "Flask",
+  //     "SQLite",
+  //     "PostgreSQL",
+  //     "Chart.js",
+  //     "Three.js",
+  //     "Python",
+  //     "HTML/CSS/JS",
+  //   ],
+  //   highlights: [
+  //     "Integrated line sensors, ultrasonic distance sensors, and a pan-tilt camera with a Raspberry Pi 4 and RobotHat for multi-mode operation: manual drive, line follow, obstacle avoidance, and color tracking.",
+  //     "Implemented an edge layer in Python + Flask handling the real-time control loop, safety thresholds, and telemetry logging at 1 Hz into a per-vehicle SQLite database.",
+  //     "Synchronized per-vehicle logs into a central PostgreSQL fleet database and built a browser-based dashboard with live camera, 3D IntelliCart model, obstacle radar, and historical telemetry charts.",
+  //   ],
+  //   coverImage: "/projects/intellicart-iiot-smart-factory-vehicle/cover.svg",
+  //   coverAlt: "IIoT smart factory vehicle cover",
+  //   links: [
+  //     {
+  //       type: "website",
+  //       label: "Contact",
+  //       href: "/about#contact",
+  //     },
+  //   ],
+  //   metrics: [
+  //     {
+  //       label: "Telemetry logging",
+  //       value: "1 Hz",
+  //       context: "Edge control loop + logging",
+  //     },
+  //     {
+  //       label: "Data stack",
+  //       value: "SQLite → PostgreSQL",
+  //       context: "Per-vehicle → fleet",
+  //     },
+  //     {
+  //       label: "Modes",
+  //       value: "4",
+  //       context: "Manual, line-follow, avoid, track",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/intellicart-iiot-smart-factory-vehicle/cover.svg",
+  //       alt: "IntelliCart cover image",
+  //       caption: "Project cover (replace with dashboard screenshots).",
+  //     },
+  //     {
+  //       type: "image",
+  //       src: "/projects/intellicart-iiot-smart-factory-vehicle/diagram.svg",
+  //       alt: "Edge-to-cloud architecture diagram placeholder",
+  //       caption: "Suggested figure: sensors → edge → DB → dashboard.",
+  //     },
+  //   ],
+  //   sections: [
+  //     {
+  //       id: "architecture",
+  //       title: "Architecture",
+  //       bullets: [
+  //         "Edge: Raspberry Pi + RobotHat runs the control loop and safety checks.",
+  //         "Data: logs stored locally (SQLite) then synced to a central PostgreSQL fleet DB.",
+  //         "UI: browser dashboard with camera, 3D model, radar, and charts.",
+  //       ],
+  //     },
+  //   ],
+  // },
+
   {
     id: "ownerpilot-ai-operating-copilot",
     title: "OwnerPilot - AI Operating Copilot for SMB Owners",
     year: 2026,
     category: "AI Product Engineering",
     featured: true,
-    order: 2,
+    order: 1,
     summary:
       "Open-source decision intelligence platform that helps smaller business owners import records, track obligations, investigate cash and margin shifts, forecast scenarios, and execute evidence-backed operating actions.",
     role: "Full-Stack AI Product Engineer",
@@ -1198,316 +1359,317 @@ export const featuredProjects: Project[] = [
       },
     ],
   },
-  {
-    id: "descriptive-question-answering-system",
-    title: "Descriptive Question Answering System",
-    year: 2021,
-    category: "NLP",
-    featured: false,
-    order: 7,
-    summary:
-      "Transformer-based descriptive question answering system using a fine-tuned BERT model and sentence-ranking pipeline, published at an IEEE conference.",
-    role: "NLP Research (Bachelor's Thesis)",
-    tags: ["NLP", "Question Answering", "Information Retrieval", "Transformers"],
-    tech: ["BERT", "Transformers", "PyTorch", "Python"],
-    highlights: [
-      "Built a transformer-based architecture for descriptive question answering, fine-tuning BERT to retrieve and rank relevant passages from document collections.",
-      "Implemented a sentence-ranking pipeline that scores candidate answers using transfer learning and semantic similarity for accurate response generation.",
-      "Published the work at the IEEE Pune Section International Conference (Dec 2021) as part of a bachelor's final-year project.",
-    ],
-    coverImage: "/projects/descriptive-question-answering-system/cover.svg",
-    coverAlt: "Descriptive question answering system cover",
-    links: [
-      {
-        type: "website",
-        label: "Contact",
-        href: "/about#contact",
-      },
-    ],
-    metrics: [
-      {
-        label: "Model",
-        value: "BERT",
-        context: "Fine-tuned for QA",
-      },
-      {
-        label: "Publication",
-        value: "IEEE",
-        context: "Pune Section Intl. Conf. (Dec 2021)",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/descriptive-question-answering-system/cover.svg",
-        alt: "QA system cover image",
-        caption: "Project cover (replace with model diagram).",
-      },
-    ],
-  },
+
+  // {
+  //   id: "descriptive-question-answering-system",
+  //   title: "Descriptive Question Answering System",
+  //   year: 2021,
+  //   category: "NLP",
+  //   featured: false,
+  //   order: 7,
+  //   summary:
+  //     "Transformer-based descriptive question answering system using a fine-tuned BERT model and sentence-ranking pipeline, published at an IEEE conference.",
+  //   role: "NLP Research (Bachelor's Thesis)",
+  //   tags: ["NLP", "Question Answering", "Information Retrieval", "Transformers"],
+  //   tech: ["BERT", "Transformers", "PyTorch", "Python"],
+  //   highlights: [
+  //     "Built a transformer-based architecture for descriptive question answering, fine-tuning BERT to retrieve and rank relevant passages from document collections.",
+  //     "Implemented a sentence-ranking pipeline that scores candidate answers using transfer learning and semantic similarity for accurate response generation.",
+  //     "Published the work at the IEEE Pune Section International Conference (Dec 2021) as part of a bachelor's final-year project.",
+  //   ],
+  //   coverImage: "/projects/descriptive-question-answering-system/cover.svg",
+  //   coverAlt: "Descriptive question answering system cover",
+  //   links: [
+  //     {
+  //       type: "website",
+  //       label: "Contact",
+  //       href: "/about#contact",
+  //     },
+  //   ],
+  //   metrics: [
+  //     {
+  //       label: "Model",
+  //       value: "BERT",
+  //       context: "Fine-tuned for QA",
+  //     },
+  //     {
+  //       label: "Publication",
+  //       value: "IEEE",
+  //       context: "Pune Section Intl. Conf. (Dec 2021)",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/descriptive-question-answering-system/cover.svg",
+  //       alt: "QA system cover image",
+  //       caption: "Project cover (replace with model diagram).",
+  //     },
+  //   ],
+  // },
 ];
 
 export const miniProjects: Project[] = [
-  {
-    id: "resnet36-smoothrelu-imagenet",
-    title: "Custom ResNet-36 + SmoothReLU on ImageNet",
-    year: 2025,
-    category: "Deep Learning",
-    summary:
-      "Custom ResNet-36 architecture and SmoothReLU activation that improve ImageNet-scale training from scratch with minimal parameter overhead.",
-    role: "DL Research",
-    tags: ["CNNs", "ResNet", "Activation Functions", "ImageNet"],
-    tech: ["PyTorch", "ResNet", "CUDA", "Python"],
-    highlights: [
-      "Designed a ResNet-36 architecture that deepens the mid-level feature stage, improving validation accuracy by about 0.6 percentage points over ResNet-34 with roughly 5.5% more parameters.",
-      "Developed SmoothReLU, a smooth non-zero-negative-slope activation function, improving validation accuracy by around 1.6 percentage points over ReLU without measurable training-time overhead.",
-      "Scaled training to a 650-class ImageNet subset (~832k images), reaching about 63.7% Top-1 and 84.8% Top-5 accuracy from scratch on an A100 GPU.",
-    ],
-    coverImage: "/projects/resnet36-smoothrelu-imagenet/cover.svg",
-    coverAlt: "ResNet-36 SmoothReLU cover",
-    links: [],
-    metrics: [
-      {
-        label: "Top-1",
-        value: "63.7%",
-        context: "650-class ImageNet subset",
-      },
-      {
-        label: "Top-5",
-        value: "84.8%",
-        context: "From scratch on A100",
-      },
-      {
-        label: "Δ vs ResNet-34",
-        value: "+0.6 pp",
-        context: "With ~5.5% more params",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/resnet36-smoothrelu-imagenet/cover.svg",
-        alt: "ResNet-36 cover",
-        caption: "Project cover (replace with training curves).",
-      },
-    ],
-  },
-  {
-    id: "vit-pv-defect-classification",
-    title: "Vision Transformer PV Defect Classification",
-    year: 2025,
-    category: "Deep Learning",
-    summary:
-      "Fine-tuning ViT-B/32 on a class-balanced photovoltaic infrared defect dataset to achieve high-accuracy multi-class classification.",
-    role: "ML Engineer",
-    tags: ["Vision Transformer", "Imbalanced Data", "Transfer Learning", "PV Defects"],
-    tech: ["ViT-B/32", "PyTorch", "Torchvision", "Python"],
-    highlights: [
-      "Transformed a severely imbalanced 20k-image PV dataset (57:1 class ratio) into a balanced 30k-image dataset (12 classes) using unsharp masking and targeted data augmentation.",
-      "Benchmarked head-only, partial-block, and full fine-tuning strategies for ViT-B/32, achieving about 89.3% test accuracy with full fine-tuning.",
-      "Showed that partial block unfreezing reaches roughly 84.4% accuracy with around 24% of parameters trainable, offering a strong accuracy-compute trade-off.",
-    ],
-    coverImage: "/projects/vit-pv-defect-classification/cover.svg",
-    coverAlt: "ViT PV defect classification cover",
-    links: [],
-    metrics: [
-      {
-        label: "Test accuracy",
-        value: "89.3%",
-        context: "Full fine-tuning",
-      },
-      {
-        label: "Params trainable",
-        value: "24%",
-        context: "Partial unfreezing",
-      },
-      {
-        label: "Dataset",
-        value: "30k images",
-        context: "12 balanced classes",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/vit-pv-defect-classification/cover.svg",
-        alt: "PV defect classification cover",
-        caption: "Project cover (replace with confusion matrix).",
-      },
-    ],
-  },
-  {
-    id: "perceptual-loss-turbulence-robust",
-    title: "Perceptual Loss Engineering & Turbulence-Robust Metric",
-    year: 2025,
-    category: "Deep Learning",
-    summary:
-      "Systematic study of VGG-based perceptual losses under shifts, noise, and depth-aware atmospheric turbulence, with a new turbulence-robust weighting scheme.",
-    role: "Research",
-    tags: ["Perceptual Loss", "VGG16", "Image Quality", "Simulation"],
-    tech: ["PyTorch", "VGG-16", "NumPy", "DAATSim"],
-    highlights: [
-      "Compared pixel-wise losses with VGG-16 feature losses and showed 33-92× lower sensitivity to small translations and much higher robustness to additive noise.",
-      "Integrated a depth-aware atmospheric turbulence simulator to create a dataset of turbulence-degraded images with realistic, depth-dependent distortions.",
-      "Designed a multi-layer perceptual loss with optimized layer weights that reduced turbulence sensitivity by roughly 24% compared to uniform VGG-layer weighting.",
-    ],
-    coverImage: "/projects/perceptual-loss-turbulence-robust/cover.svg",
-    coverAlt: "Perceptual loss turbulence robustness cover",
-    links: [],
-    metrics: [
-      {
-        label: "Shift robustness",
-        value: "33-92×",
-        context: "Vs pixel loss",
-      },
-      {
-        label: "Turbulence sensitivity",
-        value: "-24%",
-        context: "Optimized layer weights",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/perceptual-loss-turbulence-robust/cover.svg",
-        alt: "Perceptual loss cover",
-        caption: "Project cover (replace with qualitative results).",
-      },
-    ],
-  },
-  {
-    id: "gru-music-generator",
-    title: "GRU-Based Music Generator",
-    year: 2025,
-    category: "Generative Modeling",
-    summary:
-      "Sequence model that generates symbolic music with controllable temperature and musical parameters.",
-    role: "ML Engineer",
-    tags: ["RNN", "GRU", "Music Generation", "Sequence Modeling"],
-    tech: ["TensorFlow or PyTorch", "Python", "MIDI Tooling"],
-    highlights: [
-      "Implemented a GRU-based recurrent network for symbolic music generation, trained on MIDI-like sequences.",
-      "Exposed parameters such as temperature and pitch-shift to control diversity and transposition of generated sequences.",
-      "Generated 10-second clips and analyzed how hyperparameters affect musical structure, repetition, and variability.",
-    ],
-    coverImage: "/projects/gru-music-generator/cover.svg",
-    coverAlt: "GRU music generator cover",
-    links: [],
-    metrics: [],
-    media: [
-      {
-        type: "image",
-        src: "/projects/gru-music-generator/cover.svg",
-        alt: "GRU music generator cover",
-        caption: "Project cover (replace with audio visualizations).",
-      },
-    ],
-  },
-  {
-    id: "siren-image-fitting-custom-activation",
-    title: "SIREN Image Fitting with Custom Activation",
-    year: 2025,
-    category: "Neural Fields",
-    summary:
-      "High-resolution image representation using sinusoidal representation networks and a custom activation variant.",
-    role: "Research",
-    tags: ["SIREN", "Implicit Representations", "Neural Fields"],
-    tech: ["PyTorch", "SIREN", "Python"],
-    highlights: [
-      "Reproduced SIREN to fit 1024×1024 images as continuous implicit neural representations.",
-      "Designed and analyzed a custom activation function to replace the sinusoid and compared its reconstruction quality and convergence behavior against SIREN.",
-      "Ran ablation experiments to validate hypotheses about why sinusoidal activations work so well for implicit image representations.",
-    ],
-    coverImage: "/projects/siren-image-fitting-custom-activation/cover.svg",
-    coverAlt: "SIREN image fitting cover",
-    links: [],
-    metrics: [
-      {
-        label: "Resolution",
-        value: "1024×1024",
-        context: "Continuous implicit image",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/siren-image-fitting-custom-activation/cover.svg",
-        alt: "SIREN cover",
-        caption: "Project cover (replace with reconstructions).",
-      },
-    ],
-  },
-  {
-    id: "vit-segmentation-depth-lens-blur",
-    title: "Vision Transformer Segmentation & Depth-Based Lens Blur",
-    year: 2025,
-    category: "Computer Vision",
-    summary:
-      "Selfie segmentation and realistic lens-blur simulation using pretrained segmentation and monocular depth-estimation models.",
-    role: "ML Engineer",
-    tags: ["Segmentation", "Depth Estimation", "Image Effects"],
-    tech: ["Hugging Face Transformers", "Monocular Depth Models", "PyTorch", "Python"],
-    highlights: [
-      "Used a Hugging Face segmentation model to isolate a person from a complex background in 512×512 selfies.",
-      "Applied both fixed Gaussian background blur and depth-based variable blur where blur intensity scales with estimated depth.",
-      "Packaged the pipeline into a reproducible Colab notebook and optional Hugging Face Space UI for interactive experimentation.",
-    ],
-    coverImage: "/projects/vit-segmentation-depth-lens-blur/cover.svg",
-    coverAlt: "Segmentation and depth blur cover",
-    links: [],
-    metrics: [
-      {
-        label: "Image size",
-        value: "512×512",
-        context: "Selfie segmentation",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/vit-segmentation-depth-lens-blur/cover.svg",
-        alt: "Segmentation cover",
-        caption: "Project cover (replace with before/after).",
-      },
-    ],
-  },
-  {
-    id: "gans-and-diffusion-animal-dataset",
-    title: "GAN & Diffusion Experiments on Custom Datasets",
-    year: 2025,
-    category: "Generative Modeling",
-    summary:
-      "Comparative study of DCGAN, Progressive GAN, and diffusion models on faces, synthetic colored squares, and a custom animal image dataset.",
-    role: "Research & Engineering",
-    tags: ["GANs", "Progressive GAN", "Diffusion Models", "Generative Modeling"],
-    tech: ["PyTorch", "DCGAN", "Progressive GAN", "Diffusion", "Python"],
-    highlights: [
-      "Trained a DCGAN on standard face datasets and a custom 64×64 colored-squares dataset to study sample complexity and mode collapse.",
-      "Collected a 1k-5k image dataset of a chosen animal at 256×256 resolution and trained both DCGAN and Progressive GAN with augmentation and architecture tweaks.",
-      "Implemented a diffusion model on the same animal dataset, visualizing the forward noising and reverse denoising processes and comparing sample quality against GAN-based approaches.",
-    ],
-    coverImage: "/projects/gans-and-diffusion-animal-dataset/cover.svg",
-    coverAlt: "GANs and diffusion experiments cover",
-    links: [],
-    metrics: [
-      {
-        label: "Dataset size",
-        value: "1k-5k",
-        context: "Custom animal images",
-      },
-      {
-        label: "Resolution",
-        value: "256×256",
-        context: "For GAN/Diffusion runs",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/gans-and-diffusion-animal-dataset/cover.svg",
-        alt: "GAN and diffusion cover",
-        caption: "Project cover (replace with samples grid).",
-      },
-    ],
-  },
+  // {
+  //   id: "resnet36-smoothrelu-imagenet",
+  //   title: "Custom ResNet-36 + SmoothReLU on ImageNet",
+  //   year: 2025,
+  //   category: "Deep Learning",
+  //   summary:
+  //     "Custom ResNet-36 architecture and SmoothReLU activation that improve ImageNet-scale training from scratch with minimal parameter overhead.",
+  //   role: "DL Research",
+  //   tags: ["CNNs", "ResNet", "Activation Functions", "ImageNet"],
+  //   tech: ["PyTorch", "ResNet", "CUDA", "Python"],
+  //   highlights: [
+  //     "Designed a ResNet-36 architecture that deepens the mid-level feature stage, improving validation accuracy by about 0.6 percentage points over ResNet-34 with roughly 5.5% more parameters.",
+  //     "Developed SmoothReLU, a smooth non-zero-negative-slope activation function, improving validation accuracy by around 1.6 percentage points over ReLU without measurable training-time overhead.",
+  //     "Scaled training to a 650-class ImageNet subset (~832k images), reaching about 63.7% Top-1 and 84.8% Top-5 accuracy from scratch on an A100 GPU.",
+  //   ],
+  //   coverImage: "/projects/resnet36-smoothrelu-imagenet/cover.svg",
+  //   coverAlt: "ResNet-36 SmoothReLU cover",
+  //   links: [],
+  //   metrics: [
+  //     {
+  //       label: "Top-1",
+  //       value: "63.7%",
+  //       context: "650-class ImageNet subset",
+  //     },
+  //     {
+  //       label: "Top-5",
+  //       value: "84.8%",
+  //       context: "From scratch on A100",
+  //     },
+  //     {
+  //       label: "Δ vs ResNet-34",
+  //       value: "+0.6 pp",
+  //       context: "With ~5.5% more params",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/resnet36-smoothrelu-imagenet/cover.svg",
+  //       alt: "ResNet-36 cover",
+  //       caption: "Project cover (replace with training curves).",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "vit-pv-defect-classification",
+  //   title: "Vision Transformer PV Defect Classification",
+  //   year: 2025,
+  //   category: "Deep Learning",
+  //   summary:
+  //     "Fine-tuning ViT-B/32 on a class-balanced photovoltaic infrared defect dataset to achieve high-accuracy multi-class classification.",
+  //   role: "ML Engineer",
+  //   tags: ["Vision Transformer", "Imbalanced Data", "Transfer Learning", "PV Defects"],
+  //   tech: ["ViT-B/32", "PyTorch", "Torchvision", "Python"],
+  //   highlights: [
+  //     "Transformed a severely imbalanced 20k-image PV dataset (57:1 class ratio) into a balanced 30k-image dataset (12 classes) using unsharp masking and targeted data augmentation.",
+  //     "Benchmarked head-only, partial-block, and full fine-tuning strategies for ViT-B/32, achieving about 89.3% test accuracy with full fine-tuning.",
+  //     "Showed that partial block unfreezing reaches roughly 84.4% accuracy with around 24% of parameters trainable, offering a strong accuracy-compute trade-off.",
+  //   ],
+  //   coverImage: "/projects/vit-pv-defect-classification/cover.svg",
+  //   coverAlt: "ViT PV defect classification cover",
+  //   links: [],
+  //   metrics: [
+  //     {
+  //       label: "Test accuracy",
+  //       value: "89.3%",
+  //       context: "Full fine-tuning",
+  //     },
+  //     {
+  //       label: "Params trainable",
+  //       value: "24%",
+  //       context: "Partial unfreezing",
+  //     },
+  //     {
+  //       label: "Dataset",
+  //       value: "30k images",
+  //       context: "12 balanced classes",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/vit-pv-defect-classification/cover.svg",
+  //       alt: "PV defect classification cover",
+  //       caption: "Project cover (replace with confusion matrix).",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "perceptual-loss-turbulence-robust",
+  //   title: "Perceptual Loss Engineering & Turbulence-Robust Metric",
+  //   year: 2025,
+  //   category: "Deep Learning",
+  //   summary:
+  //     "Systematic study of VGG-based perceptual losses under shifts, noise, and depth-aware atmospheric turbulence, with a new turbulence-robust weighting scheme.",
+  //   role: "Research",
+  //   tags: ["Perceptual Loss", "VGG16", "Image Quality", "Simulation"],
+  //   tech: ["PyTorch", "VGG-16", "NumPy", "DAATSim"],
+  //   highlights: [
+  //     "Compared pixel-wise losses with VGG-16 feature losses and showed 33-92× lower sensitivity to small translations and much higher robustness to additive noise.",
+  //     "Integrated a depth-aware atmospheric turbulence simulator to create a dataset of turbulence-degraded images with realistic, depth-dependent distortions.",
+  //     "Designed a multi-layer perceptual loss with optimized layer weights that reduced turbulence sensitivity by roughly 24% compared to uniform VGG-layer weighting.",
+  //   ],
+  //   coverImage: "/projects/perceptual-loss-turbulence-robust/cover.svg",
+  //   coverAlt: "Perceptual loss turbulence robustness cover",
+  //   links: [],
+  //   metrics: [
+  //     {
+  //       label: "Shift robustness",
+  //       value: "33-92×",
+  //       context: "Vs pixel loss",
+  //     },
+  //     {
+  //       label: "Turbulence sensitivity",
+  //       value: "-24%",
+  //       context: "Optimized layer weights",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/perceptual-loss-turbulence-robust/cover.svg",
+  //       alt: "Perceptual loss cover",
+  //       caption: "Project cover (replace with qualitative results).",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "gru-music-generator",
+  //   title: "GRU-Based Music Generator",
+  //   year: 2025,
+  //   category: "Generative Modeling",
+  //   summary:
+  //     "Sequence model that generates symbolic music with controllable temperature and musical parameters.",
+  //   role: "ML Engineer",
+  //   tags: ["RNN", "GRU", "Music Generation", "Sequence Modeling"],
+  //   tech: ["TensorFlow or PyTorch", "Python", "MIDI Tooling"],
+  //   highlights: [
+  //     "Implemented a GRU-based recurrent network for symbolic music generation, trained on MIDI-like sequences.",
+  //     "Exposed parameters such as temperature and pitch-shift to control diversity and transposition of generated sequences.",
+  //     "Generated 10-second clips and analyzed how hyperparameters affect musical structure, repetition, and variability.",
+  //   ],
+  //   coverImage: "/projects/gru-music-generator/cover.svg",
+  //   coverAlt: "GRU music generator cover",
+  //   links: [],
+  //   metrics: [],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/gru-music-generator/cover.svg",
+  //       alt: "GRU music generator cover",
+  //       caption: "Project cover (replace with audio visualizations).",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "siren-image-fitting-custom-activation",
+  //   title: "SIREN Image Fitting with Custom Activation",
+  //   year: 2025,
+  //   category: "Neural Fields",
+  //   summary:
+  //     "High-resolution image representation using sinusoidal representation networks and a custom activation variant.",
+  //   role: "Research",
+  //   tags: ["SIREN", "Implicit Representations", "Neural Fields"],
+  //   tech: ["PyTorch", "SIREN", "Python"],
+  //   highlights: [
+  //     "Reproduced SIREN to fit 1024×1024 images as continuous implicit neural representations.",
+  //     "Designed and analyzed a custom activation function to replace the sinusoid and compared its reconstruction quality and convergence behavior against SIREN.",
+  //     "Ran ablation experiments to validate hypotheses about why sinusoidal activations work so well for implicit image representations.",
+  //   ],
+  //   coverImage: "/projects/siren-image-fitting-custom-activation/cover.svg",
+  //   coverAlt: "SIREN image fitting cover",
+  //   links: [],
+  //   metrics: [
+  //     {
+  //       label: "Resolution",
+  //       value: "1024×1024",
+  //       context: "Continuous implicit image",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/siren-image-fitting-custom-activation/cover.svg",
+  //       alt: "SIREN cover",
+  //       caption: "Project cover (replace with reconstructions).",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "vit-segmentation-depth-lens-blur",
+  //   title: "Vision Transformer Segmentation & Depth-Based Lens Blur",
+  //   year: 2025,
+  //   category: "Computer Vision",
+  //   summary:
+  //     "Selfie segmentation and realistic lens-blur simulation using pretrained segmentation and monocular depth-estimation models.",
+  //   role: "ML Engineer",
+  //   tags: ["Segmentation", "Depth Estimation", "Image Effects"],
+  //   tech: ["Hugging Face Transformers", "Monocular Depth Models", "PyTorch", "Python"],
+  //   highlights: [
+  //     "Used a Hugging Face segmentation model to isolate a person from a complex background in 512×512 selfies.",
+  //     "Applied both fixed Gaussian background blur and depth-based variable blur where blur intensity scales with estimated depth.",
+  //     "Packaged the pipeline into a reproducible Colab notebook and optional Hugging Face Space UI for interactive experimentation.",
+  //   ],
+  //   coverImage: "/projects/vit-segmentation-depth-lens-blur/cover.svg",
+  //   coverAlt: "Segmentation and depth blur cover",
+  //   links: [],
+  //   metrics: [
+  //     {
+  //       label: "Image size",
+  //       value: "512×512",
+  //       context: "Selfie segmentation",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/vit-segmentation-depth-lens-blur/cover.svg",
+  //       alt: "Segmentation cover",
+  //       caption: "Project cover (replace with before/after).",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "gans-and-diffusion-animal-dataset",
+  //   title: "GAN & Diffusion Experiments on Custom Datasets",
+  //   year: 2025,
+  //   category: "Generative Modeling",
+  //   summary:
+  //     "Comparative study of DCGAN, Progressive GAN, and diffusion models on faces, synthetic colored squares, and a custom animal image dataset.",
+  //   role: "Research & Engineering",
+  //   tags: ["GANs", "Progressive GAN", "Diffusion Models", "Generative Modeling"],
+  //   tech: ["PyTorch", "DCGAN", "Progressive GAN", "Diffusion", "Python"],
+  //   highlights: [
+  //     "Trained a DCGAN on standard face datasets and a custom 64×64 colored-squares dataset to study sample complexity and mode collapse.",
+  //     "Collected a 1k-5k image dataset of a chosen animal at 256×256 resolution and trained both DCGAN and Progressive GAN with augmentation and architecture tweaks.",
+  //     "Implemented a diffusion model on the same animal dataset, visualizing the forward noising and reverse denoising processes and comparing sample quality against GAN-based approaches.",
+  //   ],
+  //   coverImage: "/projects/gans-and-diffusion-animal-dataset/cover.svg",
+  //   coverAlt: "GANs and diffusion experiments cover",
+  //   links: [],
+  //   metrics: [
+  //     {
+  //       label: "Dataset size",
+  //       value: "1k-5k",
+  //       context: "Custom animal images",
+  //     },
+  //     {
+  //       label: "Resolution",
+  //       value: "256×256",
+  //       context: "For GAN/Diffusion runs",
+  //     },
+  //   ],
+  //   media: [
+  //     {
+  //       type: "image",
+  //       src: "/projects/gans-and-diffusion-animal-dataset/cover.svg",
+  //       alt: "GAN and diffusion cover",
+  //       caption: "Project cover (replace with samples grid).",
+  //     },
+  //   ],
+  // },
 ];
