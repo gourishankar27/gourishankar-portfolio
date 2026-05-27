@@ -89,7 +89,7 @@ export default function AboutPage() {
       name: siteConfig.name,
       url: siteConfig.url,
       email: siteConfig.email,
-      telephone: siteConfig.phone,
+      // telephone: siteConfig.phone,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Tempe",

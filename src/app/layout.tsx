@@ -87,7 +87,7 @@ export default function RootLayout({
         url: siteConfig.url,
         jobTitle: "Robotics & AI Software Engineer",
         email: siteConfig.email,
-        telephone: siteConfig.phone,
+        // telephone: siteConfig.phone,
         address: {
           "@type": "PostalAddress",
           addressLocality: "Tempe",
