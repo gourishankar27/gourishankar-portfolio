@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+<title id="title">Mission-X mecanum inverse kinematics</title><desc id="description">Body-frame velocity and yaw map to four wheel angular velocities using half dimensions. This diagram represents code, not measured hardware behavior.</desc>
+<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#14233a"/></linearGradient>
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#4da3ff" stroke-opacity=".08"/></pattern>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4da3ff"/></marker>
+  <marker id="proposal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ff6b6b"/></marker>
+</defs>
+<rect width="1600" height="900" rx="30" fill="url(#bg)"/><rect width="1600" height="900" rx="30" fill="url(#grid)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="80" y="90" font-size="23" fill="#4da3ff" >MISSION-X / IMPLEMENTED INVERSE KINEMATICS</text>
+<text x="80" y="160" font-size="48" fill="#e7eaf0" font-weight="700">Body velocity → wheel angular velocity</text>
+<rect x="190" y="280" width="440" height="390" rx="35" fill="#121827" stroke="#4da3ff" stroke-width="3"/>
+<g fill="#243651" stroke="#4da3ff" stroke-width="3"><rect x="145" y="300" width="85" height="130" rx="25"/><rect x="590" y="300" width="85" height="130" rx="25"/><rect x="145" y="520" width="85" height="130" rx="25"/><rect x="590" y="520" width="85" height="130" rx="25"/></g>
+<text x="100" y="275" font-size="28" fill="#cbd5e1" >FL</text><text x="640" y="275" font-size="28" fill="#cbd5e1" >FR</text><text x="100" y="710" font-size="28" fill="#cbd5e1" >RL</text><text x="640" y="710" font-size="28" fill="#cbd5e1" >RR</text>
+<path d="M410 510V345M410 510H290" stroke="#4da3ff" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="430" y="370" font-size="30" fill="#cbd5e1" >vx</text><text x="270" y="490" font-size="30" fill="#cbd5e1" >vy</text><text x="365" y="580" font-size="27" fill="#cbd5e1" >yaw ω</text>
+<text x="790" y="305" font-size="29" fill="#4da3ff" >k = wheelbase / 2 + separation / 2</text>
+<text x="790" y="385" font-size="34" fill="#e7eaf0" >ωFL = (vx − vy − kω) / r</text>
+<text x="790" y="455" font-size="34" fill="#e7eaf0" >ωFR = (vx + vy + kω) / r</text>
+<text x="790" y="525" font-size="34" fill="#e7eaf0" >ωRL = (vx + vy − kω) / r</text>
+<text x="790" y="595" font-size="34" fill="#e7eaf0" >ωRR = (vx − vy + kω) / r</text>
+<text x="790" y="675" font-size="25" fill="#cbd5e1" >vx, vy: m/s · yaw rate: rad/s · r: m</text>
+<text x="80" y="805" font-size="25" fill="#cbd5e1" >Kinematic diagram derived from base_driver.py. Graph following currently sets vy = 0.</text>
+<text x="80" y="850" font-size="23" fill="#cbd5e1" >Wheel-speed interfaces do not establish encoder feedback, calibrated motor speed or physical accuracy.</text>
+</g></svg>

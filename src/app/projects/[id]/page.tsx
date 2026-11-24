@@ -150,8 +150,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
       </header>
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
-        <main className="space-y-10">
+      <details className="lg:hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+        <summary className="cursor-pointer text-sm font-semibold text-[color:var(--text)]">
+          On this page
+        </summary>
+        <div className="mt-3">
+          <ProjectTOC sections={sections} />
+        </div>
+      </details>
+
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <main className="min-w-0 space-y-10">
           {project.highlights && project.highlights.length > 0 && (
             <section aria-label="Highlights">
               <h2 className="text-sm font-semibold text-[color:var(--muted)] uppercase tracking-[0.18em] mb-3">
@@ -201,7 +210,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </main>
 
         <aside className="hidden lg:block">
-          <div className="sticky top-24 space-y-4">
+          <div className="sticky top-24 max-h-[calc(100dvh-7rem)] overflow-y-auto space-y-4">
             <ProjectTOC sections={sections} />
 
             {project.coverImage && (

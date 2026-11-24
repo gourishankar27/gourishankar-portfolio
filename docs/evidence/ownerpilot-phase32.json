@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/gourishankar27/ownerpilot",
+  "branch": "main",
+  "commit": "0883e71d33f502ea6d1f9d92c2c36ae6d50903e7",
+  "source_file": "docs/rfq/phase3_2/EVALUATION_RESULTS.md",
+  "methodology": "docs/rfq/phase3_2/EVALUATION_METHODOLOGY.md",
+  "model": "qwen3:8b",
+  "corpus": "Frozen fictional procurement corpus; 16 development, 20 validation, 60 held-out RFQs",
+  "target_verified_complete": 57,
+  "selected_configuration": "D/four",
+  "variants": [
+    { "label": "Frozen Phase 3.1", "rfqs": 60, "verified_complete": 4, "lines": 324, "source_covered_lines": 51 },
+    { "label": "A · native batching", "rfqs": 60, "verified_complete": 51, "lines": 324, "source_covered_lines": 323 },
+    { "label": "B · coverage native", "rfqs": 60, "verified_complete": 56, "lines": 324, "source_covered_lines": 324 },
+    { "label": "D · selected hybrid", "rfqs": 60, "verified_complete": 52, "lines": 324, "source_covered_lines": 324 }
+  ],
+  "independent_oracle": { "executions": 240, "materialized_facts": 5274, "tool_receipts": 651, "unsupported_or_misbound_accepted_facts": 0, "unauthorized_successful_tools": 0 },
+  "limitation": "Observed controlled finite-sample outcomes; not production accuracy, safety, or latency guarantees. Source coverage, verified research completion and quote readiness are distinct."
+}

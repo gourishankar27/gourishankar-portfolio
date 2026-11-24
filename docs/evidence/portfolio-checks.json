@@ -1,0 +1,27 @@
+{
+  "baseline_commit": "d575a75407e907a6ee3ccaddad74388f81c981b3",
+  "data_checks": "PASS",
+  "projects": [
+    "event-based-star-tracking",
+    "ownerpilot-ai-operating-copilot",
+    "vision-guided-diff-physics",
+    "adaptive-digital-assistant",
+    "mission-x-citycar",
+    "autonomous-drone-navigation",
+    "automated-goalie",
+    "sp500-deep-learning-forecasting"
+  ],
+  "unrelated_content": "All four unrelated featured projects and all mini-project data match baseline, excluding requested order fields.",
+  "local_assets": 44,
+  "http": {
+    "status": "PASS",
+    "origin": "http://127.0.0.1:3100",
+    "project_routes": 8,
+    "local_images": 44,
+    "og_images": 8,
+    "initial_filter_queries": 6,
+    "sitemap": "PASS",
+    "unknown_route": 404,
+    "browser_interaction": "UNEXECUTED; HTTP initial-state checks do not exercise hydration, typing, click, debounce or history."
+  }
+}

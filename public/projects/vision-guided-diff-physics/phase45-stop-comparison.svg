@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="648pt" viewBox="0 0 1152 648" xmlns="http://www.w3.org/2000/svg" version="1.1" role="img" aria-labelledby="figure-title figure-description">
+<title id="figure-title">Phase 4.5 held-out stopping forecasts</title>
+<desc id="figure-description">Recomputed RMSE in millimeters over 64 independent condition errors; training mean and fitted friction baselines are retained.</desc>
+ <title>Phase 4.5 held-out stopping forecasts</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Phase 4.5 held-out stopping forecasts</dc:title>
+    <dc:description>Recomputed RMSE in millimeters over 64 independent condition errors; training mean and fitted friction baselines are retained.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 648 
+L 1152 648 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #0b1020"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 391.68 518.4 
+L 1059.84 518.4 
+L 1059.84 136.08 
+L 391.68 136.08 
+z
+" style="fill: #0b1020"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 391.68 518.4 
+L 391.68 136.08 
+" clip-path="url(#paadf694754)" style="fill: none; stroke: #46516a; stroke-opacity: 0.35; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m94f8cd5f1b" d="M 0 0 
+L 0 3.5 
+" style="stroke: #cbd5e1; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m94f8cd5f1b" x="391.68" y="518.4" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="391.68" y="535.277969" transform="rotate(-0 391.68 535.277969)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 517.747925 518.4 
+L 517.747925 136.08 
+" clip-path="url(#paadf694754)" style="fill: none; stroke: #46516a; stroke-opacity: 0.35; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m94f8cd5f1b" x="517.747925" y="518.4" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="517.747925" y="535.277969" transform="rotate(-0 517.747925 535.277969)">1</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 643.815849 518.4 
+L 643.815849 136.08 
+" clip-path="url(#paadf694754)" style="fill: none; stroke: #46516a; stroke-opacity: 0.35; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m94f8cd5f1b" x="643.815849" y="518.4" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="643.815849" y="535.277969" transform="rotate(-0 643.815849 535.277969)">2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 769.883774 518.4 
+L 769.883774 136.08 
+" clip-path="url(#paadf694754)" style="fill: none; stroke: #46516a; stroke-opacity: 0.35; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m94f8cd5f1b" x="769.883774" y="518.4" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="769.883774" y="535.277969" transform="rotate(-0 769.883774 535.277969)">3</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 895.951698 518.4 
+L 895.951698 136.08 
+" clip-path="url(#paadf694754)" style="fill: none; stroke: #46516a; stroke-opacity: 0.35; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m94f8cd5f1b" x="895.951698" y="518.4" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="895.951698" y="535.277969" transform="rotate(-0 895.951698 535.277969)">4</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 1022.019623 518.4 
+L 1022.019623 136.08 
+" clip-path="url(#paadf694754)" style="fill: none; stroke: #46516a; stroke-opacity: 0.35; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m94f8cd5f1b" x="1022.019623" y="518.4" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="1022.019623" y="535.277969" transform="rotate(-0 1022.019623 535.277969)">5</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #cbd5e1" x="725.76" y="561.859531" transform="rotate(-0 725.76 561.859531)">Euclidean stop-position RMSE (mm)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_13">
+      <defs>
+       <path id="mb376767179" d="M 0 0 
+L -3.5 0 
+" style="stroke: #cbd5e1; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mb376767179" x="391.68" y="175.465486" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #cbd5e1" x="384.68" y="180.404471" transform="rotate(-0 384.68 180.404471)">Heuristic release + nominal friction</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#mb376767179" x="391.68" y="251.352743" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #cbd5e1" x="384.68" y="256.291728" transform="rotate(-0 384.68 256.291728)">Learned release + nominal friction</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#mb376767179" x="391.68" y="327.24" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #cbd5e1" x="384.68" y="332.178984" transform="rotate(-0 384.68 332.178984)">Learned + training-mean friction</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#mb376767179" x="391.68" y="403.127257" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #cbd5e1" x="384.68" y="408.066241" transform="rotate(-0 384.68 408.066241)">Learned + bounded-fit friction</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#mb376767179" x="391.68" y="479.014514" style="fill: #cbd5e1; stroke: #cbd5e1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #cbd5e1" x="384.68" y="483.953498" transform="rotate(-0 384.68 483.953498)">Learned + Warp-fit friction</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 391.68 153.458182 
+L 958.943288 153.458182 
+L 958.943288 197.472791 
+L 391.68 197.472791 
+z
+" clip-path="url(#paadf694754)" style="fill: #ff6b6b"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 391.68 229.345439 
+L 956.109853 229.345439 
+L 956.109853 273.360048 
+L 391.68 273.360048 
+z
+" clip-path="url(#paadf694754)" style="fill: #bd879b"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 391.68 305.232696 
+L 749.55262 305.232696 
+L 749.55262 349.247304 
+L 391.68 349.247304 
+z
+" clip-path="url(#paadf694754)" style="fill: #9aa4b2"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 391.68 381.119952 
+L 748.936661 381.119952 
+L 748.936661 425.134561 
+L 391.68 425.134561 
+z
+" clip-path="url(#paadf694754)" style="fill: #4da3ff"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 391.68 457.007209 
+L 748.936656 457.007209 
+L 748.936656 501.021818 
+L 391.68 501.021818 
+z
+" clip-path="url(#paadf694754)" style="fill: #82c4ff"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 391.68 518.4 
+L 391.68 136.08 
+" style="fill: none; stroke: #46516a; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 391.68 518.4 
+L 1059.84 518.4 
+" style="fill: none; stroke: #46516a; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="968.943288" y="179.604549" transform="rotate(-0 968.943288 179.604549)">4.500 mm</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="966.109853" y="255.491806" transform="rotate(-0 966.109853 255.491806)">4.477 mm</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="759.55262" y="331.379062" transform="rotate(-0 759.55262 331.379062)">2.839 mm</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="758.936661" y="407.266319" transform="rotate(-0 758.936661 407.266319)">2.834 mm</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="758.936656" y="483.153576" transform="rotate(-0 758.936656 483.153576)">2.834 mm</text>
+   </g>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="69.12" y="51.84" transform="rotate(-0 69.12 51.84)">Phase 4.5 · held-out stop forecasts</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #cbd5e1" x="69.12" y="90.72" transform="rotate(-0 69.12 90.72)">64 independent Gazebo conditions · frozen models · identical recorded actions</text>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e7eaf0" x="69.12" y="589.68" transform="rotate(-0 69.12 589.68)">The training-mean baseline nearly matches both fitted models. No demonstrated gradient accuracy advantage.</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #9aa4b2" x="69.12" y="618.84" transform="rotate(-0 69.12 618.84)">Source: run-20261103T213021Z / evaluate-001 / per-episode.csv · Forecast errors are not controller success rates.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="paadf694754">
+   <rect x="391.68" y="136.08" width="668.16" height="382.32"/>
+  </clipPath>
+ </defs>
+</svg>

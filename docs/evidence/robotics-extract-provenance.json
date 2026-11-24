@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/gourishankar27/Vision-Guided-Robotic-Manipulation",
+  "source_commit": "b033f38f7d9c4807ef5e04135ef766156a2598e1",
+  "note": "Reports/source are committed at this SHA. Raw results were inspected read-only in the matching clean WSL checkout and are not tracked in Git. Extracts omit host paths and retain original numeric strings.",
+  "units": {
+    "phase45_errors": "m (Euclidean stop-position error per condition)",
+    "phase6_displacements": "mm",
+    "phase6_angles": "degrees"
+  },
+  "artifacts": [
+    {
+      "source_artifact": "results/phase45/run-20261103T213021Z/analysis/evaluate-001/per-episode.csv",
+      "sha256": "6749f733cd4d02c56f6ba6699461e41c861bb394b2e07d20a7c88d9de3c98e73"
+    },
+    {
+      "source_artifact": "results/phase6a1/run-20261105T015355Z/geometry-v4/analysis/report-002/conditions.csv",
+      "sha256": "19c5738324658a464ba988f93e2d869be3da30297aeec7b5e2d6f11b8405b2e4"
+    }
+  ]
+}

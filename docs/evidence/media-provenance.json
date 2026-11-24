@@ -1,0 +1,52 @@
+[
+  {
+    "repository": "ownerpilot",
+    "source_commit": "0883e71d33f502ea6d1f9d92c2c36ae6d50903e7",
+    "source_artifact": "docs/rfq/phase3_2/screenshots/native-2-line.png",
+    "source_sha256": "3ace663116bcf0086219e98463817155d3c78a5b7b0aec16641acc0543edb8e6",
+    "destination": "/projects/ownerpilot-ai-operating-copilot/research-coverage.webp",
+    "crop": {
+      "left": 0,
+      "top": 240,
+      "width": 846,
+      "height": 930
+    },
+    "note": "Authentic fictional-source demonstration; top research status, coverage, and receipt activity. Crop only.",
+    "output_bytes": 99034
+  },
+  {
+    "repository": "ownerpilot",
+    "source_commit": "0883e71d33f502ea6d1f9d92c2c36ae6d50903e7",
+    "source_artifact": "docs/rfq/phase3_2/screenshots/regression/catalog-match.png",
+    "source_sha256": "7b5e7fb5eac9b76356be2883b7aa33db146c34f55d83f0411c85a432b032e7c4",
+    "destination": "/projects/ownerpilot-ai-operating-copilot/catalog-review.webp",
+    "crop": {
+      "left": 448,
+      "top": 885,
+      "width": 890,
+      "height": 1285
+    },
+    "note": "Authentic fictional catalog workflow. Crop omits the synthetic account/sidebar and unrelated page regions.",
+    "output_bytes": 82038
+  },
+  {
+    "repository": "Vision-Guided-Robotic-Manipulation",
+    "source_commit": "b033f38f7d9c4807ef5e04135ef766156a2598e1",
+    "source_artifact": "results/phase6a1/run-20261105T015355Z/geometry-v4/trials/confirmation6a1-v2-005/attempt-001/gui-contact.png",
+    "source_sha256": "612c8af97dc57a0310565e35254ed44f0a4ead560b2695ee59b481984c2c2531",
+    "destination": "/projects/vision-guided-diff-physics/gazebo-contact.webp",
+    "crop": null,
+    "note": "Actual simulated confirmation contact capture, unchanged framing. Raw WSL artifact is untracked; source/report SHA is recorded separately.",
+    "output_bytes": 28394
+  },
+  {
+    "repository": "Vision-Guided-Robotic-Manipulation",
+    "source_commit": "b033f38f7d9c4807ef5e04135ef766156a2598e1",
+    "source_artifact": "results/phase6a1/run-20261105T015355Z/geometry-v4/trials/confirmation6a1-v2-005/attempt-001/rviz-contact.png",
+    "source_sha256": "44cfc2ef07a5de3a32c21b437fc127937645e09fb9ddcb01330133a7c64a6f7f",
+    "destination": "/projects/vision-guided-diff-physics/rviz-contact.webp",
+    "crop": null,
+    "note": "Actual simulated confirmation contact capture, unchanged framing. Raw WSL artifact is untracked; source/report SHA is recorded separately.",
+    "output_bytes": 15344
+  }
+]

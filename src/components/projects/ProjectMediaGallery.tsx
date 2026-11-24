@@ -30,7 +30,7 @@ function MediaCard({
               <img
                 src={media.src}
                 alt={media.alt ?? "Project media"}
-                className="h-full w-full object-cover cursor-zoom-in"
+                className="h-full w-full object-contain cursor-zoom-in"
                 loading="lazy"
               />
             </div>
@@ -95,6 +95,7 @@ function Lightbox({
   onNext: () => void;
 }) {
   const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
+  const dialogRef = React.useRef<HTMLDivElement | null>(null);
   const restoreFocusRef = React.useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
@@ -108,6 +109,21 @@ function Lightbox({
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") onPrev();
       if (e.key === "ArrowRight") onNext();
+      if (e.key === "Tab") {
+        const controls = dialogRef.current?.querySelectorAll<HTMLElement>(
+          'button, a[href], [tabindex="0"]'
+        );
+        if (!controls?.length) return;
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     }
 
     window.addEventListener("keydown", onKeyDown);
@@ -122,6 +138,7 @@ function Lightbox({
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-label="Media lightbox"
@@ -203,10 +220,8 @@ function Lightbox({
 }
 
 export function ProjectMediaGallery({ media }: { media?: ProjectMedia[] }) {
-  if (!media || media.length === 0) return null;
-
   const images = React.useMemo(
-    () => media.filter((m) => m.type === "image"),
+    () => (media ?? []).filter((m) => m.type === "image"),
     [media]
   );
 
@@ -217,23 +232,25 @@ export function ProjectMediaGallery({ media }: { media?: ProjectMedia[] }) {
     if (idx >= 0) setActiveImageIndex(idx);
   }
 
-  function close() {
+  const close = React.useCallback(() => {
     setActiveImageIndex(null);
-  }
+  }, []);
 
-  function prev() {
+  const prev = React.useCallback(() => {
     setActiveImageIndex((idx) => {
       if (idx === null) return null;
       return (idx - 1 + images.length) % images.length;
     });
-  }
+  }, [images.length]);
 
-  function next() {
+  const next = React.useCallback(() => {
     setActiveImageIndex((idx) => {
       if (idx === null) return null;
       return (idx + 1) % images.length;
     });
-  }
+  }, [images.length]);
+
+  if (!media || media.length === 0) return null;
 
   return (
     <section aria-label="Project media">
