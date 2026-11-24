@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-24",
+  "timezone": "America/Phoenix",
+  "status": "UNEXECUTED",
+  "attempted_target": "Local production portfolio",
+  "blockers": [
+    "Browser tab creation failed: The browser access host is unavailable.",
+    "Browser inventory exposed no browser host.",
+    "Native Chrome selection was stopped because Computer Use could not confidently determine the current browser URL to enforce policy."
+  ],
+  "viewports": [
+    { "width": 1920, "height": 1080, "status": "UNEXECUTED" },
+    { "width": 1440, "height": 900, "status": "UNEXECUTED" },
+    { "width": 768, "height": 1024, "status": "UNEXECUTED" },
+    { "width": 390, "height": 844, "status": "UNEXECUTED" }
+  ],
+  "interactive_checks": "UNEXECUTED: hydration, live search/filter controls, URL history, navigation, anchors/scroll, lightbox keyboard/focus, responsive layout, overflow, theme and console.",
+  "portfolio_screenshots": [],
+  "note": "Production HTTP, initial query-state filters, metadata, links and media were checked separately. Original project captures and SVG rasterization do not constitute portfolio browser verification. No bypass of the computer-use block was attempted."
+}

@@ -1,4 +1,8 @@
 import type { Project } from "@/types/project";
+import { adaptiveDigitalAssistant } from "./projects/adaptive-digital-assistant";
+import { missionXCityCar } from "./projects/mission-x-citycar";
+import { ownerPilot } from "./projects/ownerpilot";
+import { visionGuidedManipulation } from "./projects/vision-guided-diff-physics";
 
 export const featuredProjects: Project[] = [
 
@@ -209,258 +213,7 @@ export const featuredProjects: Project[] = [
     ],
   },
 
-  {
-    id: "vision-guided-diff-physics",
-    title: "Vision-Guided Differentiable Physics for Robotic Manipulation",
-    year: 2025,
-    category: "Robotics",
-    featured: true,
-    order: 2,
-    summary:
-      "A presentation-style robotics case study that connects RGB observations, robot state, temporal Transformer prediction, differentiable rollout losses, and Isaac Sim Franka data to learn multi-step manipulation behavior from visual context.",
-    role: "Project Lead / Research Engineer",
-    tags: [
-      "Robotics",
-      "Robot Learning",
-      "Differentiable Physics",
-      "Vision-Guided Control",
-      "Isaac Sim",
-      "Franka Manipulation",
-      "Transformer",
-      "3D Gaussian Splatting",
-      "System Identification",
-    ],
-    tech: [
-      "Python",
-      "PyTorch",
-      "NVIDIA Isaac Sim",
-      "NVIDIA Warp",
-      "3D Gaussian Splatting",
-      "Transformer Encoder",
-      "CNN Vision Encoder",
-      "Franka Panda",
-      "JSONL Datasets",
-      "YAML Configs",
-      "Matplotlib",
-    ],
-    highlights: [
-      "Built an end-to-end RGB plus robot-state learning pipeline for Franka manipulation, predicting 8-step future joint deltas and end-effector trajectories from 4 context frames/states.",
-      "Implemented a TemporalVisionFrankaPolicy with a CNN image encoder, state projection, Transformer temporal fusion, joint-delta rollout head, and end-effector prediction head.",
-      "Created an Isaac Sim data workflow with brighter multi-episode collection, merged JSONL indexes, episode-level validation, continuity filters, image preprocessing, and modality ablations.",
-      "Trained the advanced run for 100 epochs and reached a best validation terminal end-effector distance of 1.67 cm with a 1.37 cm mean trajectory end-effector distance across 976 validation windows.",
-      "Validated that visual context contributes to the model: removing RGB increased terminal end-effector error by about 1.49x, while removing state/cube context caused order-of-magnitude degradation.",
-    ],
-    coverImage: "/projects/vision-guided-diff-physics/cover.png",
-    coverAlt: "Vision-guided differentiable physics project cover",
-    links: [
-      {
-        type: "website",
-        label: "Architecture",
-        href: "#architecture",
-      },
-      {
-        type: "website",
-        label: "Results",
-        href: "#results",
-      },
-      {
-        type: "website",
-        label: "Contact for code/demo",
-        href: "/about#contact",
-      },
-    ],
-    metrics: [
-      {
-        label: "Terminal EE error",
-        value: "1.67 cm",
-        context: "Best validation terminal end-effector distance at epoch 97",
-      },
-      {
-        label: "Mean EE error",
-        value: "1.37 cm",
-        context: "Validation trajectory-average end-effector distance",
-      },
-      {
-        label: "Temporal window",
-        value: "4 -> 8",
-        context: "4 context frames/states used to predict an 8-step future rollout",
-      },
-      {
-        label: "Validation windows",
-        value: "976",
-        context: "Windows used in the saved modality-ablation evaluation",
-      },
-      {
-        label: "Vision ablation",
-        value: "1.49x",
-        context: "Terminal error increase when RGB context is zeroed",
-      },
-      {
-        label: "Model backbone",
-        value: "2L / 4H",
-        context: "2-layer, 4-head Transformer temporal encoder",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/cover.png",
-        alt: "Vision-guided differentiable physics project cover",
-        caption:
-          "Project cover summarizing the portfolio case study: RGB observations, robot state, temporal policy learning, differentiable rollouts, and end-effector target prediction.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/architecture.png",
-        alt: "Vision-guided differentiable physics architecture diagram",
-        caption:
-          "System architecture: visual observations are encoded, fused with state context, passed through a differentiable physics/simulation loop, and optimized through end-to-end gradient flow.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/visual-property-estimation.png",
-        alt: "Visual feature extraction and physical property estimation diagram",
-        caption:
-          "Visual feature extraction concept: RGB observations and depth-like structure support prediction of physical properties such as mass, friction, and restitution for downstream physics reasoning.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/optimization-progression.png",
-        alt: "Gradient-based optimization progression for object manipulation",
-        caption:
-          "Optimization progression: the differentiable loop moves from an initial configuration through gradient-guided updates toward a target manipulation configuration.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/training-summary.png",
-        alt: "Training and evaluation summary for Isaac Franka temporal model",
-        caption:
-          "Presentation-style summary of the advanced Isaac Franka run, including context horizon, best end-effector errors, validation windows, and the training/evaluation pipeline.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/loss-curve.png",
-        alt: "Advanced Isaac Franka temporal training loss curve",
-        caption:
-          "Training curve from the advanced run: train terminal EE error, validation terminal EE error, and validation mean EE error converge toward centimeter-level tracking behavior.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/ee-rollout.png",
-        alt: "Predicted versus target end-effector rollout plot",
-        caption:
-          "Predicted vs target end-effector rollout: the model predicts future x, y, and z end-effector coordinates over the 8-step horizon.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/ablation-summary.png",
-        alt: "Vision and state ablation summary",
-        caption:
-          "Ablation summary: the full model is strongest; removing RGB increases terminal error, while removing robot/state context causes much larger degradation.",
-      },
-      {
-        type: "image",
-        src: "/projects/vision-guided-diff-physics/context-frame.png",
-        alt: "Isaac Franka context frame used by the temporal policy",
-        caption:
-          "Representative final context frame from the saved Isaac Franka evaluation sample, showing the kind of visual input used by the policy.",
-      },
-    ],
-    sections: [
-      {
-        id: "objective",
-        title: "Objective",
-        paragraphs: [
-          "The goal of this project is to make robotic manipulation models more physically grounded by tying visual observations to differentiable state prediction and rollout losses. Instead of treating perception and control as separate blocks, the system asks whether an RGB-conditioned policy can learn multi-step robot motion while remaining inspectable through simulation metrics and ablations.",
-          "The final portfolio version presents the project as a research-style report page: it explains the robotics problem, shows the architecture, documents the Isaac Sim data workflow, visualizes training behavior, and summarizes ablation evidence from the saved run artifacts.",
-        ],
-      },
-      {
-        id: "problem",
-        title: "Problem and motivation",
-        paragraphs: [
-          "Contact-rich manipulation is hard because the policy must reason about geometry, object state, physical interaction, robot kinematics, and future consequences of actions. Pure image models can learn correlations, but they often hide whether the model is using visual evidence, robot state, or dataset shortcuts.",
-          "This project focuses on the bridge between visual learning and physics-aware prediction. The code base starts with runnable differentiable-physics demos, then extends the idea toward Isaac Sim Franka manipulation with temporal context, multi-step supervision, continuity filtering, and modality ablations.",
-        ],
-      },
-      {
-        id: "architecture",
-        title: "System architecture",
-        bullets: [
-          "Input: a temporal context of 4 RGB frames plus robot joint positions, end-effector position, cube/object position, target position, and a normalized time token.",
-          "Vision branch: a lightweight CNN encoder converts each frame into a compact visual feature vector that can be trained without external pretrained dependencies.",
-          "State branch: robot and scene state are projected into the same embedding space as the vision features.",
-          "Temporal fusion: a 2-layer, 4-head Transformer encoder fuses the context window and produces a sequence-level summary.",
-          "Prediction heads: the model predicts bounded future joint deltas for rollout integration and future end-effector positions for trajectory-level supervision.",
-        ],
-      },
-      {
-        id: "data-pipeline",
-        title: "Isaac Sim data and sequence pipeline",
-        paragraphs: [
-          "The project includes an Isaac Sim Franka workflow for collecting RGB frames and robot/cube/end-effector trajectories, converting episodes into training indexes, merging multiple episodes, and inspecting sequence quality before training.",
-          "A major engineering improvement was treating sequence quality as a first-class issue. The dataset loader splits merged JSONL indexes back into episode trajectories, supports episode-level train/validation splits, and rejects windows with impossible end-effector or joint jumps so the temporal model is not trained across reset boundaries.",
-        ],
-        bullets: [
-          "Bright collection workflow: stronger lighting, camera look-at setup, visual randomization, debug previews, and percentile image preprocessing for under-exposed frames.",
-          "Sequence settings: image size 128, batch size 8, context length 4, horizon 8, stride 1, validation fraction 0.2, and episode-level split mode.",
-          "Continuity filters: reject windows with excessive end-effector jumps or joint-space jumps before constructing multi-step targets.",
-        ],
-      },
-      {
-        id: "model",
-        title: "Temporal vision model",
-        paragraphs: [
-          "The core model is a TemporalVisionFrankaPolicy. It encodes each context frame using a CNN, combines those visual features with projected state vectors, adds learned positional embeddings, and passes the context through a Transformer encoder. The last token summary drives two prediction heads: one for future joint deltas and one for future end-effector coordinates.",
-          "The architecture is intentionally practical: the image encoder is compact, the Transformer is modest enough to train on project-scale data, and the prediction heads expose interpretable quantities that can be plotted and compared against future trajectories.",
-        ],
-      },
-      {
-        id: "differentiable-physics",
-        title: "Differentiable physics and rollout losses",
-        paragraphs: [
-          "The training objective combines multiple physical consistency signals instead of relying on one scalar loss. Predicted joint deltas are integrated into future joint trajectories, end-effector predictions are compared across the horizon, terminal end-effector error receives extra weight, smoothness discourages jittery actions, and joint-limit regularization keeps predictions physically plausible.",
-          "The repository also includes differentiable physics scaffolding beyond the Franka sequence model: a PyTorch Gaussian splatting renderer for visual-loss wiring, an optional NVIDIA Warp planar-arm engine, and local proxy robot-arm training scripts that provide a fast path before heavier simulator integration.",
-        ],
-      },
-      {
-        id: "results",
-        title: "Training results",
-        paragraphs: [
-          "The saved advanced Isaac Franka bright-many run trained for 100 epochs. The best validation checkpoint occurred at epoch 97, reaching 1.67 cm terminal end-effector distance and 1.37 cm mean end-effector distance across the future trajectory. The final epoch remained close, ending at 1.71 cm terminal end-effector distance and 1.39 cm mean end-effector distance.",
-          "The loss curve shows the model moving from a high initial terminal error into a stable centimeter-level validation regime. The rollout plot compares predicted and target end-effector x/y/z coordinates over the future horizon and exposes where the model tracks well versus where longer-horizon transitions remain difficult.",
-        ],
-      },
-      {
-        id: "ablations",
-        title: "Ablation findings",
-        paragraphs: [
-          "The ablation run evaluated 976 validation windows. The full model achieved a 1.67 cm terminal end-effector distance. Zeroing RGB context increased terminal error to 2.49 cm, showing that visual information contributes to the policy even though robot state is still very informative.",
-          "The stronger ablations show that the task is not solvable from vision alone in the current formulation. Removing joint state, end-effector/cube state, or the full state vector increases terminal error by more than an order of magnitude, which is a useful engineering signal: the next version should make action/state conditioning explicit and collect more diverse visual episodes before claiming strong vision-only generalization.",
-        ],
-      },
-      {
-        id: "engineering-contribution",
-        title: "Engineering contribution",
-        bullets: [
-          "Implemented the temporal sequence dataset, model, training loop, metrics logging, checkpointing, rollout visualization, and modality-ablation evaluation workflow.",
-          "Added Isaac Sim data-collection utilities, merged-index tooling, path-repair scripts, dark-frame diagnostics, and generated-data hygiene so the repository stays usable as experiments grow.",
-          "Documented practical lessons around lighting, camera placement, episode-level validation, reset-boundary filtering, and the difference between a visually attractive demo and a learnable sequence dataset.",
-          "Packaged the project page with a cover image, architecture visual, visual-property concept figure, optimization progression image, training curve, rollout plot, ablation chart, and concise research-style narrative.",
-        ],
-      },
-      {
-        id: "limitations-next-steps",
-        title: "Limitations and next steps",
-        bullets: [
-          "The current best results are from simulator-generated Franka sequences, not a physical robot deployment.",
-          "The model still relies heavily on robot state, so the next iteration should add richer visual diversity, multi-camera inputs, and action-conditioned prediction.",
-          "The differentiable FK prior is scaffolded but should be calibrated from the actual Isaac/URDF transforms before enabling stronger FK consistency losses.",
-          "Future work should add closed-loop Isaac replay, action-conditioned rollouts, 50-100 brighter randomized episodes, production-grade 3DGS rendering, and real-robot validation.",
-        ],
-      },
-    ],
-  },
+  visionGuidedManipulation,
 
   {
     id: "sp500-deep-learning-forecasting",
@@ -468,7 +221,7 @@ export const featuredProjects: Project[] = [
     year: 2025,
     category: "Financial ML",
     featured: true,
-    order: 1,
+    order: 7,
     summary:
       "A research-grade forecasting system that evaluates Temporal Fusion Transformers against LSTM and ARIMAX baselines for S&P 500 return prediction using mixed-frequency market and macroeconomic data, then extends TFT with regime-aware attention and interpretability diagnostics.",
     role: "ML Research Engineer / Time-Series Modeling",
@@ -687,7 +440,7 @@ export const featuredProjects: Project[] = [
     year: 2025,
     category: "Robotics",
     featured: true,
-    order: 3,
+    order: 5,
     summary:
       "A vision-based landing system where a Parrot Mambo drone tracks a moving line-follower robot, stays aligned using image feedback, and executes a timed descent onto the platform.",
     role: "Solo Robotics Systems Engineer",
@@ -873,7 +626,7 @@ export const featuredProjects: Project[] = [
     year: 2025,
     category: "Robotics",
     featured: true,
-    order: 4,
+    order: 6,
     summary:
       "A closed-loop robot-learning prototype that detects a ping pong ball, estimates its 3D motion, predicts the landing point, and rotates a servo-driven blocker in real time on a Raspberry Pi-based hardware setup.",
     role: "Robotics Perception, Prediction & Controls Lead",
@@ -1171,194 +924,9 @@ export const featuredProjects: Project[] = [
   //   ],
   // },
 
-  {
-    id: "ownerpilot-ai-operating-copilot",
-    title: "OwnerPilot - AI Operating Copilot for SMB Owners",
-    year: 2026,
-    category: "AI Product Engineering",
-    featured: true,
-    order: 1,
-    summary:
-      "Open-source decision intelligence platform that helps smaller business owners import records, track obligations, investigate cash and margin shifts, forecast scenarios, and execute evidence-backed operating actions.",
-    role: "Full-Stack AI Product Engineer",
-    tags: [
-      "Full-Stack AI",
-      "Decision Intelligence",
-      "RAG",
-      "Forecasting",
-      "PWA",
-      "SMB Analytics",
-      "Self-Hosted",
-      "Open Source",
-    ],
-    tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "FastAPI",
-      "Python",
-      "Pydantic",
-      "PostgreSQL",
-      "pgvector",
-      "Docker Compose",
-      "Ollama",
-      "Recharts",
-      "Drizzle ORM",
-      "Better Auth",
-      "Turborepo",
-    ],
-    highlights: [
-      "Built a monorepo product with a Next.js PWA frontend, FastAPI analytics service, shared typed contracts, Postgres/pgvector business memory, and Docker Compose self-hosting support.",
-      "Implemented owner workflows for CSV/Excel import previews, confirmed ledger history, recurring obligations, quick-add sales/purchases/expenses, document storage, action queues, forecasting, scenario planning, and cash-aware reorder recommendations.",
-      "Designed AI analyst flows with prompt guardrails, retrieval-backed evidence snippets, confidence and recommendation fields, and runtime metadata for provider, mode, latency, and estimated cost.",
-      "Shipped a recruiter-ready India-first pharmacy demo with sanitized fixtures, deterministic walkthrough prompts, local-open Ollama mode, BYO cloud mode, hybrid routing, and hosted deployment path documentation.",
-    ],
-    coverImage: "/projects/ownerpilot-ai-operating-copilot/cover.svg",
-    coverAlt: "OwnerPilot AI operating copilot project cover",
-    links: [
-      {
-        type: "github",
-        label: "Source repository",
-        href: "https://github.com/gourishankar27/ownerpilot",
-      },
-      {
-        type: "docs",
-        label: "Architecture notes",
-        href: "https://github.com/gourishankar27/ownerpilot/tree/main/docs",
-      },
-      {
-        type: "website",
-        label: "Discuss demo access",
-        href: "/about#contact",
-      },
-    ],
-    metrics: [
-      {
-        label: "Showcase release",
-        value: "v1.0.0",
-        context: "Public milestone with docs, demo data, and deployment paths",
-      },
-      {
-        label: "API surface",
-        value: "24 routes",
-        context: "FastAPI endpoints for imports, investigations, forecasts, actions, and reorder plans",
-      },
-      {
-        label: "Runtime modes",
-        value: "3",
-        context: "local-open, BYO cloud, and hybrid model routing",
-      },
-      {
-        label: "Deployment paths",
-        value: "2",
-        context: "Hosted Vercel/Render/Supabase path and Docker/Ollama self-hosted path",
-      },
-    ],
-    media: [
-      {
-        type: "image",
-        src: "/projects/ownerpilot-ai-operating-copilot/cover.svg",
-        alt: "OwnerPilot command center cover image",
-        caption: "Portfolio cover for the OwnerPilot SMB operating cockpit and AI copilot.",
-      },
-      {
-        type: "image",
-        src: "/projects/ownerpilot-ai-operating-copilot/architecture.svg",
-        alt: "OwnerPilot technical architecture diagram",
-        caption: "System architecture: Next.js PWA, FastAPI service, Postgres/pgvector memory, Ollama local inference, and optional cloud model providers.",
-      },
-      {
-        type: "image",
-        src: "/projects/ownerpilot-ai-operating-copilot/workflow.svg",
-        alt: "OwnerPilot owner workflow diagram",
-        caption: "Owner workflow: import records, build business memory, investigate issues, forecast scenarios, reorder stock, and move actions through a lifecycle.",
-      },
-    ],
-    sections: [
-      {
-        id: "problem",
-        title: "Problem",
-        paragraphs: [
-          "Small business owners often make inventory, cash, supplier, and margin decisions without dedicated analytics teams or expensive operating software.",
-          "OwnerPilot is designed to close that gap with practical owner workflows instead of generic dashboards: import the records a business already has, surface operational risks, and explain what to do next with evidence and confidence traces.",
-        ],
-      },
-      {
-        id: "product-scope",
-        title: "Product scope",
-        bullets: [
-          "India-first pharmacy and medical-store showcase with reusable SMB domain models for sales, purchases, products, expenses, recurring obligations, documents, actions, forecasts, and reorder plans.",
-          "Dashboard surfaces revenue, margin, bills, inventory alerts, morning briefs, action queue, and quick-add entries for daily operations.",
-          "Owner workflows include import preview and confirmation, recurring obligation tracking, document upload, AI investigation, action lifecycle management, forecasting, scenario planning, and cash-aware replenishment.",
-        ],
-      },
-      {
-        id: "architecture",
-        title: "Architecture",
-        paragraphs: [
-          "The system uses a thin web shell plus thin API orchestration model around a Postgres-first business memory. The web app owns the owner-facing PWA experience, while the API centralizes ingestion, analytics, retrieval, forecasting, scheduler, and AI orchestration workflows.",
-        ],
-        bullets: [
-          "apps/web: Next.js App Router PWA with dashboard, imports, documents, Ask OwnerPilot, action center, planner, reorder plan, authentication, and workspace entry.",
-          "apps/api: FastAPI service with Pydantic models for import jobs, document storage, investigations, briefings, forecasts, scenarios, quick-add ledger entries, actions, and scheduler runs.",
-          "packages/contracts: shared schemas and structured response contracts to keep API/UI boundaries explicit.",
-          "infra: Docker Compose stack with Postgres, pgvector, and Ollama for private self-hosted operation.",
-        ],
-      },
-      {
-        id: "ai-analyst-workflow",
-        title: "AI analyst workflow",
-        bullets: [
-          "Investigation requests return structured summaries, confidence scores, evidence snippets, risks, recommendations, provider metadata, runtime mode, latency, and estimated cost.",
-          "Retrieval-backed evidence is stored through the business document and pgvector memory path so recommendations can cite business context rather than acting like a free-form chatbot.",
-          "Provider configuration supports local-open, BYO cloud, and hybrid modes so the project can demonstrate privacy-first local inference while still allowing hosted model fallbacks.",
-          "Prompt guardrails and deterministic demo fixtures keep recruiter walkthroughs repeatable and safe to record.",
-        ],
-      },
-      {
-        id: "planning-and-actions",
-        title: "Planning and action systems",
-        bullets: [
-          "Cash-aware reorder planning blends stock, sales velocity, supplier costs, expiry risk, and recurring obligation pressure into replenishment recommendations.",
-          "Forecast Lab exposes deterministic baseline forecasts and scenario outputs with assumptions and warnings instead of opaque chart-only results.",
-          "Action Center tracks open, watching, snoozed, and resolved states so insights become operational tasks rather than static dashboard observations.",
-          "Scheduler routes generate briefings, anomalies, due reminders, and action prompts that can evolve into daily owner workflows.",
-        ],
-      },
-      {
-        id: "engineering-quality",
-        title: "Engineering quality",
-        bullets: [
-          "Monorepo structure separates UX composition, API orchestration, contracts, UI primitives, infra, and sanitized demo data.",
-          "Public fixtures are sanitized and reproducible, with strict data safety rules against committing raw private business data.",
-          "CI-oriented commands cover linting, type checking, web builds, API compile sanity, and formatting baselines across TypeScript and Python modules.",
-          "Deployment docs cover both near-zero-cost hosted mode and private self-hosted Windows-first mode with Docker and Ollama.",
-        ],
-      },
-      {
-        id: "demo-walkthrough",
-        title: "Demo walkthrough",
-        paragraphs: [
-          "The showcase narrative starts with the dashboard, demonstrates import history, asks why profit dropped, reviews evidence and confidence, moves an action through the lifecycle, compares reorder horizons, and runs a forecast or scenario.",
-        ],
-        bullets: [
-          "Sample prompts: 'Why did profit drop this month?', 'What are my top selling products?', 'Which expense categories are spiking?', and 'What should I reorder next week?'",
-          "Expected proof points: evidence-backed response, provider/mode/latency/cost metadata, visible action lifecycle, and deterministic forecast/scenario output.",
-        ],
-      },
-      {
-        id: "next-steps",
-        title: "Next steps",
-        bullets: [
-          "Add API integration tests for import confirmation, recurring obligations, investigation, scheduler, and reorder workflows.",
-          "Add Playwright smoke coverage for dashboard -> import -> ask -> action transitions.",
-          "Expand import mapping presets, supplier lead-time settings, localization scaffolding, and model-routing observability.",
-          "Capture a 90-second recruiter walkthrough and a 2-3 minute technical walkthrough for the project page media gallery.",
-        ],
-      },
-    ],
-  },
+  ownerPilot,
+  adaptiveDigitalAssistant,
+  missionXCityCar,
 
   // {
   //   id: "descriptive-question-answering-system",

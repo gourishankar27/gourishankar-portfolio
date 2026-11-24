@@ -5,7 +5,7 @@ export default function ProjectNotFound() {
     <div className="space-y-4">
       <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">Project not found</h1>
       <p className="text-sm sm:text-base text-[color:var(--muted-2)] max-w-2xl">
-        The project you're looking for doesn't exist (or the link is outdated).
+        The project you&apos;re looking for doesn&apos;t exist (or the link is outdated).
       </p>
       <Link
         href="/projects"

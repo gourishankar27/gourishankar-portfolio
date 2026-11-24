@@ -258,6 +258,7 @@ export function ProjectExplorer({
                   <button
                     key={tag}
                     type="button"
+                    aria-pressed={active}
                     onClick={() => toggleTag(tag)}
                     className={[
                       "rounded-full px-3 py-1 text-xs border transition-colors",

@@ -123,7 +123,6 @@ export default function RootLayout({
         className="antialiased"
       >
         <script
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
         <script

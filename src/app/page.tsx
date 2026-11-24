@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/hero/HeroSection";
+import { ProjectCard } from "@/components/projects/ProjectCard";
+import { getFeaturedProjects } from "@/lib/projects";
 
 export default function HomePage() {
   return (
@@ -35,6 +37,30 @@ export default function HomePage() {
             Smart India Hackathon winner, National Innovation Contest finalist,
             and IEEE-published work on a descriptive question-answering system.
           </p>
+        </div>
+      </section>
+      <section aria-labelledby="featured-projects-title" className="space-y-5">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              Selected engineering work
+            </p>
+            <h2
+              id="featured-projects-title"
+              className="mt-2 text-xl sm:text-2xl font-semibold tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Featured projects
+            </h2>
+          </div>
+          <Link href="/projects" className="text-sm text-[color:var(--primary)] hover:underline">
+            Explore and filter all projects →
+          </Link>
+        </div>
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2">
+          {getFeaturedProjects().map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
       </section>
 

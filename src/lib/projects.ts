@@ -3,7 +3,7 @@ import { featuredProjects, miniProjects } from "@/data/projects";
 
 export function getFeaturedProjects(): Project[] {
   return [...featuredProjects].sort(
-    (a, b) => (a.order ?? 0) - (b.order ?? 0)
+    (a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id.localeCompare(b.id)
   );
 }
 
@@ -14,7 +14,7 @@ export function getMiniProjects(): Project[] {
 }
 
 export function getAllProjects(): Project[] {
-  return [...featuredProjects, ...miniProjects];
+  return [...getFeaturedProjects(), ...getMiniProjects()];
 }
 
 export function getProjectById(id: string): Project | undefined {
