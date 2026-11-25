@@ -97,7 +97,10 @@ if (arg >= 0) {
     assert.ok(home.includes(`href="/projects/${id}"`), `Homepage discovery: ${id}`);
     assert.ok(listing.includes(`href="/projects/${id}"`), `Explorer discovery: ${id}`);
   }
-  const positions = expected.map((id) => home.indexOf(`href="/projects/${id}"`));
+  const featured = home.match(/<section aria-labelledby="featured-projects-title"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(featured, "Homepage featured section exists");
+  const positions = expected.map((id) => featured.indexOf(`href="/projects/${id}"`));
+  assert.ok(positions.every((position) => position >= 0), "All expected projects appear in the homepage featured section");
   assert.deepEqual([...positions].sort((a, b) => a - b), positions, "Homepage order matches explorer data order");
   const sitemap = await (await request("/sitemap.xml")).text();
   const cardIds = (html) => [...html.matchAll(/<a\b[^>]*href="\/projects\/([^"#?]+)"/g)].map((match) => match[1]);

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { resumeSectionHref } from "@/data/resumes";
+
 export function Footer() {
   return (
     <footer className="w-full border-t border-[color:var(--border)] bg-[color:var(--surface-alpha)]">
@@ -6,8 +9,10 @@ export function Footer() {
           © {new Date().getFullYear()} Gourishankar Bansode. All rights
           reserved.
         </p>
-        <p className="text-xs text-[color:var(--muted)]">
-          Event-Based Vision · Space Autonomy · Robotics Systems · AI Software
+        <p className="text-center sm:text-right text-xs text-[color:var(--muted)]">
+          Applied AI · Robotics &amp; Autonomous Systems · Reliable Software
+          <span aria-hidden="true"> · </span>
+          <Link href={resumeSectionHref} className="inline-flex min-h-11 items-center hover:underline">Resumes</Link>
         </p>
       </div>
     </footer>

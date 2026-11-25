@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import { EducationTimeline } from "@/components/education/EducationTimeline";
 import { SkillsGrid } from "@/components/skills/SkillsGrid";
+import { absoluteUrl, ogImageUrl } from "@/lib/seo";
+
+const description = "Education in Robotics and Autonomous Systems at Arizona State University and Intelligent Systems at MIT-ADT University, with skills across applied AI, robotics, software engineering, and research evaluation.";
+export const metadata: Metadata = {
+  title: "Education & Skills",
+  description,
+  alternates: { canonical: "/education-skills" },
+  openGraph: { title: "Education & Skills | Gourishankar Bansode", description, url: absoluteUrl("/education-skills"), images: [ogImageUrl({ title: "Education & Skills", subtitle: "AI · Robotics · Software Engineering" })] },
+  twitter: { card: "summary_large_image", title: "Education & Skills | Gourishankar Bansode", description, images: [ogImageUrl({ title: "Education & Skills", subtitle: "AI · Robotics · Software Engineering" })] },
+};
 
 export default function EducationSkillsPage() {
   return (
@@ -12,10 +23,9 @@ export default function EducationSkillsPage() {
           Education &amp; Skills
         </h1>
         <p className="mt-2 text-sm sm:text-base text-[color:var(--muted-2)] max-w-3xl">
-          Formal training in robotics, autonomous systems, and intelligent
-          systems, combined with hands-on experience in event-based vision,
-          state estimation, computer vision, data pipelines, and reliable
-          production software.
+          Academic study in robotics, autonomous systems, and intelligent systems,
+          alongside practical work in LLM applications, perception, planning,
+          backend software, and research evaluation.
         </p>
       </header>
 

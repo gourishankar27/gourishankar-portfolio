@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HeroRobotCanvas } from "./HeroRobotCanvas";
+import { resumeSectionHref } from "@/data/resumes";
+import { siteConfig } from "@/lib/seo";
 
 export function HeroSection() {
   return (
@@ -24,18 +26,20 @@ export function HeroSection() {
               className="text-center text-2xl font-semibold tracking-tight sm:text-left sm:text-3xl lg:text-4xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Gourishankar Bansode
+              {siteConfig.name}
             </h1>
             <p className="mt-1 text-center text-sm text-[color:var(--muted)] sm:text-left sm:text-base">
-              Robotics &amp; AI Software Engineer · ASU Research Assistant
+              {siteConfig.role}
+            </p>
+            <p className="mt-1 text-center text-xs text-[color:var(--muted)] sm:text-left sm:text-sm">
+              {siteConfig.affiliation}
             </p>
           </div>
 
-          <p className="max-w-xl text-sm sm:text-base text-[color:var(--muted-2)]">
-            I build reliable autonomy software across event-based space vision,
-            spacecraft attitude estimation, differentiable-physics robotics,
-            real-time computer vision, and production-grade backend/data systems.
-          </p>
+          <div className="max-w-xl space-y-3 text-sm sm:text-base text-[color:var(--muted-2)]">
+            <p>I build intelligent software systems that bring together artificial intelligence, robotics, and reliable software engineering.</p>
+            <p>With over two years of professional experience developing mission-critical C++ and Python systems, my work now spans self-hosted LLM applications, AI agents, autonomous navigation, robotic perception, motion planning, and spacecraft attitude estimation.</p>
+          </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
@@ -51,6 +55,12 @@ export function HeroSection() {
               View Experience
             </Link>
             <Link
+              href={resumeSectionHref}
+              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-[color:var(--primary)] bg-[color:var(--surface)] border border-[color:var(--primary-border)] hover:border-[color:var(--primary)] hover:bg-[color:var(--primary-soft)] transition-colors"
+            >
+              View Resumes
+            </Link>
+            <Link
               href="/about#contact"
               className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-[color:var(--text)] bg-[color:var(--surface)] border border-[color:var(--border)] hover:border-[color:var(--primary)] transition-colors"
             >
@@ -60,16 +70,16 @@ export function HeroSection() {
 
           <div className="mt-6 flex flex-wrap gap-2 text-xs">
             <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
-              Event-Based Vision &amp; Space Autonomy
+              Applied AI &amp; LLM Engineering
             </span>
             <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
-              State Estimation &amp; Control
+              Robotics &amp; Autonomous Systems
             </span>
             <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
-              Differentiable Physics &amp; 3D Vision
+              Computer Vision &amp; State Estimation
             </span>
             <span className="rounded-full bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)] text-[color:var(--text)] px-3 py-1">
-              Reliable Distributed Systems
+              Backend &amp; Software Engineering
             </span>
           </div>
         </div>

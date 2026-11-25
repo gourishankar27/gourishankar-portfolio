@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-24",
+  "timezone": "America/Phoenix",
+  "baseline_commit": "5faa473600c7bd5ea47657fd1a4b7296ef97e357",
+  "static_checks": "PASS",
+  "protected_paths": [
+    "src/data/projects.ts",
+    "src/data/projects",
+    "src/lib/projects.ts",
+    "src/types/project.ts",
+    "src/components/projects",
+    "src/app/projects",
+    "public/projects",
+    "public/images",
+    "src/app/globals.css",
+    "src/components/hero/HeroRobotCanvas.tsx",
+    "src/components/three",
+    "src/components/experience/DefenseHudCanvas.tsx",
+    "src/components/experience/ExperienceTimeline.tsx",
+    "src/app/sitemap.ts",
+    "src/data/achievements.ts",
+    "src/app/achievements/page.tsx",
+    "src/app/publications/page.tsx",
+    "package.json",
+    "package-lock.json"
+  ],
+  "pdfs": [
+    {
+      "id": "ai",
+      "source_filename": "Gourishankar_Resume_AI_ML.pdf",
+      "public_url": "/resumes/Gourishankar_Bansode_AI_Resume.pdf",
+      "download_filename": "Gourishankar_Bansode_AI_Resume.pdf",
+      "bytes": 177483,
+      "source_sha256": "160c51673b6f4074afe902acd61b0c29b011b9a4f14a8766b68923ac61bd3ea6",
+      "destination_sha256": "160c51673b6f4074afe902acd61b0c29b011b9a4f14a8766b68923ac61bd3ea6",
+      "identity": "PASS"
+    },
+    {
+      "id": "robotics",
+      "source_filename": "Gourishankar_Resume_Robotics.pdf",
+      "public_url": "/resumes/Gourishankar_Bansode_Robotics_Resume.pdf",
+      "download_filename": "Gourishankar_Bansode_Robotics_Resume.pdf",
+      "bytes": 138090,
+      "source_sha256": "7be8882e9328022f0fd68fabe67261000ceda51fd0fbddb152e3b3b89dada4af",
+      "destination_sha256": "7be8882e9328022f0fd68fabe67261000ceda51fd0fbddb152e3b3b89dada4af",
+      "identity": "PASS"
+    }
+  ],
+  "http": {
+    "status": "PASS",
+    "routes": [
+      "/",
+      "/about",
+      "/about#resume",
+      "/about?resume=ai#resume",
+      "/about?resume=robotics#resume",
+      "/experience",
+      "/education-skills",
+      "/projects",
+      "/achievements",
+      "/publications"
+    ],
+    "pdf_identity_and_content_type": "PASS",
+    "selected_resume_markup": [
+      "ai",
+      "robotics"
+    ],
+    "unknown_selection": "ai",
+    "legacy_redirects": [
+      {
+        "path": "/resume.pdf",
+        "status": 308,
+        "destination": "/about#resume"
+      },
+      {
+        "path": "/resume_oold.pdf",
+        "status": 308,
+        "destination": "/about#resume"
+      }
+    ],
+    "contact_redirect": 307,
+    "social_contact_preservation": "PASS",
+    "metadata": "PASS",
+    "note": "Native PDF opening/downloading, responsive iframes, tab/keyboard behavior and skills-filter clicks still require an actual browser."
+  },
+  "browser": "NOT RUN by this helper; HTTP/markup checks do not establish browser interactions or responsive rendering."
+}
