@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Gourishankar Bansode",
   },
   description: siteConfig.description,
+  keywords: ["AI Engineer", "Applied AI", "Robotics Software Engineer", "Autonomous Systems", "Self-Hosted LLMs", "Retrieval-Augmented Generation", "ROS 2", "C++", "Python", "Computer Vision", "Motion Planning", "FastAPI", "Software Engineering"],
   alternates: {
     canonical: "/",
   },
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
       {
         url: ogImageUrl({
           title: siteConfig.name,
-          subtitle: "Robotics & AI Software Engineer",
+          subtitle: siteConfig.role,
         }),
         width: 1200,
         height: 630,
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     images: [
       ogImageUrl({
         title: siteConfig.name,
-        subtitle: "Robotics & AI Software Engineer",
+        subtitle: siteConfig.role,
       }),
     ],
   },
@@ -85,7 +86,8 @@ export default function RootLayout({
         "@id": absoluteUrl("/#person"),
         name: siteConfig.name,
         url: siteConfig.url,
-        jobTitle: "Robotics & AI Software Engineer",
+        jobTitle: siteConfig.role,
+        affiliation: { "@type": "Organization", name: "Arizona State University" },
         email: siteConfig.email,
         // telephone: siteConfig.phone,
         address: {

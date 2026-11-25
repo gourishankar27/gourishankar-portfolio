@@ -2,6 +2,8 @@ import Link from "next/link";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { getFeaturedProjects } from "@/lib/projects";
+import { resumes } from "@/data/resumes";
+import { ResumeCard } from "@/components/resumes/ResumeCard";
 
 export default function HomePage() {
   return (
@@ -14,8 +16,9 @@ export default function HomePage() {
             Current Research
           </p>
           <p className="text-sm text-[color:var(--text)]">
-            Research Assistant at ASU working on NASA/Alphacore event-based star
-            tracking for high-speed spacecraft attitude estimation.
+            ASU Research Assistant on event-based spacecraft attitude estimation:
+            approximately 8.7 million events across 372 batches in one representative
+            3.0-second research sequence.
           </p>
         </div>
 
@@ -24,8 +27,9 @@ export default function HomePage() {
             Systems Background
           </p>
           <p className="text-sm text-[color:var(--text)]">
-            2+ years building Python, C, and C++ software for distributed,
-            reliability-critical defense platforms at Tata Advanced Systems.
+            2+ years developing C++ and Python backend systems, telemetry, and
+            automation at Tata Advanced Systems, including leadership of a
+            six-engineer team.
           </p>
         </div>
 
@@ -37,6 +41,21 @@ export default function HomePage() {
             Smart India Hackathon winner, National Innovation Contest finalist,
             and IEEE-published work on a descriptive question-answering system.
           </p>
+        </div>
+      </section>
+      <section aria-labelledby="resume-pathways-title" className="space-y-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--muted)]">Professional focus</p>
+          <h2 id="resume-pathways-title" className="mt-2 text-xl sm:text-2xl font-semibold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            AI &amp; robotics resumes
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm text-[color:var(--muted-2)]">
+            Two views of the same software engineering background. Choose a
+            specialization to open the relevant resume and explore the technical work behind it.
+          </p>
+        </div>
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2">
+          {resumes.map((resume) => <ResumeCard key={resume.id} resume={resume} />)}
         </div>
       </section>
       <section aria-labelledby="featured-projects-title" className="space-y-5">
@@ -64,30 +83,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-5 sm:p-6 shadow-[0_12px_30px_var(--shadow-1)]">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--muted)]">
-              Portfolio focus
-            </p>
-            <h2
-              className="mt-2 text-xl font-semibold text-[color:var(--text)]"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              ENGINEERING WORK WITH REAL-WORLD IMPACT
-            </h2>
-            <p className="mt-2 max-w-2xl text-sm text-[color:var(--muted-2)]">
-              Projects focused on autonomy, computer vision, simulation, and scalable software systems, backed by research and production experience.
-            </p>
-          </div>
-          <Link
-            href="/about#resume"
-            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[color:var(--primary-border)] bg-[color:var(--primary-soft)] px-5 py-2.5 text-sm font-medium text-[color:var(--primary)] hover:border-[color:var(--primary)]"
-          >
-            View resume
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }

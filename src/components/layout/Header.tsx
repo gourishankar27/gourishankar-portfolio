@@ -4,10 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { siteConfig } from "@/lib/seo";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "Bio & Contact" },
+  { href: "/about", label: "About & Resumes" },
   { href: "/education-skills", label: "Education & Skills" },
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
@@ -31,26 +32,27 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-baseline gap-2"
+          className="flex shrink-0 flex-col items-start gap-0.5"
           onClick={() => setOpen(false)}
         >
-          <span className="text-lg font-semibold tracking-tight text-[color:var(--text)]">
-            Gourishankar Bansode
+          <span className="text-base sm:text-lg font-semibold tracking-tight text-[color:var(--text)]">
+            {siteConfig.name}
           </span>
-          <span className="hidden sm:inline text-xs text-[color:var(--muted)]">
-            Robotics &amp; AI Software Engineer
+          <span className="hidden sm:inline xl:hidden text-xs text-[color:var(--muted)]">
+            {siteConfig.role}
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-2 lg:gap-3 text-sm">
+        <nav aria-label="Primary navigation" className="hidden xl:flex items-center gap-1 text-sm">
           {navItems.map((item) => {
             const active = isActivePath(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={[
-                  "px-3 py-1.5 rounded-full transition-colors",
+                  "whitespace-nowrap px-2 py-1.5 rounded-full transition-colors",
                   active
                     ? "text-[color:var(--text)] bg-[color:var(--primary-soft)] border border-[color:var(--primary-border)]"
                     : "text-[color:var(--muted)] hover:text-[color:var(--text)]",
@@ -67,8 +69,10 @@ export function Header() {
 
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] h-9 w-9"
+            className="xl:hidden inline-flex items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] h-11 w-11"
             aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
             onClick={() => setOpen((v) => !v)}
           >
             <span className="sr-only">Open navigation</span>
@@ -94,14 +98,15 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-[color:var(--border)] bg-[color:var(--surface-alpha)] backdrop-blur-sm">
-          <nav className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-3 flex flex-col gap-1.5 text-sm">
+        <div id="mobile-navigation" className="xl:hidden border-t border-[color:var(--border)] bg-[color:var(--surface-alpha)] backdrop-blur-sm">
+          <nav aria-label="Mobile navigation" className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-3 flex flex-col gap-1.5 text-sm">
             {navItems.map((item) => {
               const active = isActivePath(pathname, item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-current={active ? "page" : undefined}
                   onClick={() => setOpen(false)}
                   className={[
                     "w-full rounded-lg px-3 py-2 transition-colors",

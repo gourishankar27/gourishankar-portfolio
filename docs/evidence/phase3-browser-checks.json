@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-24",
+  "timezone": "America/Phoenix",
+  "origin": "http://127.0.0.1:3100",
+  "method": "Native Microsoft Edge through CUA accessibility, screenshots, mouse and keyboard; Edge DevTools responsive mode. No headless runner or DOM script execution was used.",
+  "browser_host": "Unavailable; native Edge window control provided the working fallback.",
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "theme": "dark and light",
+      "observed": "Homepage avatar/robot and highlights; balanced resume cards, technology tags, project links and actions; no visible horizontal overflow."
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "theme": "dark and light",
+      "observed": "Homepage; About biography and selected AI/robotics embedded PDF; experience timeline and visualization. Light theme checked on About; dark restored."
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "theme": "dark",
+      "observed": "Education/skills with two-column cards and wrapping controls; no visible horizontal overflow."
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "observed": "About resume section, both selection controls and direct PDF actions; no embedded preview in the accessibility tree or visible layout."
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "theme": "dark",
+      "additional": true,
+      "observed": "Education GPA badges, mobile menu navigation to Education & Skills, all five functional skills filters."
+    }
+  ],
+  "interactions": [
+    {
+      "check": "Robotics deep link",
+      "status": "PASS",
+      "observed": "URL, panel title, preview title, open and download URLs all reference Robotics."
+    },
+    {
+      "check": "Resume switching",
+      "status": "PASS",
+      "observed": "Mouse selection and Left Arrow, Home and End changed selection, URL, panel, iframe title and PDF actions. Only one selected preview was exposed."
+    },
+    {
+      "check": "Direct PDF opening",
+      "status": "PASS",
+      "observed": "Both Open PDF links opened the matching canonical PDF in a new Edge tab; each test tab was closed."
+    },
+    {
+      "check": "PDF downloading",
+      "status": "PASS",
+      "observed": "Both Download PDF links saved the expected canonical filenames. Download bytes match originals and public canonical copies."
+    },
+    {
+      "check": "Skills filtering",
+      "status": "PASS",
+      "counts": {
+        "All Skills": 9,
+        "AI & ML": 5,
+        "Robotics & Autonomy": 4,
+        "Software Engineering": 3,
+        "Research & Evaluation": 3
+      }
+    },
+    {
+      "check": "Mobile menu",
+      "status": "PASS",
+      "observed": "Opened on a 375px viewport with all seven routes; Education & Skills link navigated and closed menu."
+    },
+    {
+      "check": "Theme toggle",
+      "status": "PASS",
+      "observed": "Dark-to-light on About and homepage cards, matching toggle label and visible palette; restored dark."
+    },
+    {
+      "check": "Avatar and WebGL scenes",
+      "status": "PASS",
+      "observed": "Homepage avatar and three-robot scene rendered; experience visualization rendered. Scene implementation files unchanged."
+    },
+    {
+      "check": "Horizontal overflow",
+      "status": "PASS (visual)",
+      "observed": "None visible in the inspected views. No programmatic scrollWidth measurement."
+    }
+  ],
+  "downloads": [
+    {
+      "filename": "Gourishankar_Bansode_AI_Resume.pdf",
+      "bytes": 177483,
+      "sha256": "160c51673b6f4074afe902acd61b0c29b011b9a4f14a8766b68923ac61bd3ea6"
+    },
+    {
+      "filename": "Gourishankar_Bansode_Robotics_Resume.pdf",
+      "bytes": 138090,
+      "sha256": "7be8882e9328022f0fd68fabe67261000ceda51fd0fbddb152e3b3b89dada4af"
+    }
+  ],
+  "console": {
+    "observed": "Blocked /_vercel/insights/script.js and /_vercel/speed-insights/script.js requests (ERR_BLOCKED_BY_CLIENT), with their existing package warnings on the local server. Edge PDF viewer also emitted an unload permissions-policy message after opening a PDF.",
+    "application_errors": "No React hydration or application exception observed during the inspected interactions; this is not an automated exhaustive console assertion.",
+    "browser_extension_noise": "An installed browser extension adds its own DOM; screenshots were captured through DevTools without altering the application."
+  },
+  "screenshots": [
+    {
+      "path": "docs/screenshots/phase3/home-desktop-1440x900-dark.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pixels": [
+        2880,
+        1800
+      ],
+      "sha256": "69f72ae84ea3f4d9a12786d5728cd971bc1217b961d0c2a1c4142e1edf9d73c6"
+    },
+    {
+      "path": "docs/screenshots/phase3/resume-pathways-desktop-1920x1080-light.png",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixels": [
+        3840,
+        2160
+      ],
+      "sha256": "6b919f33d7b2eb0f8f19fd4ce30ad8e4d35d6e2785d29eac2e07d0a308b1a13c"
+    },
+    {
+      "path": "docs/screenshots/phase3/experience-desktop-1440x900-dark.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pixels": [
+        2880,
+        1800
+      ],
+      "sha256": "1489a3013280148e21c1ff0b04c17502eb4e92fc3f9077f49d2a38f9ded664ac"
+    },
+    {
+      "path": "docs/screenshots/phase3/skills-tablet-768x1024-dark.png",
+      "viewport": [
+        768,
+        1024
+      ],
+      "pixels": [
+        1536,
+        2048
+      ],
+      "sha256": "751409ab5ca032485949b5cf42ef0e89e572237424d0ab8ccb12308ed890cf00"
+    },
+    {
+      "path": "docs/screenshots/phase3/resume-mobile-390x844-dark.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "pixels": [
+        780,
+        1688
+      ],
+      "sha256": "edac771e286119ce8abe5ac6e4d75602a51a9f05ebd7c0defad486fb69bc6463"
+    },
+    {
+      "path": "docs/screenshots/phase3/education-mobile-375x812-dark.png",
+      "viewport": [
+        375,
+        812
+      ],
+      "pixels": [
+        750,
+        1624
+      ],
+      "sha256": "b17273cd52d331373dadf83c06f210308b5b8d78d51d96d78aba7fc3e11a72ca"
+    }
+  ],
+  "screenshot_provenance": "Actual DevTools Capture screenshot downloads, copied byte-for-byte into docs; 2x device pixels. No generated UI, cropping, resizing or editing. No resume page/contact extraction included.",
+  "limitations": [
+    "Representative views, not every route at every size or in every theme.",
+    "No Safari, Firefox, iOS/Android physical-device, screen-reader, automated axe/Lighthouse or contrast-ratio audit.",
+    "No forced browser PDF-rendering failure; direct fallback links remain visible in both responsive modes.",
+    "Project filtering/history/browser media interactions were not rerun in Phase 3; project source is protected and production HTTP regression passed.",
+    "Research and source-project experimental suites were inspected as evidence, not rerun."
+  ],
+  "cleanup": "Task browser/PDF tabs and DevTools closed; original user tab and window size restored. Existing user localhost:3000 development server left untouched."
+}

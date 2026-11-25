@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline";
 import { DefenseHudCanvas } from "@/components/experience/DefenseHudCanvas";
+import { absoluteUrl, ogImageUrl } from "@/lib/seo";
+
+const description = "Professional C++ and Python software engineering, telemetry, automation, computer vision, and spacecraft attitude-estimation research at Arizona State University.";
+export const metadata: Metadata = {
+  title: "Professional Experience",
+  description,
+  alternates: { canonical: "/experience" },
+  openGraph: { title: "Professional Experience | Gourishankar Bansode", description, url: absoluteUrl("/experience"), images: [ogImageUrl({ title: "Professional Experience", subtitle: "Software Engineering · Applied AI · Robotics Research" })] },
+  twitter: { card: "summary_large_image", title: "Professional Experience | Gourishankar Bansode", description, images: [ogImageUrl({ title: "Professional Experience", subtitle: "Software Engineering · Applied AI · Robotics Research" })] },
+};
 
 export default function ExperiencePage() {
   return (
@@ -12,9 +23,10 @@ export default function ExperiencePage() {
           Professional Experience
         </h1>
         <p className="mt-2 text-sm sm:text-base text-[color:var(--muted-2)] max-w-3xl">
-          Experience spanning NASA-aligned event-based space autonomy research,
-          reliability-critical defense platforms, backend/data systems,
-          observability, computer vision, and real-time autonomy evaluation.
+          More than two years of professional C++ and Python engineering,
+          followed by research in event-based vision and spacecraft attitude
+          estimation. My work connects dependable backend systems, applied AI,
+          and robotics evaluation.
         </p>
       </header>
 

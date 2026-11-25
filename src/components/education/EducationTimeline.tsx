@@ -14,7 +14,7 @@ export function EducationTimeline() {
           </div>
 
           {/* Card */}
-          <div className="flex-1 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[0_12px_30px_var(--shadow-1)] p-4 sm:p-5">
+          <div className="min-w-0 flex-1 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[0_12px_30px_var(--shadow-1)] p-4 sm:p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div>
                 <h3 className="text-sm sm:text-base font-semibold text-[color:var(--text)]">
@@ -27,6 +27,12 @@ export function EducationTimeline() {
               </div>
               <p className="text-xs sm:text-sm text-[color:var(--muted)]">{edu.period}</p>
             </div>
+
+            {edu.gpa && (
+              <p className="mt-3 inline-flex rounded-full border border-[color:var(--primary-border)] bg-[color:var(--primary-soft)] px-3 py-1.5 text-sm font-semibold text-[color:var(--text)]">
+                GPA {edu.gpa.value} / {edu.gpa.scale}
+              </p>
+            )}
 
             {edu.details && (
               <p className="mt-3 text-xs sm:text-sm text-[color:var(--muted-2)]">

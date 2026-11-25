@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/lib/seo";
 
 export const runtime = "edge";
 
@@ -9,9 +10,9 @@ function clampText(text: string, max: number): string {
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const title = clampText(searchParams.get("title") ?? "Gourishankar Bansode", 72);
+  const title = clampText(searchParams.get("title") ?? siteConfig.name, 72);
   const subtitle = clampText(
-    searchParams.get("subtitle") ?? "Robotics & AI Engineer",
+    searchParams.get("subtitle") ?? siteConfig.role,
     96
   );
 

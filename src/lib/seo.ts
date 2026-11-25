@@ -1,12 +1,14 @@
 export const siteConfig = {
   name: "Gourishankar Bansode",
+  role: "Robotics & AI Software Engineer",
+  affiliation: "Research Assistant at Arizona State University",
   title: "Gourishankar Bansode | Robotics & AI Software Engineer",
   description:
-    "Portfolio of Gourishankar Bansode - robotics and AI software engineer working on event-based vision, space autonomy, state estimation, differentiable physics, autonomous systems, and reliability-focused production software.",
+    "Robotics and AI Software Engineer with professional C++ and Python experience, specializing in self-hosted LLMs, AI agents, retrieval systems, autonomous navigation, computer vision, state estimation, and reliable software engineering.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://gshankar.me",
   email: "gourishankar@asu.edu",
   // phone: "+1-602-491-8770",
-  location: "Tempe, AZ",
+  location: "Tempe, Arizona, United States",
   socials: {
     github: "https://github.com/gourishankar27",
     linkedin: "https://linkedin.com/in/gourishankarb/",
